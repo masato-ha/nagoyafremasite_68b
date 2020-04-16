@@ -63,3 +63,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # haml導入
 gem "haml-rails", "~> 2.0"
+
+#デプロイ用unicon導入
+group :production do
+  gem 'unicorn', '5.4.1'
+end
