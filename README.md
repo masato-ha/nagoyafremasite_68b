@@ -12,6 +12,14 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+## 〇〇テーブル
+
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+
 
 * Database initialization
 
