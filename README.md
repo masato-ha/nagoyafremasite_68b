@@ -12,12 +12,8 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-## 〇〇テーブル
 
-|カラム名|カラム型|オプション|
-|------|----|-------|
-
-### Association
+##ER図 https://gyazo.com/d935d3dcbe59d07f20a9be46df8c6709
 
 ## usersテーブル
 
