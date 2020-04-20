@@ -21,19 +21,6 @@ Things you may want to cover:
 |nickname|string|NOT NULL|
 |passward|string|NOT NULL|
 |e-mail|string|users, :email, unique: true|
-
-
-### Association
-
-belongs_to :credit-card
-belongs_to :profile
-belongs_to :address
-has_many :likes
-has_many :items, through: :comments
-
-## profilesテーブル
-
-|カラム名|カラム型|オプション|
 |first_name|string|null: false|
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -45,9 +32,14 @@ has_many :items, through: :comments
 |avatar|string|任意|
 |user_id|integer|null: false, foreign_key: true|
 
+
 ### Association
 
-belongs_to :user
+belongs_to :credit-card
+belongs_to :address
+has_many :likes
+has_many :items, through: :comments
+
 
 ## addressesテーブル
 
@@ -57,7 +49,7 @@ belongs_to :user
 |address_first_name_kana|string|null: false|
 |address_family_name_kana|string|null: false|
 |post_code|integer|null: false|
-|prefecture_code|integer|null: false|
+|prefecture|integer|null: false|
 |city|string|null: false|
 |house_number|integer|null: false|
 |building_name|string|任意|
@@ -135,7 +127,6 @@ belongs_to :user
 ## categoriesテーブル
 # 
 |name|string|null: false|
-|ancesty|string|Path Enumeration|
 
 ### Association
 
