@@ -30,7 +30,6 @@ Things you may want to cover:
 |birth_day|integer|null: false|
 |introduction|text|任意|
 |avatar|string|任意|
-|user_id|integer|null: false, foreign_key: true|
 
 
 ### Association
@@ -66,12 +65,11 @@ belongs_to :user
 |name|srting|null: false|
 |introduction|text|null: false|
 |price|integer|null: false|
-|brand_id|integer|任意|
+|brand_id|integer|foreign_key: true|
 |item_condition|string|null: false|
 |shipping_area|string|null: false|
 |size|string|null: false|
 |preparation_day|datetime|null: false|
-|image|string|null: false|
 |category_id|integer|null: false, foreign_key: true|
 |trading_status|string|null: false|
 |seller_id|integer|null: false, foreign_key: true|
@@ -81,11 +79,11 @@ belongs_to :user
 
 ### Association
 
-belongs_to :like
 belongs_to :category
 belongs_to :brand
 has_many :images
-has_many :users, through:comments
+belongs_to :user, through:comments
+has_many :items
 
 ## credit-cardsテーブル
 
@@ -110,8 +108,8 @@ belongs_to :user
 
 ### Association
 
-has_many :users
-has_many :items
+belongs_to :user
+belongs_to :item
 
 ## likesテーブル
 
@@ -121,7 +119,7 @@ has_many :items
 
 ### Association
 
-has_many :items
+belongs_to :item
 belongs_to :user
 
 ## categoriesテーブル
