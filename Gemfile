@@ -77,6 +77,6 @@ group :production do
 end
 
 gem 'devise'
-gem 'font-awesome-sass', '~> 5.4.1'
+
 
 
