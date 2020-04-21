@@ -1,0 +1,294 @@
+.body
+  .body__image
+    .body__image__photos
+      .body__image__photos__text
+        %b1 人生を変える
+        %b2 フリマアプリ
+        %b3 FURIMAはだれでもかんたんに出品・購入できる
+        %b4 フリマアプリです
+      .body__image__photos__stores
+        = link_to 'https://apps.apple.com/jp/app/id667861049?l=ja', class: "appstore" do
+          = image_tag 'appstore.svg', size: '170x52'
+        = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "googleplay" do
+          = image_tag 'googleplay.svg', size: '520x52'
+        
+  .body__reasons
+    .body__reasons__subtitle
+      FURIMAが選ばれる3つの理由
+    %ul.body__reasons__lists
+      %li.body__reasons__lists__list
+        .body__reasons__lists__list__photo
+          .body__reasons__lists__list__photo__number
+            1
+          = image_tag "pict-reason-01.jpg", height: '300px', width: '300px'
+        .body__reasons__lists__list__text
+          %span
+            ３分
+          #text
+            ですぐに出品
+        %p.body__reasons__lists__list__comment
+          スマホで入力するだけで簡単に出品できる！
+      %li.body__reasons__lists__list
+        .body__reasons__lists__list__photo
+          .body__reasons__lists__list__photo__number
+            2
+          = image_tag "pict-reason-02.jpg", height: '300px', width: '300px'
+        .body__reasons__lists__list__text
+          %span 
+            シンプル
+          #text
+            で使いやすい
+        %p.body__reasons__lists__list__comment
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.body__reasons__lists__list
+        .body__reasons__lists__list__photo
+          .body__reasons__lists__list__photo__number
+            3
+          = image_tag "pict-reason-03.jpg", height: '300px', width: '300px'
+        .body__reasons__lists__list__text
+          %span 
+            手数料
+          #text
+            業界最安値
+        %p.body__reasons__lists__list__comment
+          最大３%でお得に出品&購入！
+
+  .body__ads
+    .body__ads__bl
+      .body__ads__bl__title
+        会員数日本一
+      .body__ads__bl__text
+        FURIMAは、フリマアプリで最も人気。
+        %br/
+        出品・購入回数も業界最多です! 
+        %br/
+        ほしかったあの商品に出会えるかもしれません。
+      .body__ads__bl__btn
+        = link_to 'https://apps.apple.com/jp/app/id667861049?l=ja', class: "appstore" do
+          = image_tag 'appstore.svg', size: '170x52'
+        = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "googleplay" do
+          = image_tag 'googleplay.svg', size: '170x52'
+        
+
+  .body__point
+    .body__point__title
+      FURIMAの特徴
+    .body__point__indexes
+      .body__point__indexes__index
+        = image_tag("icon-01.png", size: "184x270")
+        .body__point__indexes__index__sub
+          簡単に売り買いできる
+        .body__point__indexes__index__comment
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .body__point__indexes__index
+        = image_tag("icon-03.png", size: "184x270")
+        .body__point__indexes__index__sub
+          売上金は即日振込みに対応
+        .body__point__indexes__index__comment
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      .body__point__indexes__index
+        = image_tag("icon-04.png", size: "184x270")
+        .body__point__indexes__index__sub
+          様々な支払いに対応
+        .body__point__indexes__index__comment
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  .body__pickup
+    .body__pickup__title
+      ピックアップカテゴリー
+    .body__pickup__indexes
+      .body__pickup__indexes__sub
+        新規投稿商品
+      .body__pickup__indexes__categories
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込 
+      
+      .body__pickup__indexes__categories
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込          
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+
+  .body__pickup
+    .body__pickup__title
+      ピックアップブランド
+    .body__pickup__indexes
+      .body__pickup__indexes__sub
+        アーカイバ
+      .body__pickup__indexes__categories
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+      .body__pickup__indexes__categories
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込          
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な白身魚
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+        .body__pickup__indexes__categories__category
+          = image_tag("egg.png", size: "184x184")
+          .body__pickup__indexes__categories__category__lists
+            .body__pickup__indexes__categories__category__lists__name
+              魅惑的な
+            .body__pickup__indexes__categories__category__lists__datas
+              %ul.body__pickup__indexes__categories__category__lists__datas__data
+                %li.body__pickup__indexes__categories__category__lists__datas__data__price
+                  20,000円
+                %li.body__pickup__indexes__categories__category__lists__datas__data__likes
+                  %li.body__pickup__indexes__categories__category__lists__datas__data__likes__like
+                    %i.fas.fa-star 
+                      0
+              %p.body__pickup__indexes__categories__category__lists__datas__data__tax
+                税込
+                
