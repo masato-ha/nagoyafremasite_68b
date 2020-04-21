@@ -14,8 +14,11 @@
  *= require_self
  */
 
+ 
  @import "./reset";
- @import "./posts";
+ @import "./header";
+ @import "./topbody";
+ @import "./footer";
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
