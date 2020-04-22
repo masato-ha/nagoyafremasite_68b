@@ -34,8 +34,8 @@ Things you may want to cover:
 
 ### Association
 
-belongs_to :credit-card
-belongs_to :address
+has_one :credit-card
+has_one :address
 has_many :likes
 has_many :items, through: :comments
 
