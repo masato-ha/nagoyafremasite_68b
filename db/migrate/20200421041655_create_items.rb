@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :item_condition, null: false
       t.string :shipping_area, null: false
       t.string :size, null: false
-      t.datetime :preparation_day
+      t.datetime :preparation_day, null: false
       t.string :trading_status, null: false
       t.string :postage_type, null: false
       t.datetime :deal_closed_date
