@@ -79,5 +79,6 @@ end
 gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'devise'
-
+gem 'carrierwave'
+gem 'fog-aws'
 
