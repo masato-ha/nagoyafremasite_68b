@@ -13,7 +13,7 @@ Things you may want to cover:
 
 * Database creation
 
-##ER図 https://gyazo.com/d935d3dcbe59d07f20a9be46df8c6709
+##ER図 https://gyazo.com/8a38543722a5fa2fe20930f8fe702319
 
 ## usersテーブル
 
