@@ -18,6 +18,7 @@ Things you may want to cover:
 ## usersテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |nickname|string|NOT NULL|
 |passward|string|NOT NULL|
 |e-mail|string|users, :email, unique: true|
