@@ -158,6 +158,7 @@ Things you may want to cover:
 
 - belongs_to :item
 
+|------|----|-------|
 * Database initialization
 
 * How to run the test suite
