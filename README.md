@@ -59,7 +59,7 @@ Things you may want to cover:
 
 ### Association
 
-belongs_to :user
+- belongs_to :user
 
 ## itemsテーブル
 
@@ -82,10 +82,10 @@ belongs_to :user
 
 ### Association
 
-belongs_to :category
-belongs_to :brand
-has_many :images
-belongs_to :user, through:comments
+- belongs_to :category
+- belongs_to :brand
+- has_many :images
+- belongs_to :user, through:comments
 
 ## credit-cardsテーブル
 
@@ -99,7 +99,7 @@ belongs_to :user, through:comments
 
 ### Association
 
-belongs_to :user
+- belongs_to :user
 
 ## commentsテーブル
 
@@ -112,8 +112,8 @@ belongs_to :user
 
 ### Association
 
-belongs_to :user
-belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 ## likesテーブル
 
@@ -124,8 +124,8 @@ belongs_to :item
 
 ### Association
 
-belongs_to :item
-belongs_to :user
+- belongs_to :item
+- belongs_to :user
 
 ## categoriesテーブル
 # 
@@ -135,7 +135,7 @@ belongs_to :user
 
 ### Association
 
-has_many :items
+- has_many :items
 
 ## brandsテーブル
 
@@ -145,7 +145,7 @@ has_many :items
 
 ### Association
 
-has_many :items
+- has_many :items
 
 ## imagesテーブル
 
@@ -156,7 +156,7 @@ has_many :items
 
 ### Association
 
-belongs_to :item
+- belongs_to :item
 
 * Database initialization
 
