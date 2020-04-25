@@ -35,10 +35,10 @@ Things you may want to cover:
 
 ### Association
 
-has_one :credit-card
-has_one :address
-has_many :likes
-has_many :items, through: :comments
+- has_one :credit-card
+- has_one :address
+- has_many :likes
+- has_many :items, through: :comments
 
 
 ## addressesテーブル
