@@ -24,8 +24,8 @@ Things you may want to cover:
 |e-mail|string|users, :email, unique: true|
 |first_name|string|null: false|
 |family_name|string|null: false|
-|first_name_kana|string|null: false|
-|family_name_kana|string|null: false|
+|first_name_pseudonym|string|null: false|
+|family_name_pseudonym|string|null: false|
 |birth_year|integer|null: false|
 |birth_manth|integer|null: false|
 |birth_day|integer|null: false|
@@ -47,8 +47,8 @@ has_many :items, through: :comments
 |------|----|-------|
 |address_first_name|string|null: false|
 |address_family_name|string|null: false|
-|address_first_name_kana|string|null: false|
-|address_family_name_kana|string|null: false|
+|address_first_name_pseudonym|string|null: false|
+|address_family_name_pseudonym|string|null: false|
 |post_code|integer|null: false|
 |prefecture|integer|null: false|
 |city|string|null: false|
