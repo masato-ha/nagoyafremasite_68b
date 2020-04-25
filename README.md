@@ -47,8 +47,8 @@ has_many :items, through: :comments
 |------|----|-------|
 |address_first_name|string|null: false|
 |address_family_name|string|null: false|
-|address_first_name_pseudonym|string|null: false|
-|address_family_name_pseudonym|string|null: false|
+|address_first_pseudonym|string|null: false|
+|address_family_pseudonym|string|null: false|
 |post_code|integer|null: false|
 |prefecture|integer|null: false|
 |city|string|null: false|
