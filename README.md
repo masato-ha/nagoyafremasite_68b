@@ -19,8 +19,8 @@ Things you may want to cover:
 
 |カラム名|カラム型|オプション|
 |------|----|-------|
-|nickname|string|NOT NULL|
-|passward|string|NOT NULL|
+|nickname|string|null: false|
+|passward|string|null: false|
 |e-mail|string|users, :email, unique: true|
 |first_name|string|null: false|
 |family_name|string|null: false|
@@ -44,6 +44,7 @@ has_many :items, through: :comments
 ## addressesテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |address_first_name|string|null: false|
 |address_family_name|string|null: false|
 |address_first_name_kana|string|null: false|
@@ -63,6 +64,7 @@ belongs_to :user
 ## itemsテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |name|srting|null: false|
 |introduction|text|null: false|
 |price|integer|null: false|
@@ -89,6 +91,7 @@ has_many :items
 ## credit-cardsテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |card_number|integer|null: false|
 |expriation_year|integer|null: false|
 |expriation_month|integer|null: false|
@@ -102,6 +105,7 @@ belongs_to :user
 ## commentsテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
 |comment|text|null: false|
@@ -115,6 +119,7 @@ belongs_to :item
 ## likesテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
 
@@ -125,6 +130,8 @@ belongs_to :user
 
 ## categoriesテーブル
 # 
+|カラム名|カラム型|オプション|
+|------|----|-------|
 |name|string|null: false|
 
 ### Association
@@ -134,6 +141,7 @@ has_many :items
 ## brandsテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |name|string|null: false|
 
 ### Association
@@ -143,6 +151,7 @@ has_many :items
 ## imagesテーブル
 
 |カラム名|カラム型|オプション|
+|------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
 |url|string|null: false|
 
