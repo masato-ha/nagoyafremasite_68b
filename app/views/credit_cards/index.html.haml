@@ -1,6 +1,5 @@
-//ログアウトページマークアップ仮
-
 =render "header"
+
 .topbody__box__below
   .topbody__box__below__search
     .topbody__box__below__search__category             
@@ -30,9 +29,12 @@
         メルカリ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to root_path, class:"headminenow" do
+      = link_to root_path, class:"headmine" do
         マイページ
         %i.fas.fa-angle-right
+    %li.mypagehed2-list-item 
+      = link_to new_credit_card_path, class:"headminenow" do
+        支払い方法
 
 .mypagemain
   .mypagemain-left
@@ -100,7 +102,7 @@
           発送元・お届け先住所変更
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          = link_to credit_cards_path, class:"content" do
+          = link_to new_credit_card_path, class:"content" do
             支払い方法
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
@@ -116,8 +118,22 @@
           = link_to new_user_path, class:"content" do
             ログアウト
           %i.fas.fa-angle-right
-  .logout-right
-    .logout-right-content
-      = link_to root_path, method: :delete do
-        ログアウト
-      
+  .contentcash
+    %section.contentcash-top
+      %h2.contentcash-top-head 支払い方法
+      .contentcash-top-inner
+        %section
+          .contentcash-top-inner-content
+            %h3.contentcash-top-inner-content-head クレジットカード一覧
+          %ul.settings-payment-list
+        %section.contentcash-top-inner-add
+          .contentcash-top-inner-add-cash
+            = link_to new_credit_card_path, class:"cashbtn-default cashbtn-red cashsubmit_button " do
+              %i.fa.fa-credit-card
+              クレジットカードを追加する
+            
+        .contentcash-top-inner-regist  
+          = link_to root_path do
+            %i.fa.fa-angle-right
+            支払い方法について
+        
