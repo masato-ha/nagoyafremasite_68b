@@ -1,0 +1,247 @@
+//クレカ用
+.contentcash{
+  width: 700px;
+
+  &-top{
+  margin: 0;
+  background: #fafafa;
+
+    &-head{
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    }
+    &-inner{
+    padding: 64px;
+    border-top: 1px solid #f5f5f5;
+
+      &-content{
+      max-width: 320px;
+      margin: 0 auto;
+
+        &-head{
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+
+      &-add{
+      padding: 24px 0;
+      border-bottom: 1px solid #eee;
+
+        &-cash{
+          width: 50%;
+          margin: 0 auto;
+          a{
+            text-decoration: none;
+            margin-bottom: 8px !important;
+            margin: 0 auto;
+            width: 50%;
+            font-size: 15px;
+            border-radius: 3px;
+            }
+      
+          .cashbtn-red{
+            background: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+          }
+          .cashbtn-default{
+            display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border: 1px solid transparent;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+          }
+        }
+      }
+      &-regist{
+        a{
+          display: block;
+          margin: 40px 0 0;
+          text-align: right;
+          color: #0099e8;
+          text-decoration: none;
+        }
+      }  
+  }
+  }
+}
+
+//クレカ登録用
+.newcredit-right{
+  width: 700px;
+  &-cash{
+    background: #fafafa;
+    &-head{
+      font-size: 24px;
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      font-weight: 600;
+    }
+    &-list{
+      max-width: 343px;
+      margin: 0 auto;
+      padding-bottom: 64px;
+    
+      .new-paynumber{
+        margin: 40px 0 0;
+        label{
+          font-weight: 600;
+          display: inline;
+        }
+        &-mark{
+          background: #3CCACE;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+        }
+        #credit_card_card_number{
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+      
+      .newpaycardlist{
+        margin: 8px 0 0;
+        display: flex;
+        li{
+          margin-right: 5px;
+        }
+      }
+    }
+    .new-payexpiration{
+      margin: 40px 0 0;
+      label{
+        font-weight: 600;
+        display: inline;
+      }
+      &-mark{
+        background: #3CCACE;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+      }
+      &-list{
+        display: flex;
+      
+        &-lists{
+          display: inline-block;
+          width: calc(50% - 2px);
+          margin: 8px 0 0;
+          #credit_card_expriation_month{
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            width: calc(100% - 38px);
+          }
+          #credit_card_expriation_year{
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            width: calc(100% - 38px);
+          }
+        }
+      }
+    }
+    .new-paysecurity{
+      margin-top: 32px;
+        label{
+        font-weight: 600;
+        display: inline-block;
+        }
+      &-mark{
+        background: #3CCACE;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+      }
+      #credit_card_card_number{
+        width: 100%;
+        margin: 8px 0 0;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      &-point{
+        position: relative;
+        margin: 8px 0 0;
+        &-text{
+          text-align: right;
+          color: #0099e8;
+        }
+        &-info{
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 28px;
+          z-index: 1;
+          padding: 16px;
+          border-radius: 6px;
+          background: #eee;
+          color: #333;
+          line-height: 1.5;
+          text-align: center;
+          transition: all ease-out .3s;
+          visibility: hidden;
+          opacity: 0;
+        }
+        .submit-btn{
+          margin: 24px 0 0;
+          background: #3CCACE;
+          border: 1px solid #3CCACE;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+    }
+      
+    
+    }
+  }
+}

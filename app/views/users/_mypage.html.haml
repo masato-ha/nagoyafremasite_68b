@@ -23,11 +23,11 @@
 %nav.mypagehed2
   %ul.mypagehed2-list
     %li.mypagehed2-list-item 
-      = link_to root_path, class:"content" do
+      = link_to root_path, class:"headmine" do
         メルカリ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to root_path, class:"content" do
+      = link_to root_path, class:"headminenow" do
         マイページ
         %i.fas.fa-angle-right
 
@@ -97,7 +97,7 @@
           発送元・お届け先住所変更
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          = link_to new_user_path, class:"content" do
+          = link_to credit_cards_path, class:"content" do
             支払い方法
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
@@ -110,7 +110,7 @@
           電話番号の確認
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          = link_to new_user_path, class:"content" do
+          = link_to users_path, class:"content" do
             ログアウト
           %i.fas.fa-angle-right
   .mypagemain-right

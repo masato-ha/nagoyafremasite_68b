@@ -1,0 +1,24 @@
+//ログアウト用
+.logout-right-content{
+  background: #fafafa;
+  margin: 0 auto;
+  width: 700px;
+  height: 200px;
+  display: flex;
+    align-items: center;
+  a{
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    font-size: 15px;
+    border-radius: 3px;
+    transition: .4s;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+  }
+}

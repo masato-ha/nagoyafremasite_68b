@@ -46,6 +46,7 @@
 //   border-radius: 5px;
 //   text-decoration: none;
 // }
+
 //ヘッダーメイン
 .mypagehed2{
   position: relative;
@@ -75,7 +76,11 @@
           color: #888;
         }
     }
+    
   }
+}
+.headminenow{
+  font-weight: 600;
 }
 
 //メイン
@@ -92,16 +97,13 @@
     width: 280px;
     margin: 0 40px 0 0;
  
-
     .mypage-nav-list{
       i{
         position: absolute;
         top: 50%;
         right: 16px;
         color: #ccc;
-        -webkit-transform: translate(0, -50%);
         transform: translate(0, -50%);
-        -webkit-transition: all ease-out .2s;
         transition: all ease-out .2s;
       }
 
@@ -165,7 +167,7 @@
         font-size: 16px;
         font-weight: 700;
         width: 350px;
-        line-height: 20px;
+        line-height: 72px;
         text-align: center;
         text-decoration: none;
         padding: 7px;
@@ -224,7 +226,7 @@
         font-size: 16px;
         font-weight: 700;
         width: 350px;
-        line-height: 20px;
+        line-height: 72px;
         text-align: center;
         text-decoration: none;
         padding: 7px;

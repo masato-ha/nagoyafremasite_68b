@@ -33,8 +33,12 @@
         マイページ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to new_credit_card_path, class:"headminenow" do
+      = link_to credit_cards_path, class:"headmine" do
         支払い方法
+        %i.fas.fa-angle-right
+    %li.mypagehed2-list-item
+      = link_to new_credit_card_path, class:"headminenow" do
+        クレジットカード情報入力
 
 .mypagemain
   .mypagemain-left
@@ -118,22 +122,38 @@
           = link_to new_user_path, class:"content" do
             ログアウト
           %i.fas.fa-angle-right
-  .contentcash
-    %section.contentcash-top
-      %h2.contentcash-top-head 支払い方法
-      .contentcash-top-inner
-        %section
-          .contentcash-top-inner-content
-            %h3.contentcash-top-inner-content-head クレジットカード一覧
-          %ul.settings-payment-list
-        %section.contentcash-top-inner-add
-          .contentcash-top-inner-add-cash
-            = link_to new_credit_card_path, class:"cashbtn-default cashbtn-red cashsubmit_button " do
-              %i.fa.fa-credit-card
-              クレジットカードを追加する
-            
-        .contentcash-top-inner-regist  
-          = link_to root_path do
-            %i.fa.fa-angle-right
-            支払い方法について
+  .newcredit-right
+    %section.newcredit-right-cash
+      %h2.newcredit-right-cash-head クレジットカード情報入力
+      .newcredit-right-cash-list
+        = form_for @CreditCard do |form| 
+          .new-paynumber
+            %label.new-paynumber-numbers カード番号
+            %span.new-paynumber-mark 必須
+            = form.text_field :card_number, placeholder: "半角数字のみ"
+            %ul.newpaycardlist
+              %li Visa
+              %li Master
+              %li JCB
+          .new-payexpiration
+            %label.new-payexpiration-numbers 有効期限
+            %span.new-payexpiration-mark 必須
+            %br
+            .new-payexpiration-list
+              .new-payexpiration-list-lists
+                = form.select :expriation_month, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+                %span 月
+              .new-payexpiration-list-lists
+                = form.select :expriation_year, ['21', '22', '23', '24', '25', '26', '27', '28', '29', '30']
+                %span 年
+          .new-paysecurity
+            %label.new-paysecurity-numbers セキュリティコード
+            %span.new-paysecurity-mark 必須
+            = form.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号"
+            .new-paysecurity-point
+              .new-paysecurity-point-text
+                %span カード裏面の番号とは？
+              .new-paysecurity-point-info
+              = form.submit "追加する" , { :class => 'submit-btn' }
         
+= render "footer"
