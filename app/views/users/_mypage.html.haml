@@ -1,6 +1,3 @@
-//ログアウトページマークアップ仮
-
-=render "header"
 .topbody__box__below
   .topbody__box__below__search
     .topbody__box__below__search__category             
@@ -113,11 +110,26 @@
           電話番号の確認
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          = link_to new_user_path, class:"content" do
+          = link_to users_path, class:"content" do
             ログアウト
           %i.fas.fa-angle-right
-  .logout-right
-    .logout-right-content
-      = link_to root_path, method: :delete do
-        ログアウト
-      
+  .mypagemain-right
+    %section.mypage-user
+    %section.mypage-user-tab
+      %ul.mypage-user-tab-tabs
+        %li.newtabs1.active お知らせ
+        %li.newtabs1 やることリスト
+      %ul.mypage-user-tab-content 
+        %li.tabcontent1.show aaaa 
+        %li.tabcontent1 bbb
+        
+          
+          
+    %section.mypage-tab-container
+      %h2.mypage-tab-container-head 購入した商品
+      %ul.mypage-tab-item
+        %li.newtabs2.active 取引中
+        %li.newtabs2 やることリスト
+      %ul.mypage-user-tab-content 
+        %li.tabcontent2.show aaaa 
+        %li.tabcontent2 bbb
