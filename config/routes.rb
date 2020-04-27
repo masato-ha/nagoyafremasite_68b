@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   # get 'users/index'
   root 'items#index'
   resources :users
-  resources :credit_cards
+  resources :credit_cards do
+    collection do
+      get 'about'
+    end
+  end
 end
