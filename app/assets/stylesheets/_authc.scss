@@ -2,7 +2,7 @@ $basic_font: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothi
 $basic_aomidori: #3ccace;
 $basic_black: #333333;
 $basic_white: #ffffff;
-
+$basic_gray: #888;
 
 .regnew {
   &__container {
@@ -40,7 +40,7 @@ $basic_white: #ffffff;
 .main {
   &__container {
     display: block;
-    background: #fff;
+    background: $basic_white;
     width: 700px;
     margin: 0 auto;
     &__title {
@@ -59,7 +59,6 @@ $basic_white: #ffffff;
         line-height: inherit;
         margin: 24px 0 0;
         &__field {
-          // position: relative;
           margin: 20px 0 0 0;
           .category {
               label {
@@ -72,7 +71,7 @@ $basic_white: #ffffff;
               margin: 0 0 0 8px;
               padding: 2px 4px;
               border-radius: 2px;
-              color: #fff;
+              color: $basic_white;
               font-size: 12px;
               vertical-align: top;
             }
@@ -82,8 +81,8 @@ $basic_white: #ffffff;
                 margin: 8px 0 0;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
+                border: 1px solid $basic_white;
+                background: $basic_white;
                 line-height: 1.5;
                 font-size: 16px;
                 min-height: 1.5em;
@@ -102,7 +101,7 @@ $basic_white: #ffffff;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
                 border: 1px solid #ccc;
-                background: #fff;
+                background: $basic_white;
                 line-height: 1.5;
                 font-size: 16px;
                 min-height: 1.5em;
@@ -119,25 +118,20 @@ $basic_white: #ffffff;
             }
           }
           .form-info-text {
-            color: #888;
+            color: $basic_gray;
             font-size: 14px;
           }
           &__select {
               margin: 10px;
             &__wrap {
-              // right: 120px;
             width: 70px;
             margin: 8px 0 0;
             position: relative;
-            background: #fff;
+            background: $basic_white;
             display: inline-block;
-            // display :flex;       
-              
               &__selector {
                 position: relative;
                 display: flex;
-                
-                
                 &__selector1 {
                   width: 60px; 
                   height: 30px;     
@@ -166,16 +160,12 @@ $basic_white: #ffffff;
                 margin: 0 2px 0 8px;
                 width: 60px;
                 margin-left: 60px;
-                // text-decoration: inherit;
-                // vertical-align: inherit;
-                // position: absolute;
-
               }
               i {
               position: absolute;
               top: 50%;
               z-index: 2;
-              color: #888;
+              color: $basic_gray;
               display: inline-block;
                   font-family: "Font Awesome 5 Free";
                   font-style: normal;
@@ -185,13 +175,12 @@ $basic_white: #ffffff;
               }
             }
             &__subtext {
-              // display: block;
-              color: #888;
+              color: $basic_gray;
               font-size: 14px;
               margin-top: 15px;
             }
             &__reg {
-              color: #888;
+              color: $basic_gray;
               font-size: 14px;
             }
             .checkbox-default {
@@ -199,7 +188,6 @@ $basic_white: #ffffff;
             }
           }
           &__submit {
-            // margin-top: px;
             display: block;
             width: 100%;
             line-height: 48px;
@@ -209,7 +197,7 @@ $basic_white: #ffffff;
             min-height: 1.5em;
             background: $basic_aomidori;
             border: 1px solid $basic_aomidori;
-            color: #fff;
+            color: $basic_white;
             &__btn {
 
             }
@@ -222,7 +210,6 @@ $basic_white: #ffffff;
 
 
 .single {
-  // background-color: #f5f5f5;
   text-align: center;
   &__footer {
     margin-top: 100px;
@@ -230,12 +217,11 @@ $basic_white: #ffffff;
     padding: 30px 0;
     text-align: center;
     &__nav {
-      // text-align: center;
       &__con {
         &__li {
           margin: 0 0 0 16px;
             text-decoration: none;
-              color: #888;
+              color: $basic_gray;
               font-size: 12px;
               text-align: center;
         }
@@ -243,7 +229,7 @@ $basic_white: #ffffff;
     }
     img {
       text-decoration: none;
-      color: #888;
+      color: $basic_gray;
       font-size: 12px;
       text-align: center;
       margin: 40px;
@@ -258,12 +244,3 @@ $basic_white: #ffffff;
     }
   }
 }
-
-
-
-
-
-
-
-
-
