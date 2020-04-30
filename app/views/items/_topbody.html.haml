@@ -7,11 +7,30 @@
       .topbody__box__below__search__category             
         = link_to "カテゴリー"             
         = link_to "ブランド"
-    .topbody__box__below__users
-      .topbody__box__below__users__member
-        .topbody__box__below__users__member__right
-          = link_to "ログイン", root_path, class: "member_right"
-        = link_to "新規会員登録", root_path, class: "newreg"
+    -if user_signed_in?
+      %nav.mypagehed-right
+        %ul.main-header-user-nav 
+          %li
+            .main-header-menu-link
+              %i.fas.fa-heart
+              %span いいね!一覧
+          %li
+            .main-header-menu-link
+              %i.fa.fa-bell
+              %span お知らせ
+          %li
+            .main-header-menu-link
+              %i.fa.fa-check
+              %span やることリスト
+          %li
+            .main-header-menu-link
+              = link_to "マイページ",users_path, class: "decoration-none" 
+    -else
+      .topbody__box__below__users
+        .topbody__box__below__users__member
+          .topbody__box__below__users__member__right
+            = link_to "ログイン", new_user_session_path, class: "member_right"
+          = link_to "新規会員登録", new_user_registration_path, class: "newreg"
   .topbody__image
     .topbody__image__photos
       .topbody__image__photos__text
