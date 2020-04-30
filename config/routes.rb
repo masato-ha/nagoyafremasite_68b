@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   } 
   
   root 'items#index'
-  resources :users
+  resources :users do
+   resource :logout ,only: [:show]
+  end
   resources :credit_cards do
     collection do
       get 'about'
@@ -19,9 +21,9 @@ Rails.application.routes.draw do
 
 
   resource :mypages do
-    resource :logout ,only: [:show]
+    
   end
   get 'logouts/show'
-  get 'mypages/show'
+  # get 'mypages/show'
 end
 
