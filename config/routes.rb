@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  
   # get 'credit_cards/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -14,5 +16,12 @@ Rails.application.routes.draw do
       get 'about'
     end
   end
+
+
+  resource :mypages do
+    resource :logout ,only: [:show]
+  end
+  get 'logouts/show'
+  get 'mypages/show'
 end
 
