@@ -1,5 +1,5 @@
 a {
-  color: #ff0211;
+  color: #222;
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -17,7 +17,7 @@ img {
 
 .sell-title{
   align-items: center;
-  margin: 0!important;
+  margin-top: 32px;
   box-sizing: border-box;
   &__text{
     font-size: 14px;
@@ -29,6 +29,19 @@ img {
     font-size: 12px;
     padding: 0 4px;
     background-color: #ff0211;
+    color: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
+    margin: 0;
+  }
+  &__free{
+    margin-left: 8px;
+    font-size: 12px;
+    padding: 0 4px;
+    background-color: #BFBFBF;
     color: #fff;
     border-radius: 2px;
     display: inline-block;
@@ -56,10 +69,12 @@ img {
 .sell-collection_select{
   box-sizing: border-box;
   margin-top: 16px;
+  width: 100%;
   &__label{
     display: inline-block;
     position: relative;
     width: 100%;
+    
     .fas.fa-chevron-down{
       box-sizing: border-box;
       pointer-events: none;
@@ -132,15 +147,22 @@ img {
           height: auto;
           width: 100%;
           &__box{
-            height: auto;
             align-content: center;
-            align-items: center;
             cursor: pointer;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             position: relative;
+            box-sizing: border-box;
+            background-color: rgb(245, 245, 245);
+            height: 150px;
             border-width: 1px;
+            border-style: dashed;
+            border-color: rgb(204, 204, 204);
+            text-align: center;
+            i{
+              box-sizing: border-box;
+              margin-bottom: 8px;
+            }
 
             #output-box{
               box-sizing: border-box;
@@ -179,30 +201,9 @@ img {
                   color: rgb(0, 149, 238);
                 }
               }
-
               #image-input{
-                box-sizing: border-box;
-                height: 100%;
-                -webkit-flex: 1;
                 flex: 1;
                 margin-top: 8px;
-
-                .sell-container__content__upload__items__box__label{
-                  box-sizing: border-box;
-                  background-color: rgb(245, 245, 245);
-                  height: 150px;
-                  border-width: 1px;
-                  border-style: dashed;
-                  border-color: rgb(204, 204, 204);
-                  text-align: center;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  i{
-                    box-sizing: border-box;
-                    margin-bottom: 8px;
-                  }
-                }
               }
             }
           }
@@ -232,6 +233,7 @@ img {
         display: block;
       }
       &__word-count{
+        margin-top: 16px;
         text-align: right;
         color: #888;
         font-size: 12px;
@@ -292,7 +294,7 @@ img {
       width: 360px;
       margin-bottom: 32px;
       &__sell-btn{
-        background-color: #ea352d;
+        background-color: #3CCBCD;
         color: #fff;
         margin-bottom: 24px;
         width: 100%;
@@ -300,8 +302,10 @@ img {
         height: 48px;
         font-weight: 600;
         border-radius: 4px;
+        text-align: center;
+        padding: 14px 0;
       }
-      &__return-btn{
+      &__Save{
         background-color: #ccc;
         color: #222;
         width: 100%;
@@ -312,6 +316,11 @@ img {
         border-radius: 4px;
         display: inline-block;
         text-align: center;
+      }
+      &__return {
+        text-align: center;
+        color: #0095ee;
+        margin-top: 24px;
       }
     }
     .attention-box{
@@ -325,24 +334,24 @@ img {
       }
     }
   }
-  .sell-footer{
+}
+.sell-footer{
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  padding: 40px 0px;
+  text-align: center;
+  font-size: 12px;
+  nav{
     box-sizing: border-box;
-    padding: 40px 0px;
-    text-align: center;
-    nav{
+    display: inline-block;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    li{
       box-sizing: border-box;
-      .clearfix{
-        box-sizing: border-box;
-        display: inline-block;
-        font-size: 12px;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 40px;
-        li{
-          box-sizing: border-box;
-          margin: 0px 8px;
-        }
-      }
+      margin: 0px 8px;
+      list-style: none;
     }
   }
 }
