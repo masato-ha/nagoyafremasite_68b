@@ -19,11 +19,9 @@ Rails.application.routes.draw do
     end
   end
 
-
-  resource :mypages do
-    
-  end
+  resource :mypages
+  
   get 'logouts/show'
-  # get 'mypages/show'
+
 end
 
