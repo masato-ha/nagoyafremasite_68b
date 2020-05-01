@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   # devise_for :users
   # get 'users/index'
   root 'items#index'
-  <<<<<<< create-exhibition-views
   resources :users
   resources :credit_cards
   resources :items
-=======
   resources :users do
    resource :logout ,only: [:show]
   end
@@ -24,5 +22,4 @@ Rails.application.routes.draw do
   end
   get 'logouts/show'
   # get 'mypages/show'
->>>>>>> master
 end
