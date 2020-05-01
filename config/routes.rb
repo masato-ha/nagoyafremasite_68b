@@ -26,3 +26,4 @@ Rails.application.routes.draw do
   get 'logouts/show'
   # get 'mypages/show'
 end
+
