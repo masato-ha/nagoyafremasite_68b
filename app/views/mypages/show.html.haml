@@ -20,7 +20,7 @@
           %span やることリスト
       %li
         .main-header-menu-link
-          = link_to "マイページ",users_path, class: "decoration-none" 
+          = link_to "マイページ",mypages_show_path, class: "decoration-none" 
 %nav.mypagehed2
   %ul.mypagehed2-list
     %li.mypagehed2-list-item 
@@ -28,7 +28,7 @@
         メルカリ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to users_path, class:"headminenow" do
+      = link_to mypages_show_path, class:"headminenow" do
         マイページ
         %i.fas.fa-angle-right
 
@@ -37,7 +37,7 @@
     %nav.mypage-nav
       %ul.mypage-nav-list 
         %li.mypage-nav-list-item 
-          = link_to users_path, class:"content" do
+          = link_to mypages_show_path, class:"content" do
             マイページ
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  

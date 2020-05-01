@@ -27,7 +27,7 @@ Things you may want to cover:
 |first_name_pseudonym|string|null: false|
 |family_name_pseudonym|string|null: false|
 |birth_year|integer|null: false|
-|birth_manth|integer|null: false|
+|birth_month|integer|null: false|
 |birth_day|integer|null: false|
 |introduction|text|任意|
 |avatar|string|任意|

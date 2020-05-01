@@ -1,0 +1,62 @@
+.Purchase
+  %h1 
+    = link_to image_tag("logo.png", size: '140x40'), root_path
+.mainpurchase
+  %section.mainpurchase-top
+    %h2.mainpurchase-top-title 購入内容の確認
+    %section.mainpurchase-top-buy
+      .mainpurchase-top-buy-item
+        .mainpurchase-top-buy-item-box
+          %h3.mainpurchase-top-buy-item-box-image
+            = image_tag("https://static.mercdn.net/thumb/photos/m48137982118_1.jpg?1587912502", size: "80x80")
+          .mainpurchase-top-buy-item-box-detail
+            %p.mainpurchase-top-buy-item-box-detail-name 任天堂 スイッチ Joy-Con ネオングリーン/ネオンピンク
+            %p.mainpurchase-top-buy-item-box-detail-jp
+              %span ¥8,199
+              %span.mainpurchase-top-buy-item-box-detail-jp-fee （税込）送料込み
+  %section.mainpurchase-price
+    .mainpurchase-price-inner
+      .mainpurchase-price-inner-item
+        %ul.mainpurchase-price-inner-item-list
+          %li.mainpurchase-price-inner-item-list-bold
+            .mainpurchase-price-inner-item-list-bold-label 支払い金額
+            .mainpurchase-price-inner-item-list-bold-cell 
+              %span ¥8,199
+        %ul.mainpurchase-price-inner-item-point
+          %li.mainpurchase-price-inner-item-point-parent
+            %i.fas.fa-check
+            %label ポイントを使用 (所持ポイント: P0)
+  %section.mainpurchase-info
+    .mainpurchase-info-pay
+      %h3 支払い方法
+      %p.mainpurchase-info-pay-text
+        %i.fas.fa-check
+        %span.mainpurchase-info-pay-text-reg 登録して下さい
+  %section.mainpurchase-address
+    .mainpurchase-address-inner
+      .mainpurchase-address-inner-title
+        %h3.mainpurchase-address-inner-title-left 配送先
+        = link_to root_path, class:"mainpurchase-address-inner-title-right" do
+          %span 変更する
+      %address.mainpurchase-address-inner-from
+        %br
+        %p 〒000-0000
+        %br
+          東京都米花町0-00
+        %br
+          江戸川コナン
+  %section.mainpurchase-button
+    = link_to root_path, method: :delete do
+      購入する
+.mainpurchase-footer
+  .mainpurchase-footer-list
+    %nav
+      %ul.footer-item
+        %li プライバシーポリシー
+        %li 利用規約
+        %li 特定商取引に関する表記
+    .mainpurchase-footer-list-icon
+      = link_to image_tag("logo-white.png", size: '140x40'), root_path
+    %p 
+      %small © Furima, Inc.
+  
