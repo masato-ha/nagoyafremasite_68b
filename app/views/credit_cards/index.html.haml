@@ -21,7 +21,7 @@
           %span やることリスト
       %li
         .main-header-menu-link
-          = link_to "マイページ",root_path, class: "decoration-none" 
+          = link_to "マイページ",users_path, class: "decoration-none" 
 %nav.mypagehed2
   %ul.mypagehed2-list
     %li.mypagehed2-list-item 
@@ -29,11 +29,11 @@
         メルカリ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to root_path, class:"headmine" do
+      = link_to users_path, class:"headmine" do
         マイページ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to new_credit_card_path, class:"headminenow" do
+      = link_to credit_cards_path, class:"headminenow" do
         支払い方法
 
 .mypagemain
@@ -41,8 +41,9 @@
     %nav.mypage-nav
       %ul.mypage-nav-list 
         %li.mypage-nav-list-item 
-          マイページ
-          %i.fas.fa-angle-right
+          = link_to users_path, class:"headmine" do
+            マイページ
+            %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
           お知らせ
           %i.fas.fa-angle-right
@@ -52,9 +53,10 @@
         %li.mypage-nav-list-item  
           いいね！一覧
           %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          出品する
-          %i.fas.fa-angle-right
+        %li.mypage-nav-list-item 
+          = link_to users_path, class:"headmine" do 
+            出品する
+            %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
           下書き一覧
           %i.fas.fa-angle-right
@@ -102,7 +104,7 @@
           発送元・お届け先住所変更
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          = link_to new_credit_card_path, class:"content" do
+          = link_to credit_cards_path, class:"content" do
             支払い方法
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
