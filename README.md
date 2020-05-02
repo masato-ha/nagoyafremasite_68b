@@ -31,20 +31,6 @@ Things you may want to cover:
 |birth_day|integer|null: false|
 |introduction|text|任意|
 |avatar|string|任意|
-
-
-### Association
-
-- has_one :credit-card
-- has_one :address
-- has_many :likes
-- has_many :items, through: :comments
-
-
-## addressesテーブル
-
-|カラム名|カラム型|オプション|
-|------|----|-------|
 |address_first_name|string|null: false|
 |address_family_name|string|null: false|
 |address_first_pseudonym|string|null: false|
@@ -55,11 +41,13 @@ Things you may want to cover:
 |house_number|integer|null: false|
 |building_name|string|任意|
 |phone_number|integer|任意|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 
-- belongs_to :user
+- has_one :credit-card
+- has_one :address
+- has_many :likes
+- has_many :items, through: :comments
 
 ## itemsテーブル
 
