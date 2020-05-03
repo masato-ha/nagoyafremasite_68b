@@ -19,6 +19,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :items
+  
+
+
+
   resource :mypages
   
   get 'logouts/show'
