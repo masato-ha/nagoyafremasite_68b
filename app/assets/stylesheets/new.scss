@@ -17,7 +17,6 @@ img {
 
 .sell-title{
   align-items: center;
-  margin-top: 32px;
   box-sizing: border-box;
   &__text{
     font-size: 14px;
@@ -162,6 +161,7 @@ img {
             i{
               box-sizing: border-box;
               margin-bottom: 8px;
+              cursor: pointer;
             }
 
             #output-box{

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'   
   } 
   
+  resources :items
+
   root 'items#index'
   resources :users do
    resource :logout ,only: [:show]
