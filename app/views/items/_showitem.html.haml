@@ -110,16 +110,16 @@
 
           .main__whole__center__comment-room
             %ul.main__whole__center__comment-room__Contents
-            %form.main__whole__center__comment-room__Contents__new-comment{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
-              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-              %input{:name => "authenticity_token", :type => "hidden", :value => "z7Qut4WXQ3mF3zKKLKZrd1Fn+L/Qvfjm2htA/nurRRIj6zbRfEQ5aPKt2pDDScEFgn+UVEEZ7t0WPSCFBEH9WA=="}/
-              %textarea.main__whole__center__comment-room__Contents__new-comment__comment-body{:name => "comment[body]", :required => "required"}
+            %form.main__whole__center__comment-room__Contents__new-comment{"accept-charset": "UTF-8", action: "#", method: "post"}
+              %input{name: "utf8", type: "hidden", value: "✓"}/
+              %input{name: "authenticity_token", type: "hidden", value: "z7Qut4WXQ3mF3zKKLKZrd1Fn+L/Qvfjm2htA/nurRRIj6zbRfEQ5aPKt2pDDScEFgn+UVEEZ7t0WPSCFBEH9WA=="}/
+              %textarea.main__whole__center__comment-room__Contents__new-comment__comment-body{name: "comment[body]", required: "required"}
               %p.main__whole__center__comment-room__Contents__new-comment__noticeMsg
                 相手のことを考え丁寧なコメントを心がけましょう。
                 %br/
                 不快な言葉遣いなどは利用制限や退会処分となることがあります。
               %br/
-              %button.main__whole__center__comment-room__Contents__new-comment__commentBtn{:name => "button", :type => "submit"}
+              %button.main__whole__center__comment-room__Contents__new-comment__commentBtn{name: "button", type: "submit"}
                 %i.fa.fa-comment
                 コメントする
           
