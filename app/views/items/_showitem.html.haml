@@ -1,15 +1,15 @@
-.topbody  
-  .topbody__exhibition
+.highspace  
+  .highspace__opening
     %a出品する
     %i.fas.fa-camera
-  .topbody__box__below
-    .topbody__box__below__search
-      .topbody__box__below__search__category             
+  .highspace__area__choice
+    .highspace__area__choice__find
+      .highspace__area__choice__find__type             
         = link_to "カテゴリー"             
         = link_to "ブランド"
-    .topbody__box__below__users
-      .topbody__box__below__users__member
-        .topbody__box__below__users__member__right
+    .highspace__area__choice__people
+      .highspace__area__choice__people__lineup
+        .highspace__area__choice__people__lineup__gate
           = link_to "ログイン", root_path, class: "member_right"
         = link_to "新規会員登録", root_path, class: "newreg"
   

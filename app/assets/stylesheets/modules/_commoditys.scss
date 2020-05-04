@@ -7,6 +7,98 @@ $basic_aomidori: #3ccace;
 $basic_black: #333333;
 $basic_white: #ffffff;
 
+.highspace {
+  height: 1950px;
+  width: 100vw;
+  font-family: $basic_font;
+  &__opening {
+    position: relative;
+    bottom: 30px;
+    right: 30px;
+    position: fixed;
+    color: $basic_white;
+    width: 120px;
+    height: 120px;
+    background-color: $basic_aomidori;
+    border-radius: 4%;
+    text-align: center;
+    padding-top: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 200;
+    a {
+      font-size: 18px;
+      text-decoration: none;
+      color: $basic_white;
+      display: block;
+      margin-top: 15px;
+    }
+    i {
+      font-size: 50px;
+      color: $basic_white;
+      margin-top: 5px;
+    }
+  }
+  &__area {
+    width: 90vw;
+    margin: 0 auto;
+    &__choice {
+      margin-top: 8px;
+      width: 98%;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      
+      &__find {
+        padding-top: 5px;
+        width: 50%;
+        &__type {
+          cursor: pointer;
+          margin-top: 5px;
+          font-family: $basic_font;
+          margin-left: 45px;
+          a {
+            font-size: 14px;
+            margin-right: 44px;
+            text-decoration: none;
+            color: $basic_black;
+          }
+        }
+      }
+      &__people {
+        &__lineup {
+          display: flex;
+          font-size: 15px;
+          i {
+            padding-top: 7px;
+            margin-left: 20px;
+            color: $basic_black;
+            cursor: pointer;
+          }
+          .newreg {
+            cursor: pointer;
+            font-size: 14px;
+            padding: 6px 10px 5px 10px;
+            color: $basic_black;
+            text-decoration: none;
+            font-family: $basic_font;
+          }
+          &__gate {
+            margin-left: 10px;
+            font-size: 14px;
+            padding: 5px 10px 5px 10px;
+            cursor: pointer;
+            .member_right {
+              color: $basic_black;
+              text-decoration: none;
+              font-family: $basic_font;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 //headerowaribubunn
 .breadCrumbs {
