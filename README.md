@@ -36,9 +36,9 @@ Things you may want to cover:
 |address_first_pseudonym|string|null: false|
 |address_family_pseudonym|string|null: false|
 |post_code|integer|null: false|
-|prefecture|integer|null: false|
+|prefecture|string|null: false|
 |city|string|null: false|
-|house_number|integer|null: false|
+|address_name|string|null: false|
 |building_name|string|任意|
 |phone_number|integer|任意|
 

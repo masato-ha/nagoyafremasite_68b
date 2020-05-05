@@ -107,13 +107,67 @@
                   日
               .main__container__form__fields__field__select__subtext ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
+            
+        .main__container__form__fields__field
+          .category
+            %label(for="")
+              世帯主名
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :address_first_name, placeholder: "例) 山田", class: "input-defaults__default"
+              = f.text_field :address_family_name, placeholder: "例) 太郎", class: "input-defaults__default"
+              
+        .main__container__form__fields__field
+          .category
+            %label(for="")
+              世帯主名カナ(全角)
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :address_first_pseudonym, placeholder: "例) ヤマダ", class: "input-defaults__default"
+              = f.text_field :adress_family_pseudonym, placeholder: "例) タロウ", class: "input-defaults__default"
+
+        .main__container__form__fields__field
+          .category
+            %label(for="")
+              郵便番号(ハイフン無し)
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :post_code, placeholder: "例)1030021 ", class: "input-defaults__default"
+              
+
+        .main__container__form__fields__field
+          .category
+            %label(for="")
+              住所
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :prefecture, placeholder: "例)東京都 ", class: "input-defaults__default"
+              = f.text_field :city, placeholder: "例) 中央区日本橋", class: "input-defaults__default"
+              = f.text_field :address_name, placeholder: "例) 本石町２−２−１", class: "input-defaults__default"            
+              = f.text_field :building_name, placeholder: "※ビルの部屋番号など、ございましたらご記入ください※", class: "input-defaults__default" 
+        .main__container__form__fields__field
+          .category
+            %label(for="")
+              連絡先電話番号(ハイフン無し)
+            .input-defaults
+              = f.text_field :phone_number, placeholder: "携帯電話の番号を推奨", class: "input-defaults__default"
+              -# %textarea.input-defaults__intro{type: "text", placeholder: "例）地球の平和を守るため、皆さんのお役に立てるものを、色々売っています。"}
+              
+            
+        .main__container__form__fields__field
+          .category          
             .main__container__form__fields__field__select
               = check_box_tag :name, "", "", checked: false, class: "checkbox-default" 
               私はロボットではありません
             .main__container__form__fields__field__select
               .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
             .main__container__form__fields__field__submit
-              %submit.main__container__form__fields__field__submit__btn 次へ進む
+              = f.submit "次へ進む", class:"btn"
+              -# %submit.main__container__form__fields__field__submit__btn 次へ進む
               
             .main__container__form__fields__field__select
               .main__container__form__fields__field__select__reg

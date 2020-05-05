@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :address_family_name, null: false
   validates :adress_first_pseudonym, null: false
   validates :adress_family_pseudonym, null: false
-  validates :post_code, presence: true, format: { with: /\A\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}\z/}
+  validates :post_code, presence: true, format: { with: /\A\d{7}\z/}
   validates :prefecture, presence: true
   validates :city, presence: true
   validates :address_name, presence: true
