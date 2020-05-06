@@ -82,3 +82,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'jquery-rails'
+
+
+
+

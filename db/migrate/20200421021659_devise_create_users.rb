@@ -11,9 +11,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :family_name,          null: false
       t.string :family_name_pseudonym,  null: false
       t.string :first_name_pseudonym, null: false
-      t.integer :birth_year,           null: false
-      t.integer :birth_month,          null: false
-      t.integer :birth_day,            null: false
+      t.string :birth_year,           null: false
+      t.string :birth_month,          null: false
+      t.string :birth_day,            null: false
       t.text :introduction
       t.string :avatar
 
@@ -26,7 +26,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :city,                 null: false
       t.string :address_name,         null: false
       t.string :building_name     
-      t.integer :phone_number       
+      t.string :phone_number       
 
       ## Recoverable
       t.string   :reset_password_token

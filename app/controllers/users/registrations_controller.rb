@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     user = User.create(user_params)
+    logger.debug user.errors.inspect
     redirect_to root_path
     
   end

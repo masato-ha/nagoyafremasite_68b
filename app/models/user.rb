@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :family_name,       presence: true, format: { with: /\A[一-龥ぁ-ん]/}
   validates :first_name_pseudonym, presence: true, format: { with: /\A[ァ-ヶー－]+\z/}
   validates :family_name_pseudonym,  presence: true, format: { with: /\A[ァ-ヶー－]+\z/}
-  validates :birth_year,   presence: true, format: { with: /\A\d{4}\z/}
+  validates :birth_year,   presence: true
   validates :birth_month,  presence: true
   validates :birth_day,    presence: true
 

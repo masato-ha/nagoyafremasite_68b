@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 2020_04_25_080657) do
     t.string "family_name", null: false
     t.string "family_name_pseudonym", null: false
     t.string "first_name_pseudonym", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
+    t.string "birth_year", null: false
+    t.string "birth_month", null: false
+    t.string "birth_day", null: false
     t.text "introduction"
     t.string "avatar"
     t.string "address_first_name", null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_080657) do
     t.string "city", null: false
     t.string "address_name", null: false
     t.string "building_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

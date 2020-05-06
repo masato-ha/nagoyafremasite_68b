@@ -26,9 +26,9 @@ Things you may want to cover:
 |family_name|string|null: false|
 |first_name_pseudonym|string|null: false|
 |family_name_pseudonym|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_day|integer|null: false|
+|birth_year|string|null: false|
+|birth_month|string|null: false|
+|birth_day|string|null: false|
 |introduction|text|任意|
 |avatar|string|任意|
 |address_first_name|string|null: false|
@@ -40,7 +40,7 @@ Things you may want to cover:
 |city|string|null: false|
 |address_name|string|null: false|
 |building_name|string|任意|
-|phone_number|integer|任意|
+|phone_number|string|任意|
 
 ### Association
 
