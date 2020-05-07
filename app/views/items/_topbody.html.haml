@@ -8,7 +8,22 @@
         = link_to "カテゴリー"             
         = link_to "ブランド"
     .topbody__box__below__users
+    - if user_signed_in?
       .topbody__box__below__users__member
+        %i.far.fa-star
+          = link_to "ログアウト(仮)", destroy_user_session_path, method: :delete, class: 'btn'
+    
+        %i.far.fa-heart
+          いいね！一覧
+        %i.far.fa-bell
+          お知らせ
+        %i.fas.fa-check
+          やることリスト
+        %i.far.fa-user-circle
+          = link_to mypages_path, class: "mypage" do
+            マイページ
+    - else
+      .topbody__box__below__users__member  
         .topbody__box__below__users__member__right
           = link_to "ログイン", new_user_session_path, class: "member_right"
         = link_to "新規会員登録", new_user_registration_path, class: "newreg"

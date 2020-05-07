@@ -10,6 +10,7 @@
     .main__container__title
       新規会員登録
     = form_for resource, url: registration_path(resource_name), as: resource_name, class: "main__container__form", id: "registration-form" do |f|
+      = render "users/shared/error_messages", resource: resource
       .main__container__form__fields
         .main__container__form__fields__field
           .category
@@ -19,7 +20,7 @@
               必須
             .input-defaults
               = f.text_field :nickname, placeholder: "例) 遠州大魔王", class: "input-defaults__default"
-              -# %input.input-defaults__default{type: "text", placeholder: "例）遠州大魔王"}
+              
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -27,7 +28,9 @@
             %span.span
               必須
             .input-defaults
-              = f.text_field :email, placeholder: "例) メールアドレス", class: "input-defaults__default"
+              = f.email_field :email, placeholder: "例) メールアドレス", class: "input-defaults__default"
+          .form-info-text
+            ※「@」「.」などの記入漏れにご注意ください 
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -35,11 +38,15 @@
             %span.span
               必須
             .input-defaults
-              = f.text_field :password, placeholder: "例) 7文字以上の半角英数字", class: "input-defaults__default"
+              = f.password_field :password, placeholder: "例) 7文字以上の半角英数字", class: "input-defaults__default"             
+            .input-defaults  
+              = f.password_field :password_confirmation, placeholder: "再度同じパスワードを入力", class: "input-defaults__default"
+             
           .form-info-text
             ※英字と数字の両方を含めて設定してください
+
           %span.form-info-text
-            パスワードを表示する
+            
         .main__container__form__fields__field
           %h3
             本人確認
@@ -54,8 +61,7 @@
             .input-defaults
               = f.text_field :family_name, placeholder: "例) 山田", class: "input-defaults__default"
               = f.text_field :first_name, placeholder: "例) 彩", class: "input-defaults__default"
-              -# %input.input-defaults__default{type: "text", placeholder: "例）遠州"}
-              -# %input.input-defaults__default{type: "text", placeholder: "例）大魔王"}
+              
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -65,16 +71,15 @@
             .input-defaults
               = f.text_field :family_name_pseudonym, placeholder: "例) ヤマダ", class: "input-defaults__default"
               = f.text_field :first_name_pseudonym, placeholder: "例) アヤ", class: "input-defaults__default"
-              -# %input.input-defaults__default{type: "text", placeholder: "例）エンシュウ"}
-              -# %input.input-defaults__default{type: "text", placeholder: "例）ダイマオウ"}
+              
         
         .main__container__form__fields__field
           .category
             %label(for="")
               自己紹介
             .input-defaults
-              = f.text_area :introduction, placeholder: "例) アヤ", class: "input-defaults__intro"
-              -# %textarea.input-defaults__intro{type: "text", placeholder: "例）地球の平和を守るため、皆さんのお役に立てるものを、色々売っています。"}
+              = f.text_area :introduction, placeholder: "例）地球の平和を守るため、皆さんのお役に立てるものを、色々売っています。", class: "input-defaults__intro"
+              
               
             
         .main__container__form__fields__field
@@ -87,21 +92,21 @@
                 
                 .main__container__form__fields__field__select__wrap__selector
                   = f.date_select :birth_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".main__container__form__fields__field__select__wrap__selector__selector1"
-                  -# %select.main__container__form__fields__field__select__wrap__selector__selector1
+                  
                    
                 .pan
                   年
               .main__container__form__fields__field__select__wrap
                 .main__container__form__fields__field__select__wrap__selector
                   = f.date_select :birth_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".main__container__form__fields__field__select__wrap__selector__selector2"
-                  -# %select.main__container__form__fields__field__select__wrap__selector__selector2
+                  
                   
                 .pan
                   月
               .main__container__form__fields__field__select__wrap               
                 .main__container__form__fields__field__select__wrap__selector
                   = f.date_select :birth_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".main__container__form__fields__field__select__wrap__selector__selector3"
-                  -# %select.main__container__form__fields__field__select__wrap__selector__selector3
+                  
                   
                 .pan
                   日
@@ -155,7 +160,7 @@
               連絡先電話番号(ハイフン無し)
             .input-defaults
               = f.text_field :phone_number, placeholder: "携帯電話の番号を推奨", class: "input-defaults__default"
-              -# %textarea.input-defaults__intro{type: "text", placeholder: "例）地球の平和を守るため、皆さんのお役に立てるものを、色々売っています。"}
+              
               
             
         .main__container__form__fields__field
@@ -165,9 +170,9 @@
               私はロボットではありません
             .main__container__form__fields__field__select
               .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-            .main__container__form__fields__field__submit
-              = f.submit "次へ進む", class:"btn"
-              -# %submit.main__container__form__fields__field__submit__btn 次へ進む
+            
+              = f.submit "次へ進む", class:"main__container__form__fields__field__submit"
+              
               
             .main__container__form__fields__field__select
               .main__container__form__fields__field__select__reg
@@ -188,5 +193,5 @@
     %p
       ©&nbsp;Fmarket,&nbsp;Inc.
 
-
+= render "users/shared/links", resource: resource
 
