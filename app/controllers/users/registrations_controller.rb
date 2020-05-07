@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user = User.create(user_params)
     logger.debug user.errors.inspect
     if user.invalid?
-      flash[:alert] = "ブラウザの「戻る」を押し、入力内容を再度ご確認お願いします。"
+      flash[:alert] = "ブラウザの「戻る」を押し、入力内容を再度ご確認ください。"
       redirect_to new_user_registration_path
     else
       sign_up(user, current_user)
