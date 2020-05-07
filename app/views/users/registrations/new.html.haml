@@ -60,8 +60,7 @@
               必須
             .input-defaults
               = f.text_field :family_name, placeholder: "例) 山田", class: "input-defaults__default"
-              = f.text_field :first_name, placeholder: "例) 彩", class: "input-defaults__default"
-              
+              = f.text_field :first_name, placeholder: "例) 彩", class: "input-defaults__default"              
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -70,49 +69,35 @@
               必須
             .input-defaults
               = f.text_field :family_name_pseudonym, placeholder: "例) ヤマダ", class: "input-defaults__default"
-              = f.text_field :first_name_pseudonym, placeholder: "例) アヤ", class: "input-defaults__default"
-              
-        
+              = f.text_field :first_name_pseudonym, placeholder: "例) アヤ", class: "input-defaults__default"  
         .main__container__form__fields__field
           .category
             %label(for="")
               自己紹介
             .input-defaults
               = f.text_area :introduction, placeholder: "例）地球の平和を守るため、皆さんのお役に立てるものを、色々売っています。", class: "input-defaults__intro"
-              
-              
-            
         .main__container__form__fields__field
           .category
             %label 生年月日
             %span.span
               必須 
             .main__container__form__fields__field__select
-              .main__container__form__fields__field__select__wrap
-                
+              .main__container__form__fields__field__select__wrap               
                 .main__container__form__fields__field__select__wrap__selector
-                  = f.date_select :birth_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".main__container__form__fields__field__select__wrap__selector__selector1"
-                  
-                   
+                  = f.date_select :birth_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".main__container__form__fields__field__select__wrap__selector__selector1"       
                 .pan
                   年
               .main__container__form__fields__field__select__wrap
                 .main__container__form__fields__field__select__wrap__selector
-                  = f.date_select :birth_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".main__container__form__fields__field__select__wrap__selector__selector2"
-                  
-                  
+                  = f.date_select :birth_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".main__container__form__fields__field__select__wrap__selector__selector2"        
                 .pan
                   月
               .main__container__form__fields__field__select__wrap               
                 .main__container__form__fields__field__select__wrap__selector
-                  = f.date_select :birth_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".main__container__form__fields__field__select__wrap__selector__selector3"
-                  
-                  
+                  = f.date_select :birth_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".main__container__form__fields__field__select__wrap__selector__selector3"                
                 .pan
                   日
-              .main__container__form__fields__field__select__subtext ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-
-            
+              .main__container__form__fields__field__select__subtext ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。          
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -121,8 +106,7 @@
               必須
             .input-defaults
               = f.text_field :address_first_name, placeholder: "例) 山田", class: "input-defaults__default"
-              = f.text_field :address_family_name, placeholder: "例) 太郎", class: "input-defaults__default"
-              
+              = f.text_field :address_family_name, placeholder: "例) 太郎", class: "input-defaults__default"            
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -132,7 +116,6 @@
             .input-defaults
               = f.text_field :address_first_pseudonym, placeholder: "例) ヤマダ", class: "input-defaults__default"
               = f.text_field :adress_family_pseudonym, placeholder: "例) タロウ", class: "input-defaults__default"
-
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -142,7 +125,6 @@
             .input-defaults
               = f.text_field :post_code, placeholder: "例)1030021 ", class: "input-defaults__default"
               
-
         .main__container__form__fields__field
           .category
             %label(for="")
@@ -159,9 +141,7 @@
             %label(for="")
               連絡先電話番号(ハイフン無し)
             .input-defaults
-              = f.text_field :phone_number, placeholder: "携帯電話の番号を推奨", class: "input-defaults__default"
-              
-              
+              = f.text_field :phone_number, placeholder: "携帯電話の番号を推奨", class: "input-defaults__default"                        
             
         .main__container__form__fields__field
           .category          
@@ -169,11 +149,8 @@
               = check_box_tag :name, "", "", checked: false, class: "checkbox-default" 
               私はロボットではありません
             .main__container__form__fields__field__select
-              .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-            
-              = f.submit "次へ進む", class:"main__container__form__fields__field__submit"
-              
-              
+              .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします          
+              = f.submit "登録する", class:"main__container__form__fields__field__submit"              
             .main__container__form__fields__field__select
               .main__container__form__fields__field__select__reg
                 本人情報の登録について

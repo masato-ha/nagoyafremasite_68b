@@ -14,35 +14,26 @@
         .main__container__form__fields__field
           .category
             %label(for="")
-              メールアドレス
-            
+              メールアドレス          
             .input-defaults
               = f.email_field :email, placeholder: "", class: "input-defaults__default"
         .main__container__form__fields__field
           .category
             %label(for="")
-              パスワード
-            
+              パスワード          
             .input-defaults
               = f.password_field :password, placeholder: "", class: "input-defaults__default"      
         .main__container__form__fields__field
           .category
             %label(for="")
               パスワード(確認)
-
             .input-defaults
               = f.password_field :password_confirmation, placeholder: "", class: "input-defaults__default" 
-          %span.form-info-text
-            
-        
+          %span.form-info-text                
             %br 
-          .main__container__form__fields__field    
-            .main__container__form__fields__field__select
-              
-            .main__container__form__fields__field__select
-              
-            = f.submit "次へ進む", class:"main__container__form__fields__field__submit"
-              
+          .main__container__form__fields__field            
+            .main__container__form__fields__field__select            
+            = f.submit "ログインする", class:"main__container__form__fields__field__submit"            
             .main__container__form__fields__field__select
               .main__container__form__fields__field__select__reg
                 本人情報の登録について
@@ -61,4 +52,5 @@
       = image_tag("logo.png", size: '180x50')
     %p
       ©&nbsp;Fmarket,&nbsp;Inc.
+
 
