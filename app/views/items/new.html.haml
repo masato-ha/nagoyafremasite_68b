@@ -3,7 +3,7 @@
     = link_to image_tag("logo.png", size: '140x40'), root_path
   %main
     %section.sell-container
-      = form_with model: @item do |f|
+      = form_with model: @item, local: true do |f|
         -#画像部分
         .sell-container__content
           .sell-title
@@ -16,13 +16,15 @@
             .sell-container__content__upload__items
               .sell-container__content__upload__items__box
                 %ul#output-box
-                  %div#image-input{tabindex:"0"}
-                    = f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0 } do 
-                      = f.file_field :images, multiple: true, class: "sell-container__content__upload__items__box__input", id: "item_images0", style: 'display: none;'
-                      %pre
-                        %i.fas.fa-camera.fa-lg
-                        ドラッグアンドドロップ
-                        またはクリックしてファイルをアップロード
+                  %div#image-input
+                    %label.sell-container__content__upload__items__box__label
+                      = f.fields_for :images do |i| 
+                        = i.file_field :url, class: 'sell-container__content__upload__items__box__input' 
+                        %pre
+                          %i.fas.fa-camera.fa-lg
+                          ドラッグアンドドロップ
+                          またはクリックしてファイルをアップロード
+                          
         -#商品名部分
         .sell-container__content
           .sell-title
@@ -37,7 +39,7 @@
               商品の説明
               %span.sell-title__require
                 必須
-            %textarea{class:'sell-container__content__description', required: "required", placeholder: '商品の説明（必須1000文字以内)'}
+            = f.text_area :introduction,{class:'sell-container__content__description', required: "required", placeholder: '商品の説明（必須1000文字以内)'}
           .sell-container__content__word-count
             %span#word-count
               0
@@ -52,20 +54,21 @@
                 カテゴリー
                 %span.sell-title__require
                   必須
-              %select.sell-collection_select__label
+              =f.select :category_id, Item.category_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
               %h3.sell-title__text
                 ブランド
                 %span.sell-title__free
                   任意
-              %input{class:'sell-collection_select__input', required: "required", placeholder: '例）シャネル'}
+              =f.select :brand_id, Item.brand_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+            .sell-collection_select
             .sell-title
               %h3.sell-title__text
                 商品の状態
                 %span.sell-title__require
                   必須
-            %select.sell-collection_select__label
-              %option{:value => "0"}  選択して下さい
+            =f.select :item_condition, Item.item_conditions.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+              
 
 
         -# 配送部分
@@ -78,7 +81,7 @@
                 配送料の負担
                 %span.sell-title__require
                   必須
-              %select{class: 'sell-collection_select__label'}
+              =f.select :trading_status, Item.trading_statuses.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
             .error-messages#error-deliverycost
             .sell-title
@@ -86,7 +89,7 @@
                 発送元の地域
                 %span.sell-title__require
                   必須
-              %select{class: 'sell-collection_select__label'}
+              =f.select :shipping_area, Item.shipping_areas.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
             .error-messages#error-pref
             .sell-title
@@ -94,13 +97,14 @@
                 発送までの日数
                 %span.sell-title__require
                   必須
-              %select{class: 'sell-collection_select__label'}
-            .sell-collection_select
+              =f.select :preparation_day, Item.preparation_days.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .error-messages#error-delivery_days
         -# 価格部分
         .sell-container__content
           %h3.sell-sub-head
             %p 販売価格(300〜9,999,999)
+            = link_to '/price',target: '_blank', class: 'sell-sub-head__guides-link' do
+              %i.far.fa-question-circle
           .sell-container__content__price
             .sell-title
               %h3.sell-title__text
@@ -108,8 +112,9 @@
                 %span.sell-title__require
                   必須
             .sell-container__content__price__form
-              ¥
-              %input.sell-container__content__price__form__box
+              = f.label :price, class: 'sell-container__content__price__form__label' do
+                ¥
+                = f.number_field :price, {placeholder: '0', value: '', autocomplete:"off", class: 'sell-container__content__price__form__box', required: "required"}
           .error-messages#error-price
           .sell-container__content__commission
             .sell-container__content__commission__left
@@ -125,15 +130,9 @@
             .submit-btn__return
               = link_to 'もどる',root_path
           .attention-box
-            禁止されている
-            および出品物
-            を必ずご確認ください。
-            偽ブランド品
-            や
-            盗品物
-            などの販売は犯罪であり、法律により処罰される可能性があります。また、出品をもちまして
-            加盟店規約
-            に同意したことになります。
+            禁止されている行為および出品物を必ずご確認ください。
+            偽ブランド品や盗品物などの販売は犯罪であり、法律に
+            より処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
   %footer.sell-footer
     %nav
       %li
