@@ -15,10 +15,10 @@ class User < ApplicationRecord
   validates :birth_month,  presence: true
   validates :birth_day,    presence: true
 
-  validates :address_first_name, null: false
-  validates :address_family_name, null: false
-  validates :adress_first_pseudonym, null: false
-  validates :adress_family_pseudonym, null: false
+  validates :address_first_name, null: false, format: { with: /\A[一-龥ぁ-ん]/}
+  validates :address_family_name, null: false, format: { with: /\A[一-龥ぁ-ん]/}
+  validates :adress_first_pseudonym, null: false, format: { with: /\A[ァ-ヶー－]+\z/}
+  validates :adress_family_pseudonym, null: false, format: { with: /\A[ァ-ヶー－]+\z/}
   validates :post_code, presence: true, format: { with: /\A\d{7}\z/}
   validates :prefecture, presence: true
   validates :city, presence: true
