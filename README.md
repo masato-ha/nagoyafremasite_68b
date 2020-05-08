@@ -26,12 +26,21 @@ Things you may want to cover:
 |family_name|string|null: false|
 |first_name_pseudonym|string|null: false|
 |family_name_pseudonym|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_day|integer|null: false|
+|birth_year|string|null: false|
+|birth_month|string|null: false|
+|birth_day|string|null: false|
 |introduction|text|任意|
 |avatar|string|任意|
-
+|address_first_name|string|null: false|
+|address_family_name|string|null: false|
+|address_first_pseudonym|string|null: false|
+|address_family_pseudonym|string|null: false|
+|post_code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|address_name|string|null: false|
+|building_name|string|任意|
+|phone_number|string|任意|
 
 ### Association
 
@@ -39,27 +48,6 @@ Things you may want to cover:
 - has_one :address
 - has_many :likes
 - has_many :items, through: :comments
-
-
-## addressesテーブル
-
-|カラム名|カラム型|オプション|
-|------|----|-------|
-|address_first_name|string|null: false|
-|address_family_name|string|null: false|
-|address_first_pseudonym|string|null: false|
-|address_family_pseudonym|string|null: false|
-|post_code|integer|null: false|
-|prefecture|integer|null: false|
-|city|string|null: false|
-|house_number|integer|null: false|
-|building_name|string|任意|
-|phone_number|integer|任意|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-
-- belongs_to :user
 
 ## itemsテーブル
 
