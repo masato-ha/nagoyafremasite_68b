@@ -26,10 +26,10 @@
         %li
           .main-header-menu-link
             = link_to "マイページ",users_path, class: "decoration-none"
-        %li
-          .main-header-menu-link      
-            %i.far.fa-star
-            = link_to "ログアウト(仮)", destroy_user_session_path, method: :delete, class: 'btn'
+        -# %li
+        -#   .main-header-menu-link      
+        -#     %i.far.fa-star
+        -#     = link_to "ログアウト(仮)", destroy_user_session_path, method: :delete, class: 'btn'
     
     - else
       .topbody__box__below__users__member  
