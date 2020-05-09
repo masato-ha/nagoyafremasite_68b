@@ -20,7 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :address_first_name,   null: false
       t.string :address_family_name,  null: false
       t.string :address_first_pseudonym, null: false
-      t.string :adress_family_pseudonym, null: false
+      t.string :address_family_pseudonym, null: false
       t.integer :post_code,           null: false
       t.string :prefecture,           null: false
       t.string :city,                 null: false

@@ -7,28 +7,20 @@
       .topbody__box__below__search__category             
         = link_to "カテゴリー"             
         = link_to "ブランド"
-    %nav.mypagehed-right
+    .topbody__box__below__users
     - if user_signed_in?
-      %ul.main-header-user-nav
-        %li
-          .main-header-menu-link
-            %i.fas.fa-heart
-            %span いいね!一覧
-        %li
-          .main-header-menu-link
-            %i.fa.fa-bell
-            %span お知らせ
-        %li
-          .main-header-menu-link
-            %i.fa.fa-check
-            %span やることリスト
-        %li
-          .main-header-menu-link
-            = link_to "マイページ",users_path, class: "decoration-none"
-        %li
-          .main-header-menu-link      
-            %i.far.fa-star
-            = link_to "ログアウト(仮)", destroy_user_session_path, method: :delete, class: 'btn'
+      .topbody__box__below__users__member
+        %i.far.fa-star
+          = link_to "ログアウト(仮)", destroy_user_session_path, method: :delete, class: 'btn'    
+        %i.far.fa-heart
+          いいね！一覧
+        %i.far.fa-bell
+          お知らせ
+        %i.fas.fa-check
+          やることリスト
+        %i.far.fa-user-circle
+          = link_to mypages_path, class: "mypage" do
+            マイページ
     
     - else
       .topbody__box__below__users__member  

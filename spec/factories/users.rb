@@ -14,7 +14,7 @@ FactoryBot.define do
     address_first_name    { "門左衛" }
     address_family_name   { "五郎" }
     address_first_pseudonym { "チュン" }
-    adress_family_pseudonym { "リー" }
+    address_family_pseudonym { "リー" }
     post_code             { "3450021" }
     prefecture            { "福岡県" }
     city                  { "東九州市" }

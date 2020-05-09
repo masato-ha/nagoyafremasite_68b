@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
                                                         :address_first_name,   
                                                         :address_family_name,  
                                                         :address_first_pseudonym, 
-                                                        :adress_family_pseudonym, 
+                                                        :address_family_pseudonym, 
                                                         :post_code,           
                                                         :prefecture,           
                                                         :city,                 
