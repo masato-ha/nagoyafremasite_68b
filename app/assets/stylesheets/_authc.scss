@@ -41,7 +41,7 @@ $basic_gray: #888;
   &__container {
     display: block;
     background: $basic_white;
-    width: 700px;
+    width: 900px;
     margin: 0 auto;
     &__title {
       font-size: 22px;
@@ -219,7 +219,7 @@ $basic_gray: #888;
 .single {
   text-align: center;
   &__footer {
-    margin-top: 100px;
+    margin-top: 400px;
     height: 300px;
     padding: 30px 0;
     text-align: center;
@@ -242,7 +242,7 @@ $basic_gray: #888;
       margin: 40px;
     }
   
-   p {
+   .pink {
     text-decoration: none;
     color: #ccc;
     font-size: 12px;
