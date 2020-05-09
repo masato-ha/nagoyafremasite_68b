@@ -6,4 +6,5 @@ class ItemsController < ApplicationController
     # @item = Item.new
     # @item.images.build
   end
+  
 end

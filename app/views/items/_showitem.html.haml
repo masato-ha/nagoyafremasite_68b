@@ -1,0 +1,140 @@
+.highspace  
+  .highspace__opening
+    %a出品する
+    %i.fas.fa-camera
+  .highspace__area__choice
+    .highspace__area__choice__find
+      .highspace__area__choice__find__type             
+        = link_to "カテゴリー"             
+        = link_to "ブランド"
+    .highspace__area__choice__people
+      .highspace__area__choice__people__lineup
+        .highspace__area__choice__people__lineup__gate
+          = link_to "ログイン", root_path, class: "member_right"
+        = link_to "新規会員登録", root_path, class: "newreg"
+  
+  %nav.breadCrumbs
+    %ul.breadCrumbs__list
+      %li.breadCrumbs__list__item 
+        = link_to root_path, class:"content" do
+          FURIMA
+          %i.fas.fa-angle-right
+      %li.breadCrumbs__list__item 
+        = link_to root_path, class:"content" do
+          ベビー・キッズ
+          %i.fas.fa-angle-right
+      %li.breadCrumbs__list__item 
+        = link_to root_path, class:"content" do
+          ベビー服(男女兼用) ~95cm
+          %i.fas.fa-angle-right
+      %li.breadCrumbs__list__item 
+        = link_to root_path, class:"content" do
+          アウター
+          %i.fas.fa-angle-right
+      %li.breadCrumbs__list__item 
+        %p= "product3"
+  
+  .main
+    .main__whole
+      .main__whole__center
+        .main__whole__center__box
+          .main__whole__center__box__content
+            %h2.main__whole__center__box__content__name
+              %p= "product3"
+            .main__whole__center__box__content__list
+              %ul
+                %li
+                  = image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png')
+                  %ul
+                    %li
+                      = image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png')
+                    %li
+                      = image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png')
+                    %li
+                      = image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png')
+            .main__whole__center__box__content__price
+              %span
+                = "¥30000"
+              .main__whole__center__box__content__price-detail
+                %p1
+                  = "(税込)"
+                %p1
+                  = "送料込み"
+            .main__whole__center__box__content__description
+              親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+            .main__whole__center__box__content__table
+              %table
+                %tbody
+                  %tr
+                    %th 出品者
+                    %td hoge
+                  %tr
+                    %th カテゴリー
+                    %td
+                      = link_to root_path, class:"" do
+                        ベビー・キッズ
+                      = link_to root_path, class:"" do
+                        ベビー服(男女兼用)  ~95cm
+                      = link_to root_path, class:"" do
+                        アウター
+                    %tr
+                      %th ブランド
+                      %td
+                    %tr
+                      %th 商品のサイズ
+                      %td
+                    %tr
+                      %th 商品の状態
+                      %td 未使用に近い
+                    %tr
+                      %th 配送料の負担
+                      %td 送料込み（出品者負担）
+                    %tr
+                    %th 発送元の地域
+                    %td
+                      = link_to root_path, class:"" do
+                        岩手県
+                    %tr
+                      %th 発送日の目安
+                      %td 4-7日で発送
+              .main__whole__center__box__content__optionalzone
+                %ul
+                  %li.main__whole__center__box__content__optionalzone__like-Btn
+                    %i.fa.fa-star
+                    %textお気に入り 0
+                %ul
+                  %li.main__whole__center__box__content__optionalzone__out-Btn
+                    = link_to root_path, class:"" do
+                      %i.fa.fa-flag
+                      %text不適切な商品の通報
+
+          .main__whole__center__comment-room
+            %ul.main__whole__center__comment-room__Contents
+            %form.main__whole__center__comment-room__Contents__new-comment{"accept-charset": "UTF-8", action: "#", method: "post"}
+              %input{name: "utf8", type: "hidden", value: "✓"}/
+              %input{name: "authenticity_token", type: "hidden", value: "z7Qut4WXQ3mF3zKKLKZrd1Fn+L/Qvfjm2htA/nurRRIj6zbRfEQ5aPKt2pDDScEFgn+UVEEZ7t0WPSCFBEH9WA=="}/
+              %textarea.main__whole__center__comment-room__Contents__new-comment__comment-body{name: "comment[body]", required: "required"}
+              %p.main__whole__center__comment-room__Contents__new-comment__noticeMsg
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br/
+                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %br/
+              %button.main__whole__center__comment-room__Contents__new-comment__commentBtn{name: "button", type: "submit"}
+                %i.fa.fa-comment
+                コメントする
+          
+          %ul.main__whole__center__links
+            %li.main__whole__center__links__f
+              = link_to root_path, class:"" do
+                %i.fa.fa-angle-left
+                %span 前の商品
+            %li.main__whole__center__links__r
+              = link_to root_path, class:"" do
+                %span 後ろの商品
+                %i.fa.fa-angle-right
+
+          .main__whole__center__relatedItems
+            = link_to root_path, class:"" do
+              ベビー・キッズをもっと見る
+            .main__whole__center__relatedItems__productLists
+            %after.main__whole__center__relatedItems__relatedItems
