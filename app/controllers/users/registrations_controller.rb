@@ -43,7 +43,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :address_first_name,   
       :address_family_name,  
       :address_first_pseudonym, 
-      :adress_family_pseudonym, 
+      :address_family_pseudonym, 
       :post_code,           
       :prefecture,           
       :city,                 
@@ -69,7 +69,7 @@ end
       # session[:address_first_name] = user_params[:address_first_name]
       # session[:address_family_name] = user_params[:address_family_name]
       # session[:address_first_pseudonym] = user_params[:address_first_pseudonym]
-      # session[:adress_family_pseudonym] = user_params[:adress_family_pseudonym]
+      # session[:address_family_pseudonym] = user_params[:address_family_pseudonym]
       # session[:post_code] = user_params[:post_code]
       # session[:prefecture] = user_params[:prefecture]
       # session[:city] = user_params[:city]
@@ -88,7 +88,7 @@ end
       # session[:erroraddressfirstname] = user.errors.messages[:address_first_name]
       # session[:erroraddressfamilyname] = user.errors.messages[:address_family_name]
       # session[:erroraddressfirst_pseudonym] = user.errors.messages[:address_first_pseudonym]
-      # session[:erroradressfamily_pseudonym] = user.errors.messages[:adress_family_pseudonym]
+      # session[:erroraddressfamily_pseudonym] = user.errors.messages[:address_family_pseudonym]
       # session[:errorpostcode] = user.errors.messages[:post_code]
       # session[:errorprefecture] = user.errors.messages[:prefecture]
       # session[:errorcity] = user.errors.messages[:city]
