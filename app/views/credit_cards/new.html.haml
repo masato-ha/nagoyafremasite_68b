@@ -29,7 +29,7 @@
         メルカリ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to root_path, class:"headmine" do
+      = link_to users_path, class:"headmine" do
         マイページ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
@@ -56,7 +56,8 @@
         %li.mypage-nav-list-item  
           いいね！一覧
           %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
+        %li.mypage-nav-list-item
+          = link_to new_item_path, class:"content" do  
           出品する
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
@@ -71,8 +72,9 @@
         %li.mypage-nav-list-item  
           出品した商品-売却済み
           %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          購入した商品-取引中
+        %li.mypage-nav-list-item 
+          = link_to about_credit_cards_path, class:"content" do 
+            購入した商品-取引中
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
           購入した商品-過去の取引
@@ -119,7 +121,7 @@
           電話番号の確認
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          = link_to new_user_path, class:"content" do
+          = link_to logouts_show_path, class:"content" do
             ログアウト
           %i.fas.fa-angle-right
   .newcredit-right

@@ -29,7 +29,7 @@
         メルカリ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
-      = link_to root_path, class:"headmine" do
+      = link_to users_path, class:"headmine" do
         マイページ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
@@ -41,7 +41,8 @@
     %nav.mypage-nav
       %ul.mypage-nav-list 
         %li.mypage-nav-list-item 
-          マイページ
+          = link_to users_path, class:"content" do
+            マイページ
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
           お知らせ
