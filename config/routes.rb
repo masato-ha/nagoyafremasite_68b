@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
 
 
-  resource :mypages
+  
   
   get 'logouts/show'
 

@@ -50,7 +50,8 @@
           いいね！一覧
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          出品する
+          = link_to new_item_path, class:"content" do
+            出品する
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
           下書き一覧
@@ -65,7 +66,8 @@
           出品した商品-売却済み
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
-          購入した商品-取引中
+          = link_to about_credit_cards_path, class:"content" do
+            購入した商品-取引中
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
           購入した商品-過去の取引
