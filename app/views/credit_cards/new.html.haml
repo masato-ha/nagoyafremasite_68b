@@ -5,7 +5,23 @@
     .topbody__box__below__search__category             
       = link_to "カテゴリー"             
       = link_to "ブランド"
-  =render "headbottom"
+  %nav.mypagehed-right
+    %ul.main-header-user-nav 
+      %li
+        .main-header-menu-link
+          %i.fas.fa-heart
+          %span いいね!一覧
+      %li
+        .main-header-menu-link
+          %i.fa.fa-bell
+          %span お知らせ
+      %li
+        .main-header-menu-link
+          %i.fa.fa-check
+          %span やることリスト
+      %li
+        .main-header-menu-link
+          = link_to "マイページ",root_path, class: "decoration-none" 
 %nav.mypagehed2
   %ul.mypagehed2-list
     %li.mypagehed2-list-item 
@@ -25,7 +41,7 @@
         クレジットカード情報入力
 
 .mypagemain
-  = render "headleftmypage"
+  =render "headleftmypage"
   .newcredit-right
     %section.newcredit-right-cash
       %h2.newcredit-right-cash-head クレジットカード情報入力
@@ -53,7 +69,7 @@
           .new-paysecurity
             %label.new-paysecurity-numbers セキュリティコード
             %span.new-paysecurity-mark 必須
-            = form.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号"
+            = form.text_field :seculity_code, placeholder: "カード背面4桁もしくは3桁の番号"
             .new-paysecurity-point
               .new-paysecurity-point-text
                 %span カード裏面の番号とは？
