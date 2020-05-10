@@ -6,7 +6,9 @@
     .topbody__box__below__search__category             
       = link_to "カテゴリー"             
       = link_to "ブランド"
+
   = render "headbottom"
+
 %nav.mypagehed2
   %ul.mypagehed2-list
     %li.mypagehed2-list-item 
@@ -20,6 +22,7 @@
 
 .mypagemain
   = render "headmypageleft"
+
   .logout-right
     .logout-right-content
       = link_to destroy_user_session_path, method: :delete do
