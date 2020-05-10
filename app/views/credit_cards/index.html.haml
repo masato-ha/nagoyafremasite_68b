@@ -5,28 +5,12 @@
     .topbody__box__below__search__category             
       = link_to "カテゴリー"             
       = link_to "ブランド"
-  %nav.mypagehed-right
-    %ul.main-header-user-nav 
-      %li
-        .main-header-menu-link
-          %i.fas.fa-heart
-          %span いいね!一覧
-      %li
-        .main-header-menu-link
-          %i.fa.fa-bell
-          %span お知らせ
-      %li
-        .main-header-menu-link
-          %i.fa.fa-check
-          %span やることリスト
-      %li
-        .main-header-menu-link
-          = link_to "マイページ",root_path, class: "decoration-none" 
+  =render "headbottom"
 %nav.mypagehed2
   %ul.mypagehed2-list
     %li.mypagehed2-list-item 
       = link_to root_path, class:"headmine" do
-        メルカリ
+        フリマ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
       = link_to users_path, class:"headmine" do
@@ -37,88 +21,7 @@
         支払い方法
 
 .mypagemain
-  .mypagemain-left
-    %nav.mypage-nav
-      %ul.mypage-nav-list 
-        %li.mypage-nav-list-item 
-          = link_to users_path, class:"content" do
-            マイページ
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          お知らせ
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          やることリスト
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          いいね！一覧
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          出品する
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          下書き一覧
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          出品した商品-出品中
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          出品した商品-取引中
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          出品した商品-売却済み
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          購入した商品-取引中
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          購入した商品-過去の取引
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          ニュース一覧
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          評価一覧
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          ガイド
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          お問い合わせ
-          %i.fas.fa-angle-right
-      %h3.mypage-nav-head メルペイ
-      %ul.mypage-nav-list 
-        %li.mypage-nav-list-item  
-          売上・振込申請
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          ポイント
-          %i.fas.fa-angle-right
-      %h3.mypage-nav-head 設定
-      %ul.mypage-nav-list 
-        %li.mypage-nav-list-item  
-          プロフィール
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          発送元・お届け先住所変更
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          = link_to new_credit_card_path, class:"content" do
-            支払い方法
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          メール/パスワード
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          本人情報
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          電話番号の確認
-          %i.fas.fa-angle-right
-        %li.mypage-nav-list-item  
-          = link_to new_user_path, class:"content" do
-            ログアウト
-          %i.fas.fa-angle-right
+  = render "headleftmypage"
   .contentcash
     %section.contentcash-top
       %h2.contentcash-top-head 支払い方法
