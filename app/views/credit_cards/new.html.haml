@@ -58,7 +58,7 @@
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item
           = link_to new_item_path, class:"content" do  
-          出品する
+            出品する
           %i.fas.fa-angle-right
         %li.mypage-nav-list-item  
           下書き一覧
@@ -151,7 +151,7 @@
           .new-paysecurity
             %label.new-paysecurity-numbers セキュリティコード
             %span.new-paysecurity-mark 必須
-            = form.text_field :card_number, placeholder: "カード背面4桁もしくは3桁の番号"
+            = form.text_field :seculity_code, placeholder: "カード背面4桁もしくは3桁の番号"
             .new-paysecurity-point
               .new-paysecurity-point-text
                 %span カード裏面の番号とは？
