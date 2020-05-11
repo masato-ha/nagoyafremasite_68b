@@ -20,7 +20,7 @@
                     %label.sell-container__content__upload__items__box__label
                       = f.fields_for :images do |i| 
                         %div{"data-index" => "#{i.index}", class: "js-file_group"}
-                        = i.file_field :url,class: 'sell-container__content__upload__items__box__input'
+                        = i.file_field :url,class: 'js-file', style: 'display: none;'
                         %pre
                           %i.fas.fa-camera.fa-lg
                           ドラッグアンドドロップ
