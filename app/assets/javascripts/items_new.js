@@ -36,7 +36,16 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
-
+  $('#image-input').before(`<li class="preview-image" id="upload-image${labelLength}" data-image-id="${labelLength}">
+                              <figure class="preview-image__figure">
+                                <img src='${e.target.result}' title='${file.name}' >
+                              </figure>
+                              <div class="preview-image__button">
+                                <a class="preview-image__button__edit">編集</a>
+                                <a class="preview-image__button__delete" data-image-id="${labelLength}">削除</a>
+                              </div>
+                            </li>`);
+  };
 
   //削除ボタンが押された時
   $(document).on('click', '.preview-image__button__delete', function(){
