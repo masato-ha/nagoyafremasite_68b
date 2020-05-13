@@ -87,6 +87,14 @@
             .error-messages#error-deliverycost
             .sell-title
               %h3.sell-title__text
+                配送の方法
+                %span.sell-title__require
+                  必須
+              =f.select :postage_type, Item.postage_types.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+            .sell-collection_select
+            .error-messages#error-deliverycost
+            .sell-title
+              %h3.sell-title__text
                 発送元の地域
                 %span.sell-title__require
                   必須

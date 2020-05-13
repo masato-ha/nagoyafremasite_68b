@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   #必須（価格300~9,999,999）
   validates :price, presence: true , numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   #必須（カテゴリー、商品の状態、発送元地域、発送までの日数、配送料の負担者、）
-  # validates :category_id, :item_condition, :shipping_area, :preparation_day, :trading_status, presence: true
+  validates :category_id, :item_condition, :shipping_area, :preparation_day, :trading_status, presence: true
   def images_presence
     if images.attached?
       # inputに保持されているimagesがあるかを確認
