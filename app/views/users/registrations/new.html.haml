@@ -5,112 +5,153 @@
         %a.image
         = link_to image_tag("logo.png", size: '185x50'), root_path
 
-.main
-  .main__container
-    .main__container__title
+.regmain
+  .regmain__container
+    .regmain__container__title
       新規会員登録
-    .main__container__form
-      .main__container__form__fields
-        .main__container__form__fields__field
+    = form_for resource, url: registration_path(resource_name), as: resource_name, class: "main__container__form", id: "registration-form" do |f|
+      .regmain__container__form__fields
+        .regmain__container__form__fields__field
           .category
             %label(for="")
               ニックネーム
             %span.span
               必須
             .input-defaults
-              %input.input-defaults__default{type: "text", placeholder: "例）遠州大魔王"}
-        .main__container__form__fields__field
+              = f.text_field :nickname, placeholder: "例) 遠州大魔王", class: "input-defaults__default"
+              
+        .regmain__container__form__fields__field
           .category
             %label(for="")
               メールアドレス
             %span.span
               必須
             .input-defaults
-              %input.input-defaults__default{type: "text", placeholder: "PC・携帯どちらでも可"}    
-        .main__container__form__fields__field
+              = f.email_field :email, placeholder: "例) メールアドレス", class: "input-defaults__default"
+          .form-info-text
+            ※「@」「.」などの記入漏れにご注意ください 
+        .regmain__container__form__fields__field
           .category
             %label(for="")
               パスワード
             %span.span
               必須
             .input-defaults
-              %input.input-defaults__default{type: "text", placeholder: "7文字以上の半角英数字"}
+              = f.password_field :password, placeholder: "例) 7文字以上の半角英数字", class: "input-defaults__default"             
+            .input-defaults  
+              = f.password_field :password_confirmation, placeholder: "再度同じパスワードを入力", class: "input-defaults__default"
+             
           .form-info-text
             ※英字と数字の両方を含めて設定してください
+
           %span.form-info-text
-            パスワードを表示する
-        .main__container__form__fields__field
+            
+        .regmain__container__form__fields__field
           %h3
             本人確認
           .form-info-text
             安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-        .main__container__form__fields__field
+        .regmain__container__form__fields__field
           .category
             %label(for="")
               お名前
             %span.span
               必須
             .input-defaults
-              %input.input-defaults__default{type: "text", placeholder: "例）遠州"}
-              %input.input-defaults__default{type: "text", placeholder: "例）大魔王"}
-        .main__container__form__fields__field
+              = f.text_field :family_name, placeholder: "例) 葛飾", class: "input-defaults__default"
+              = f.text_field :first_name, placeholder: "例) 北斎", class: "input-defaults__default"              
+        .regmain__container__form__fields__field
           .category
             %label(for="")
               お名前カナ(全角)
             %span.span
               必須
             .input-defaults
-              %input.input-defaults__default{type: "text", placeholder: "例）エンシュウ"}
-              %input.input-defaults__default{type: "text", placeholder: "例）ダイマオウ"}
-        
-        .main__container__form__fields__field
+              = f.text_field :family_name_pseudonym, placeholder: "例) カツシカ", class: "input-defaults__default"
+              = f.text_field :first_name_pseudonym, placeholder: "例) ホクサイ", class: "input-defaults__default"  
+        .regmain__container__form__fields__field
           .category
             %label(for="")
               自己紹介
             .input-defaults
-              %textarea.input-defaults__intro{type: "text", placeholder: "例）地球の平和を守るため、皆さんのお役に立てるものを、色々売っています。"}
-              
-              %br
-        .main__container__form__fields__field
+              = f.text_area :introduction, placeholder: "例）地球の平和を守るため、皆さんのお役に立てるものを、色々売っています。", class: "input-defaults__intro"
+        .regmain__container__form__fields__field
           .category
             %label 生年月日
             %span.span
               必須 
-            %br     
-            .main__container__form__fields__field__select
-              .main__container__form__fields__field__select__wrap
-                
-                .main__container__form__fields__field__select__wrap__selector
-                  %select.main__container__form__fields__field__select__wrap__selector__selector1
-                   
+            .regmain__container__form__fields__field__select
+              .regmain__container__form__fields__field__select__wrap               
+                .regmain__container__form__fields__field__select__wrap__selector
+                  = f.date_select :birth_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".regmain__container__form__fields__field__select__wrap__selector__selector1"       
                 .pan
                   年
-              .main__container__form__fields__field__select__wrap
-               
-                .main__container__form__fields__field__select__wrap__selector
-                  %select.main__container__form__fields__field__select__wrap__selector__selector2
-                  
+              .regmain__container__form__fields__field__select__wrap
+                .regmain__container__form__fields__field__select__wrap__selector
+                  = f.date_select :birth_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".regmain__container__form__fields__field__select__wrap__selector__selector2"        
                 .pan
                   月
-              .main__container__form__fields__field__select__wrap
-                
-                .main__container__form__fields__field__select__wrap__selector
-                  %select.main__container__form__fields__field__select__wrap__selector__selector3
-                  
+              .regmain__container__form__fields__field__select__wrap               
+                .regmain__container__form__fields__field__select__wrap__selector
+                  = f.date_select :birth_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".regmain__container__form__fields__field__select__wrap__selector__selector3"                
                 .pan
                   日
-              .main__container__form__fields__field__select__subtext ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-
-            .main__container__form__fields__field__select
+              .regmain__container__form__fields__field__select__subtext ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。          
+        .regmain__container__form__fields__field
+          .category
+            %label(for="")
+              世帯主名
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :address_first_name, placeholder: "例) 葛飾", class: "input-defaults__default"
+              = f.text_field :address_family_name, placeholder: "例) 太郎", class: "input-defaults__default"            
+        .regmain__container__form__fields__field
+          .category
+            %label(for="")
+              世帯主名カナ(全角)
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :address_first_pseudonym, placeholder: "例) カツシカ", class: "input-defaults__default"
+              = f.text_field :address_family_pseudonym, placeholder: "例) タロウ", class: "input-defaults__default"
+        .regmain__container__form__fields__field
+          .category
+            %label(for="")
+              郵便番号(ハイフン無し)
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :post_code, placeholder: "例)1030021 ", class: "input-defaults__default"
+              
+        .regmain__container__form__fields__field
+          .category
+            %label(for="")
+              住所
+            %span.span
+              必須
+            .input-defaults
+              = f.text_field :prefecture, placeholder: "例)東京都 ", class: "input-defaults__default"
+              = f.text_field :city, placeholder: "例) 中央区日本橋", class: "input-defaults__default"
+              = f.text_field :address_name, placeholder: "例) 本石町２−２−１", class: "input-defaults__default"            
+              = f.text_field :building_name, placeholder: "※ビルの部屋番号など、ございましたらご記入ください※", class: "input-defaults__default" 
+        .regmain__container__form__fields__field
+          .category
+            %label(for="")
+              連絡先電話番号(ハイフン無し)
+            .input-defaults
+              = f.text_field :phone_number, placeholder: "携帯電話の番号を推奨", class: "input-defaults__default"                        
+            
+        .regmain__container__form__fields__field
+          .category          
+            .regmain__container__form__fields__field__select
               = check_box_tag :name, "", "", checked: false, class: "checkbox-default" 
               私はロボットではありません
-            .main__container__form__fields__field__select
-              .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-            .main__container__form__fields__field__submit
-              %submit.main__container__form__fields__field__submit__btn 次へ進む
-              
-            .main__container__form__fields__field__select
-              .main__container__form__fields__field__select__reg
+            .regmain__container__form__fields__field__select
+              .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします          
+            = f.submit "登録する", class:"regmain__container__form__fields__field__submit"              
+            .regmain__container__form__fields__field__select
+              .regmain__container__form__fields__field__select__reg
                 本人情報の登録について
                 %i.fas.fa-chevron-right
 .single
@@ -127,6 +168,5 @@
       = image_tag("logo.png", size: '180x50')
     %p
       ©&nbsp;Fmarket,&nbsp;Inc.
-
 
 

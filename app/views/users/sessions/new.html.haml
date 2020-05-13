@@ -5,61 +5,37 @@
         %a.image
         = link_to image_tag("logo.png", size: '185x50'), root_path
 
-.main
-  .main__container
-    .main__container__title
+.reglogin
+  .reglogin__container
+    .reglogin__container__title
       ログインページだよ！！！
-    .main__container__form
-      .main__container__form__fields
-        .main__container__form__fields__field
+    = form_for resource, as: resource_name, url: user_session_path, class: "reglogin__container__form" do |f|
+      .reglogin__container__form__fields
+        .reglogin__container__form__fields__field
           .category
             %label(for="")
-              ニックネーム
-            
+              メールアドレス          
             .input-defaults
-              %input.input-defaults__default{type: "text"}
-        .main__container__form__fields__field
+              = f.email_field :email, placeholder: "", class: "input-defaults__default"
+        .reglogin__container__form__fields__field
           .category
             %label(for="")
-              パスワード
-            
+              パスワード          
             .input-defaults
-              %input.input-defaults__default{type: "text"}    
-        .main__container__form__fields__field
+              = f.password_field :password, placeholder: "", class: "input-defaults__default"      
+        .reglogin__container__form__fields__field
           .category
             %label(for="")
               パスワード(確認)
-            
             .input-defaults
-              %input.input-defaults__default{type: "text"}
-          %span.form-info-text
-            パスワードを表示する
-        
+              = f.password_field :password_confirmation, placeholder: "", class: "input-defaults__default" 
+          %span.form-info-text                
             %br 
-          .main__container__form__fields__field    
-            .main__container__form__fields__field__select
-              
-            .main__container__form__fields__field__select
-              
-            .main__container__form__fields__field__submit
-              %submit.main__container__form__fields__field__submit__btn 次へ進む
-              
-            .main__container__form__fields__field__select
-              .main__container__form__fields__field__select__reg
+          .reglogin__container__form__fields__field            
+            .reglogin__container__form__fields__field__select            
+            = f.submit "ログインする", class:"reglogin__container__form__fields__field__submit"            
+            .reglogin__container__form__fields__field__select
+              .reglogin__container__form__fields__field__select__reg
                 本人情報の登録について
                 %i.fas.fa-chevron-right
-.single
-  .single__footer
-    .single__footer__nav
-      .single__footer__nav__con
-        .single__footer__nav__con__li
-          プライバシーポリシー
-        .single__footer__nav__con__li
-          メルカリ利用規約
-        .single__footer__nav__con__li
-          特定商取引に関する表記
-    = link_to root_path, data: {"turbolinks": false} do
-      = image_tag("logo.png", size: '180x50')
-    %p
-      ©&nbsp;Fmarket,&nbsp;Inc.
 

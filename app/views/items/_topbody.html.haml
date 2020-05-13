@@ -1,14 +1,38 @@
 .topbody  
   .topbody__exhibition
     %a出品する
-    %i.fas.fa-camera
+    =link_to new_item_path do
+      %i.fas.fa-camera
   .topbody__box__below
     .topbody__box__below__search
       .topbody__box__below__search__category             
         = link_to "カテゴリー"             
         = link_to "ブランド"
-    .topbody__box__below__users
-      .topbody__box__below__users__member
+    %nav.mypagehed-right
+    - if user_signed_in?
+      %ul.main-header-user-nav
+        %li
+          .main-header-menu-link
+            %i.fas.fa-heart
+            %span いいね!一覧
+        %li
+          .main-header-menu-link
+            %i.fa.fa-bell
+            %span お知らせ
+        %li
+          .main-header-menu-link
+            %i.fa.fa-check
+            %span やることリスト
+        %li
+          .main-header-menu-link
+            = link_to "マイページ",users_path, class: "decoration-none"
+        -# %li
+        -#   .main-header-menu-link      
+        -#     %i.far.fa-star
+        -#     = link_to "ログアウト(仮)", destroy_user_session_path, method: :delete, class: 'btn'
+    
+    - else
+      .topbody__box__below__users__member  
         .topbody__box__below__users__member__right
           = link_to "ログイン", new_user_session_path, class: "member_right"
         = link_to "新規会員登録", new_user_registration_path, class: "newreg"
