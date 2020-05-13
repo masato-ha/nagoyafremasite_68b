@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_080657) do
+ActiveRecord::Schema.define(version: 2020_05_01_130826) do
+
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "card_number", null: false
@@ -22,21 +28,28 @@ ActiveRecord::Schema.define(version: 2020_04_25_080657) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "introduction", null: false
     t.integer "price", null: false
     t.string "item_condition", null: false
     t.string "shipping_area", null: false
-    t.string "size", null: false
-    t.datetime "preparation_day", null: false
+    t.string "size"
+    t.string "preparation_day", null: false
     t.string "trading_status", null: false
-    t.string "postage_type", null: false
+    t.string "postage_type"
     t.datetime "deal_closed_date"
     t.integer "brand_id"
-    t.integer "buyer_id", null: false
-    t.integer "seller_id", null: false
-    t.integer "category_id", null: false
+    t.integer "buyer_id"
+    t.integer "seller_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
