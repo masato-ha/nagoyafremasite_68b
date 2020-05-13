@@ -2,7 +2,6 @@
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
-=======
 
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
@@ -25,7 +24,7 @@ require 'rspec/rails'
 #
 
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
-=======
+
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 
@@ -39,7 +38,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
 
-=======
+
   config.include FactoryBot::Syntax::Methods
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -53,7 +52,7 @@ RSpec.configure do |config|
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
-=======
+
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -64,7 +63,7 @@ RSpec.configure do |config|
   #
 
   #     RSpec.describe UsersController, type: :controller do
-=======
+
   #     RSpec.describe UsersController, :type => :controller do
 
   #       # ...
