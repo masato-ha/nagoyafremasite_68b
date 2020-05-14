@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  # belongs_to :category
+  belongs_to :category
   # belongs_to :brand #optional: true
   has_many :images
   # belongs_to :user #optional: true#through:comments

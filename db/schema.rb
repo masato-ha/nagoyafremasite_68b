@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_130826) do
+ActiveRecord::Schema.define(version: 2020_05_14_121813) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,28 +63,8 @@ ActiveRecord::Schema.define(version: 2020_05_01_130826) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "first_name", null: false
-    t.string "family_name", null: false
-    t.string "family_name_pseudonym", null: false
-    t.string "first_name_pseudonym", null: false
-    t.string "birth_year", null: false
-    t.string "birth_month", null: false
-    t.string "birth_day", null: false
-    t.text "introduction"
-    t.string "avatar"
-    t.string "address_first_name", null: false
-    t.string "address_family_name", null: false
-    t.string "address_first_pseudonym", null: false
-    t.string "address_family_pseudonym", null: false
-    t.integer "post_code", null: false
-    t.string "prefecture", null: false
-    t.string "city", null: false
-    t.string "address_name", null: false
-    t.string "building_name"
-    t.string "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
