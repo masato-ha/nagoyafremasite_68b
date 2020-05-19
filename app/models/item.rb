@@ -43,8 +43,5 @@ class Item < ApplicationRecord
   enum brand_id:{
     ナイキ:1
   }
-  enum category_id:{
-    靴:1
-  }
 
 end

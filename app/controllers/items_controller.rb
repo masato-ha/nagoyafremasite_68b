@@ -1,11 +1,31 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.includes(:images).order('created_at DESC')
+    #@parents = Category.where(ancestry: nil)
   end
 
   def new
     @item = Item.new
     @item.images.new
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["選択して下さい"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+       @category_parent_array << parent.name
+    end
+    #@parents = Category.where(ancestry: nil).limit(13)
+  end
+
+   # 親カテゴリーが選択された後に動くアクション
+  def category_children
+    @category_children = Category.find("#{params[:parent_id]}").children
+    #親カテゴリーに紐付く子カテゴリーを取得
+  end
+
+   # 子カテゴリーが選択された後に動くアクション
+  def category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+    #子カテゴリーに紐付く孫カテゴリーの配列を取得
   end
 
   def create
