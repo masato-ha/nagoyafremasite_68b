@@ -7,7 +7,6 @@ document.addEventListener(
 
       let btn = document.getElementById("new-paysecurity-point-btn"); //IDがtoken_submitの場合に取得されます
       btn.addEventListener("click", e => { //ボタンが押されたときに作動します
-        console.log("Hello world");
         e.preventDefault(); //ボタンを一旦無効化します
         let card = {
           number: document.getElementById("card_number").value,
@@ -15,7 +14,6 @@ document.addEventListener(
           exp_month: document.getElementById("exp_month").value,
           exp_year: document.getElementById("exp_year").value
         }; //入力されたデータを取得します。
-        console.log(card)
         Payjp.createToken(card, (status, response) => {
           console.log(status)
           if (status === 200) { //成功した場合

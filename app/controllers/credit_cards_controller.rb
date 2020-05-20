@@ -23,7 +23,7 @@ class CreditCardsController < ApplicationController
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @creditCard = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @creditCard.save
-        redirect_to "/credit_cards/#{current_user.id}"
+        redirect_to credit_card_path(:id)
       else
         redirect_to action: "create"
       end
