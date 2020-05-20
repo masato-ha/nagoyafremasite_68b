@@ -1,0 +1,48 @@
+=render "header"
+
+.topbody__box__below
+  .topbody__box__below__search
+    .topbody__box__below__search__category             
+      = link_to "カテゴリー"             
+      = link_to "ブランド"
+  =render "headbottom"
+%nav.mypagehed2
+  %ul.mypagehed2-list
+    %li.mypagehed2-list-item 
+      = link_to root_path, class:"headmine" do
+        フリマ
+        %i.fas.fa-angle-right
+    %li.mypagehed2-list-item 
+      = link_to users_path, class:"headmine" do
+        マイページ
+        %i.fas.fa-angle-right
+    %li.mypagehed2-list-item 
+      = link_to credit_cards_path, class:"headmine" do
+        支払い方法
+        %i.fas.fa-angle-right
+    %li.mypagehed2-list-item
+      = link_to new_credit_card_path, class:"headminenow" do
+        クレジットカード情報入力
+
+.mypagemain
+  = render "headmypageleft"
+  .showcredit-right
+    %section.showcredit-right-cash
+      %h2.showcredit-right-cash-head 支払い方法
+      .showcredit-right-cash-list
+        %section
+          .showcredit_list
+            %h3.showcredit_list_head  クレジットカード一覧 
+            %br
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = form_tag(credit_card_path, method: :delete, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button 削除する
+
+            
+            
+   
