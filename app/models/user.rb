@@ -23,4 +23,10 @@ class User < ApplicationRecord
   validates :prefecture, presence: true
   validates :city, presence: true
   validates :address_name, presence: true
+
+
+
+  has_many :credit_cards
+  # -------------
+  has_many :items
 end
