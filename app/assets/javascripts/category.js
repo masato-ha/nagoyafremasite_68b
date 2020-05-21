@@ -1,46 +1,44 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
-  function appendChidrenBox(insertHTML){
+  function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='sell-container__content__details' id= 'children_wrapper'>
-                        <div class='sell-collection_select'>
-                          <select class="sell-collection_select__label" id="child_category" name="category_id">
-                            <option value="---" data-category="---">---</option>
+    childSelectHtml = `<div class='sell-collection_select' id= 'grandchildren_wrapper'>
+                          <select class="sell-collection_select__label" id="grandchild_category" name="category_id">
+                            <option value="---">---</option>
                             ${insertHTML}
-                          <select>
-                        </div>
-                      </div>`;
+                          </select>
+                        </div>`;
     $('.listing-product-detail__category').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
-  function appendGrandchidrenBox(insertHTML){
+  function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<div class='sell-container__content__details' id= 'grandchildren_wrapper'>
-                              <div class='sell-collection_select'>
-                                <select class="sell-collection_select__label" id="grandchild_category" name="category_id">
-                                  <option value="---" data-category="---">---</option>
-                                  ${insertHTML}
-                                </select>
-                              </div>
+    grandchildSelectHtml = `<div class='sell-collection_select' id= 'grandchildren_wrapper'>
+                              <select class="sell-collection_select__label" id="grandchild_category" name="category_id">
+                                <option value="---" data-category="---">---</option>
+                                ${insertHTML}
+                              </select>
                             </div>`;
     $('.listing-product-detail__category').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
+    console.log(parentCategory)
     if (parentCategory != "選択して下さい"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
-        url: 'get_category_children',
+        url: '/items/get_category_children',
         type: 'GET',
-        data: { parent_name: parentCategory },
+        data: { parent_id: parentCategory },
         dataType: 'json'
       })
       .done(function(children){
+        console.log(children);
         $('#children_wrapper').remove(); //親が変更された時、子以下を削除するする
         $('#grandchildren_wrapper').remove();
         //$('#size_wrapper').remove();
@@ -49,7 +47,7 @@ $(function(){
         children.forEach(function(child){
           insertHTML += appendOption(child);
         });
-        appendChidrenBox(insertHTML);
+        appendChildrenBox(insertHTML);
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
@@ -80,7 +78,7 @@ $(function(){
           grandchildren.forEach(function(grandchild){
             insertHTML += appendOption(grandchild);
           });
-          appendGrandchidrenBox(insertHTML);
+          appendGrandchildrenBox(insertHTML);
         }
       })
       .fail(function(){

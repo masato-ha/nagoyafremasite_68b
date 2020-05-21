@@ -1,3 +1,4 @@
+-console
 .sell
   %header.sell-header
     = link_to image_tag("logo.png", size: '140x40'), root_path
@@ -56,7 +57,8 @@
                 %span.sell-title__require
                   必須
             .sell-collection_select
-              = f.select :category, @category_parent_array, {}, {class: 'sell-collection_select__label', id: 'parent_category'}
+              -# = f.select :category, @category_parent_array, {}, {class: 'sell-collection_select__label', id: 'parent_category'}
+              = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択して下さい'}, {class: 'sell-collection_select__label', id: 'parent_category'}
             .error-messages#error-deliverycost
             .sell-title
               %h3.sell-title__text

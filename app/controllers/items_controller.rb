@@ -8,17 +8,16 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     #セレクトボックスの初期値設定
-    @category_parent_array = ["選択して下さい"]
+    @category_parent_array = []
     #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-       @category_parent_array << parent.name
+    Category.where(ancestry: nil).limit(13).each do |parent|
+       @category_parent_array << parent
     end
-    #@parents = Category.where(ancestry: nil).limit(13)
   end
 
    # 親カテゴリーが選択された後に動くアクション
-  def category_children
-    @category_children = Category.find("#{params[:parent_id]}").children
+  def get_category_children
+    @category_children = Category.where(ancestry: "#{params[:parent_id]}")
     #親カテゴリーに紐付く子カテゴリーを取得
   end
 
@@ -27,6 +26,7 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
     #子カテゴリーに紐付く孫カテゴリーの配列を取得
   end
+
 
   def create
     @item = Item.new(item_params)
