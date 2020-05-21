@@ -7,9 +7,9 @@ $(function(){
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='sell-collection_select' id= 'grandchildren_wrapper'>
-                          <select class="sell-collection_select__label" id="grandchild_category" name="category_id">
-                            <option value="---">---</option>
+    childSelectHtml = `<div class='sell-collection_select' id= 'children_wrapper'>
+                          <select class="sell-collection_select__label" id="child_category" name="category_id">
+                            <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           </select>
                         </div>`;
@@ -30,7 +30,7 @@ $(function(){
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
     console.log(parentCategory)
-    if (parentCategory != "選択して下さい"){ //親カテゴリーが初期値でないことを確認
+    if (parentCategory != ""){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: '/items/get_category_children',
         type: 'GET',
@@ -48,6 +48,7 @@ $(function(){
           insertHTML += appendOption(child);
         });
         appendChildrenBox(insertHTML);
+        //console.log(insertHTML)
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');

@@ -88,18 +88,18 @@ $(document).on('turbolinks:load', ()=> {
     });
 
     //送信しようとした時
-    // $('form').on('submit',function(){
-    //   let imageLength = $('#output-box').children('li').length;
-    //   if(imageLength ==''){
-    //     $('body, html').animate({ scrollTop: 0 }, 500);
-    //     $('#error-image').text('画像がありません');
-    //   }else if(imageLength >10){
-    //     $('body, html').animate({ scrollTop: 0 }, 500);
-    //     $('#error-image').text('画像を10枚以下にして下さい');
-    //   }else{
-    //     return true;
-    //   }
-    // });
+    $('form').on('submit',function(){
+      let imageLength = $('#output-box').children('li').length;
+      if(imageLength ==''){
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        $('#error-image').text('画像がありません');
+      }else if(imageLength >10){
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        $('#error-image').text('画像を10枚以下にして下さい');
+      }else{
+        return true;
+      }
+    });
 
      //画像を削除した時
     $(document).on('click','.preview-image__button__delete',function(){
@@ -136,6 +136,7 @@ $(document).on('turbolinks:load', ()=> {
         $(this).css('border-color','rgb(204, 204, 204)');
       }
     });
+
     //状態
     $('#condition-select').on('blur',function(){
       let value = $(this).val();
@@ -149,24 +150,26 @@ $(document).on('turbolinks:load', ()=> {
     });
 
     //送料負担
-    $('#deliverycost-select').on('blur',function(){
+    $('#delivery_cost-select').on('blur',function(){
       let value = $(this).val();
       if(value == ""){
-        $('#error-deliverycost').text('選択して下さい');
+        $('#error-delivery_cost').text('選択して下さい');
         $(this).css('border-color','red');
       }else{
-        $('#error-deliverycost').text('');
+        $('#error-delivery_cost').text('');
         $(this).css('border-color','rgb(204, 204, 204)');
       }
     });
 
     //配送の方法の表示
-    $('#item_trading_status').change(function() {
-      var r = $('option:selected').val();
-      if(value == "選択してください"){
-        $(this).addClass('sell-collection_select__label');
+    $('#item_trading_status-select').on('blur',function() {
+      let value = $(this).val();
+      if(value == ""){
+        $('#error-item_trading_status').text('選択して下さい');
+        $(this).css('border-color','red');
       }else{
-        $('#error-pref').css('display','none');
+        $('#error-item_trading_status').text('');
+        $(this).css('border-color','rgb(204, 204, 204)');
       }
     })
 
