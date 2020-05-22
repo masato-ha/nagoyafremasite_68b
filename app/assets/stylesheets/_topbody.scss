@@ -282,7 +282,7 @@ $basic_white: #ffffff;
     }
   }
   &__pickup {
-    padding: 80px 0 0;
+    padding: 100px 0 0;
     background-color: #f8f8f8;
     height: 27%;
     &__title {
@@ -292,6 +292,7 @@ $basic_white: #ffffff;
       font-weight: bold;
     }
     &__indexes {
+    
       &__sub {
         text-align: center;
         font-size: 24px;
@@ -299,14 +300,25 @@ $basic_white: #ffffff;
         color: $basic_aomidori;
       }
       &__categories {
-        width: 780px;
+        width: 765px;
         margin: 26px auto;
+        float: center;
         display: flex;
-        justify-content: space-around;
+        //flex-direction: row;
+        //flex-flow: row wrap;
+        flex-wrap: wrap;
+	      //justify-content: flex-start;
         &__category {
-          width: 220px;
+          width: 255px;
+          margin-top: 30px;
           display: inline-block;
-          float: left;
+          padding-right: 16px;
+          //float: left;
+          img{
+            height: 180px;
+            width: 255px;
+            padding-right: 16px;
+          }
           &__lists {
             background-color: $basic_white;
             color: $basic_black;
