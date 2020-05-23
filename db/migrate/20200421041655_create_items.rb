@@ -11,6 +11,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :trading_status, null: false
       t.string :postage_type
       t.datetime :deal_closed_date
+  
       t.integer :brand_id, foreign_key: true
       t.integer :buyer_id, foreign_key: true
       t.integer :seller_id, foreign_key: true

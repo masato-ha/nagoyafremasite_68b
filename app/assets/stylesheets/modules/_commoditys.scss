@@ -446,10 +446,9 @@ $basic_white: #ffffff;
             ul{
               i{
                 display: inline-block;
-                font: normal normal normal 14px/1 FontAwesome;
+                font-family: "Font Awesome 5 Free";
                 font-size: inherit;
                 text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
               }
             }
             &__out-Btn{
@@ -467,7 +466,7 @@ $basic_white: #ffffff;
                 text-decoration: none;
                 i{
                   display: inline-block;
-                  font: normal normal normal 14px/1 FontAwesome;
+                  font-family: "Font Awesome 5 Free";
                   font-size: inherit;
                   text-rendering: auto;
                   -webkit-font-smoothing: antialiased;
@@ -529,11 +528,9 @@ $basic_white: #ffffff;
               border-radius: 100px;
               i{
                 display: inline-block;
-                font: normal normal normal 14px/1 FontAwesome;
+                font-family: "Font Awesome 5 Free";
                 font-size: inherit;
                 text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
               }
             }
           }
@@ -548,11 +545,9 @@ $basic_white: #ffffff;
             color: #3CCACE;
             i{
               display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
+              font-family: "Font Awesome 5 Free";
               font-size: inherit;
               text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
             }
             span{
               text-decoration: none;
@@ -571,11 +566,9 @@ $basic_white: #ffffff;
             }
             i{
               display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
+              font-family: "Font Awesome 5 Free";
               font-size: inherit;
               text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
             }
           }
         }

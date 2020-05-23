@@ -1,7 +1,9 @@
-.highspace  
-  .highspace__opening
-    %a出品する
-    %i.fas.fa-camera
+.highspace 
+  - if user_signed_in? 
+    .highspace__opening
+      %a 出品する
+      =link_to new_item_path do
+        %i.fas.fa-camera
   .highspace__area__choice
     .highspace__area__choice__find
       .highspace__area__choice__find__type             
@@ -9,9 +11,14 @@
         = link_to "ブランド"
     .highspace__area__choice__people
       .highspace__area__choice__people__lineup
-        .highspace__area__choice__people__lineup__gate
-          = link_to "ログイン", root_path, class: "member_right"
-        = link_to "新規会員登録", root_path, class: "newreg"
+        - if user_signed_in?
+          .highspace__area__choice__people__lineup__gate
+            = link_to "フリマ", root_path, class: "member_right"
+          = link_to "マイページ", users_path, class: "newreg"
+        - else
+          .highspace__area__choice__people__lineup__gate
+            = link_to "ログイン", root_path, class: "member_right"
+          = link_to "新規会員登録", root_path, class: "newreg"
   
   %nav.breadCrumbs
     %ul.breadCrumbs__list
@@ -44,10 +51,10 @@
             .main__whole__center__box__content__list
               %ul
                 %li
-                  = image_tag @item.images.first.url.url.to_s
+                  = image_tag (@item.images.first.url.url.to_s)
                   %ul
                     %li
-                      = image_tag @item.images.first.url.url.to_s
+                      = image_tag (@item.images.first.url.url.to_s)
                     %li
                       -# = image_tag @item.images.second.url.url.to_s
                     %li
@@ -87,15 +94,15 @@
                       %td
                     %tr
                       %th 商品の状態
-                      %td 未使用に近い
+                      %td=@item.item_condition
                     %tr
                       %th 配送料の負担
-                      %td 送料込み（出品者負担）
+                      %td=@item.trading_status
                     %tr
                     %th 発送元の地域
                     %td
                       = link_to root_path, class:"" do
-                        岩手県
+                        =@item.shipping_area
                     %tr
                       %th 発送日の目安
                       %td 4-7日で発送

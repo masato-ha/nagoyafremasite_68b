@@ -1,8 +1,9 @@
 .topbody  
-  .topbody__exhibition
-    %a出品する
-    =link_to new_item_path do
-      %i.fas.fa-camera
+  - if user_signed_in? 
+    .topbody__exhibition
+      %a出品する
+      =link_to new_item_path do
+        %i.fas.fa-camera
   .topbody__box__below
     .topbody__box__below__search
       .topbody__box__below__search__category             
@@ -140,7 +141,7 @@
         - @items.each do |item|
           .topbody__pickup__indexes__categories__category
             = link_to asset_url("/items/#{item.id}", method: :get) do
-              = image_tag item.images.first.url.url.to_s
+              = image_tag (item.images.first.url.url.to_s)
             .topbody__pickup__indexes__categories__category__lists
               .topbody__pickup__indexes__categories__category__lists__name
                 %span.name
