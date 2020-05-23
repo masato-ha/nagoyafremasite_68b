@@ -20,7 +20,7 @@ Things you may want to cover:
 |カラム名|カラム型|オプション|
 |------|----|-------|
 |nickname|string|null: false|
-|passward|string|null: false|
+|password|string|null: false|
 |e-mail|string|users, :email, unique: true|
 |first_name|string|null: false|
 |family_name|string|null: false|
