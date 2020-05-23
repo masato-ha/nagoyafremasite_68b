@@ -8,7 +8,7 @@ $basic_black: #333333;
 $basic_white: #ffffff;
 
 .highspace {
-  height: 1950px;
+  height: 2130px;
   width: 100vw;
   font-family: $basic_font;
   &__opening {
@@ -138,24 +138,24 @@ $basic_white: #ffffff;
 
 .main {
   background: #f8f8f8;
-  height: 1856px;
+  height: 2030;
   width: 100vw;
   &__whole {
-    height: 1856px;
+    height: 2030;
     width: 100vw;
     padding: 40px;
     margin: 0 auto;
     &__center {
       width: 700px;
-      height: 1768px;
+      height: 1940;
       margin: 0 auto;
       &__box {
         width: 700px;
-        height: 1677px;
+        height: 1840;
         margin: 0 auto;
         &__content {
           width: 700px;
-          height: 1362px;
+          height: 1500;
           background-color: #fff;
           padding: 24px 40px 40px;
           &__name {
@@ -474,6 +474,25 @@ $basic_white: #ffffff;
                 }
               }
             }
+          }
+          
+        }
+        .sssss{
+          margin: 24px 0 24px 0;
+          background: #fff;
+          padding: 8px 16px 8px 16px;
+          .sjhnk{
+            margin: 20px 0 20px 0;
+            background: #3CCACE;;
+            border: 1px solid #3CCACE;;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
           }
         }
       }

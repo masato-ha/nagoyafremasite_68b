@@ -15,6 +15,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :buyer_id, foreign_key: true
       t.integer :seller_id, foreign_key: true
       t.integer :category_id, foreign_key: true
+      t.integer :user_id
       t.timestamps
     end
   end

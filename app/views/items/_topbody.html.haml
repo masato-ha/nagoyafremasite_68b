@@ -139,11 +139,13 @@
       .topbody__pickup__indexes__categories
         - @items.each do |item|
           .topbody__pickup__indexes__categories__category
-            = image_tag item.images.first.url.url.to_s
+            = link_to asset_url("/items/#{item.id}", method: :get) do
+              = image_tag item.images.first.url.url.to_s
             .topbody__pickup__indexes__categories__category__lists
               .topbody__pickup__indexes__categories__category__lists__name
                 %span.name
                   = item.name
+                    
               .topbody__pickup__indexes__categories__category__lists__datas
                 %ul.topbody__pickup__indexes__categories__category__lists__datas__data
                   %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
