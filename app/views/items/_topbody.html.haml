@@ -137,99 +137,26 @@
       .topbody__pickup__indexes__sub
         新規投稿商品
       .topbody__pickup__indexes__categories
-        .topbody__pickup__indexes__categories__category
-          = image_tag("egg.png", size: "184x184")
-          .topbody__pickup__indexes__categories__category__lists
-            .topbody__pickup__indexes__categories__category__lists__name
-              魅惑的な白身魚
-            .topbody__pickup__indexes__categories__category__lists__datas
-              %ul.topbody__pickup__indexes__categories__category__lists__datas__data
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
-                  20,000円
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes
-                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes__like
-                    %i.fas.fa-star 
-                      0
-              %p.topbody__pickup__indexes__categories__category__lists__datas__data__tax
-                税込
-        .topbody__pickup__indexes__categories__category
-          = image_tag("egg.png", size: "184x184")
-          .topbody__pickup__indexes__categories__category__lists
-            .topbody__pickup__indexes__categories__category__lists__name
-              魅惑的な白身魚
-            .topbody__pickup__indexes__categories__category__lists__datas
-              %ul.topbody__pickup__indexes__categories__category__lists__datas__data
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
-                  20,000円
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes
-                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes__like
-                    %i.fas.fa-star 
-                      0
-              %p.topbody__pickup__indexes__categories__category__lists__datas__data__tax
-                税込
-        .topbody__pickup__indexes__categories__category
-          = image_tag("egg.png", size: "184x184")
-          .topbody__pickup__indexes__categories__category__lists
-            .topbody__pickup__indexes__categories__category__lists__name
-              魅惑的な白身魚
-            .topbody__pickup__indexes__categories__category__lists__datas
-              %ul.topbody__pickup__indexes__categories__category__lists__datas__data
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
-                  20,000円
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes
-                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes__like
-                    %i.fas.fa-star 
-                      0
-              %p.topbody__pickup__indexes__categories__category__lists__datas__data__tax
-                税込 
+        - @items.each do |item|
+          .topbody__pickup__indexes__categories__category
+            = image_tag item.images.first.url.url.to_s
+            .topbody__pickup__indexes__categories__category__lists
+              .topbody__pickup__indexes__categories__category__lists__name
+                %span.name
+                  = item.name
+              .topbody__pickup__indexes__categories__category__lists__datas
+                %ul.topbody__pickup__indexes__categories__category__lists__datas__data
+                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
+                    %span.price
+                      = item.price
+                      円
+                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes
+                    %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes__like
+                      %i.fas.fa-star 
+                        0
+                %p.topbody__pickup__indexes__categories__category__lists__datas__data__tax
+                  (税込)
       
-      .topbody__pickup__indexes__categories
-        .topbody__pickup__indexes__categories__category
-          = image_tag("egg.png", size: "184x184")
-          .topbody__pickup__indexes__categories__category__lists
-            .topbody__pickup__indexes__categories__category__lists__name
-              魅惑的な白身魚
-            .topbody__pickup__indexes__categories__category__lists__datas
-              %ul.topbody__pickup__indexes__categories__category__lists__datas__data
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
-                  20,000円
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes
-                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes__like
-                    %i.fas.fa-star 
-                      0
-              %p.topbody__pickup__indexes__categories__category__lists__datas__data__tax
-                税込          
-        .topbody__pickup__indexes__categories__category
-          = image_tag("egg.png", size: "184x184")
-          .topbody__pickup__indexes__categories__category__lists
-            .topbody__pickup__indexes__categories__category__lists__name
-              魅惑的な白身魚
-            .topbody__pickup__indexes__categories__category__lists__datas
-              %ul.topbody__pickup__indexes__categories__category__lists__datas__data
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
-                  20,000円
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes
-                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes__like
-                    %i.fas.fa-star 
-                      0
-              %p.topbody__pickup__indexes__categories__category__lists__datas__data__tax
-                税込
-        .topbody__pickup__indexes__categories__category
-          = image_tag("egg.png", size: "184x184")
-          .topbody__pickup__indexes__categories__category__lists
-            .topbody__pickup__indexes__categories__category__lists__name
-              魅惑的な白身魚
-            .topbody__pickup__indexes__categories__category__lists__datas
-              %ul.topbody__pickup__indexes__categories__category__lists__datas__data
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__price
-                  20,000円
-                %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes
-                  %li.topbody__pickup__indexes__categories__category__lists__datas__data__likes__like
-                    %i.fas.fa-star 
-                      0
-              %p.topbody__pickup__indexes__categories__category__lists__datas__data__tax
-                税込
-
   .topbody__pickup
     .topbody__pickup__title
       ピックアップブランド

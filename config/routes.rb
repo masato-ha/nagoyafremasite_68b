@@ -21,8 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items
-  
 
 
 
@@ -31,4 +29,3 @@ Rails.application.routes.draw do
   get 'logouts/show'
 
 end
-
