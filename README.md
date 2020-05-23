@@ -53,19 +53,19 @@ Things you may want to cover:
 
 |カラム名|カラム型|オプション|
 |------|----|-------|
-|name|srting|null: false|
+|name|string|null: false|
 |introduction|text|null: false|
 |price|integer|null: false|
 |brand_id|integer|foreign_key: true|
-|item_condition|string|null: false|
-|shipping_area|string|null: false|
+|item_condition_id|string|null: false|
+|shipping_area_id|string|null: false|
 |size|string|null: false|
-|preparation_day|datetime|null: false|
+|preparation_day_id|datetime|null: false|
 |category_id|integer|null: false, foreign_key: true|
-|trading_status|string|null: false|
+|trading_status_id|string|null: false|
 |seller_id|integer|null: false, foreign_key: true|
 |buyer_id|integer|null: false, foreign_key: true|
-|postage_type|string|null: false|
+|postage_type_id|string|null: false|
 |deal_closed_date|datetime||
 
 ### Association
@@ -74,6 +74,11 @@ Things you may want to cover:
 - belongs_to :brand
 - has_many :images
 - belongs_to :user, through:comments
+- belongs_to_active_hash :item_condition
+- belongs_to_active_hash :shipping_area
+- belongs_to_active_hash :preparation_day
+- belongs_to_active_hash :trading_status
+- belongs_to_active_hash :postage_type
 
 ## credit-cardsテーブル
 
