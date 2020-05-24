@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 2020_05_01_130826) do
     t.string "name", null: false
     t.text "introduction", null: false
     t.integer "price", null: false
-    t.string "item_condition_id", null: false
-    t.string "shipping_area_id", null: false
+    t.integer "item_condition", null: false
+    t.integer "shipping_area", null: false
     t.string "size"
-    t.string "preparation_day_id", null: false
-    t.integer "trading_status_id", null: false
-    t.integer "postage_type_id"
+    t.integer "preparation_day", null: false
+    t.integer "trading_status", null: false
+    t.integer "postage_type"
     t.datetime "deal_closed_date"
     t.integer "brand_id"
     t.integer "buyer_id"
