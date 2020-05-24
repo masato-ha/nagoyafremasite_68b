@@ -98,18 +98,18 @@
                       %td
                     %tr
                       %th 商品の状態
-                      %td=@item.item_condition_id
+                      %td=@item.item_condition
                     %tr
                       %th 配送料の負担
-                      %td=@item.trading_status_id
+                      %td=@item.trading_status
                     %tr
                     %th 発送元の地域
                     %td
                       = link_to root_path, class:"" do
-                        =@item.shipping_area_id
+                        =@item.shipping_area
                     %tr
                       %th 発送日の目安
-                      %td=@item.preparation_day_id
+                      %td=@item.preparation_day
               .main__whole__center__box__content__optionalzone
                 %ul
                   %li.main__whole__center__box__content__optionalzone__like-Btn
