@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_130826) do
     t.integer "buyer_id"
     t.integer "seller_id"
     t.integer "category_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

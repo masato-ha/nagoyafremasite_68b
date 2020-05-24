@@ -8,7 +8,7 @@ $basic_black: #333333;
 $basic_white: #ffffff;
 
 .highspace {
-  height: 1950px;
+  height: 2130px;
   width: 100vw;
   font-family: $basic_font;
   &__opening {
@@ -138,24 +138,24 @@ $basic_white: #ffffff;
 
 .main {
   background: #f8f8f8;
-  height: 1856px;
+  height: 2030;
   width: 100vw;
   &__whole {
-    height: 1856px;
+    height: 2030;
     width: 100vw;
     padding: 40px;
     margin: 0 auto;
     &__center {
       width: 700px;
-      height: 1768px;
+      height: 1940;
       margin: 0 auto;
       &__box {
         width: 700px;
-        height: 1677px;
+        height: 1840;
         margin: 0 auto;
         &__content {
           width: 700px;
-          height: 1362px;
+          height: 1500;
           background-color: #fff;
           padding: 24px 40px 40px;
           &__name {
@@ -168,9 +168,6 @@ $basic_white: #ffffff;
             width: 620px;
             height: 443px;
             ul{
-              width: 620px;
-              height: 443px;
-              display: flex;
               position: relative;
               li{
                 display: flex;
@@ -182,40 +179,41 @@ $basic_white: #ffffff;
                   width: 560px;
                   height: 346px;
                   object-fit: cover;
-                }
-                ul{
-                  display: flex;
-                  justify-content: center;
-                  margin-top: 10px;
-                  width: 560px;
-                  height: 87px;
-                  li{
-                    width: 25%;
-                    margin: 0 10px 0 0;
-                    img{
-                      object-fit: cover;
-                      width: 140px;
-                      height: 87px;
-                    }
-                  }
-                  li{
-                    width: 25%;
-                    margin: 0 10px 0 0;
-                    img{
-                      object-fit: cover;
-                      height: 87px;
-                    }
-                  }
-                  li{
-                    width: 25%;
-                    margin: 0 10px 0 0;
-                    img{
-                      object-fit: cover;
-                      height: 87px;
-                    }
-                  }
+                  vertical-align: middle;
                 }
               }
+                ul{
+                  display: flex;
+                  flex-wrap: wrap;
+                 height: 87px;
+                 width: 560px;
+                 margin: 0 auto;
+                   
+                    img{
+                      object-fit: cover;
+                      width: 60px;
+                      height: 60px;
+                      margin: 0 5px 0 5px;
+                    }
+                 
+                  li{
+                    width: 25%;
+                    margin: 0 10px 0 0;
+                    img{
+                      object-fit: cover;
+                      height: 87px;
+                    }
+                  }
+                  li{
+                    width: 25%;
+                    margin: 0 10px 0 0;
+                    img{
+                      object-fit: cover;
+                      height: 87px;
+                    }
+                  }
+                }
+              
             }
           }
           &__price {
@@ -446,10 +444,9 @@ $basic_white: #ffffff;
             ul{
               i{
                 display: inline-block;
-                font: normal normal normal 14px/1 FontAwesome;
+                font-family: "Font Awesome 5 Free";
                 font-size: inherit;
                 text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
               }
             }
             &__out-Btn{
@@ -467,13 +464,32 @@ $basic_white: #ffffff;
                 text-decoration: none;
                 i{
                   display: inline-block;
-                  font: normal normal normal 14px/1 FontAwesome;
+                  font-family: "Font Awesome 5 Free";
                   font-size: inherit;
                   text-rendering: auto;
                   -webkit-font-smoothing: antialiased;
                 }
               }
             }
+          }
+          
+        }
+        .shousaiedit{
+          margin: 24px 0 24px 0;
+          background: #fff;
+          padding: 8px 16px 8px 16px;
+          .showsaibtn{
+            margin: 20px 0 20px 0;
+            background: #3CCACE;;
+            border: 1px solid #3CCACE;;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
           }
         }
       }
@@ -510,11 +526,9 @@ $basic_white: #ffffff;
               border-radius: 100px;
               i{
                 display: inline-block;
-                font: normal normal normal 14px/1 FontAwesome;
+                font-family: "Font Awesome 5 Free";
                 font-size: inherit;
                 text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
               }
             }
           }
@@ -529,11 +543,9 @@ $basic_white: #ffffff;
             color: #3CCACE;
             i{
               display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
+              font-family: "Font Awesome 5 Free";
               font-size: inherit;
               text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
             }
             span{
               text-decoration: none;
@@ -552,11 +564,10 @@ $basic_white: #ffffff;
             }
             i{
               display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
+              font-family: "Font Awesome 5 Free";
               font-size: inherit;
               text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
+
             }
           }
         }

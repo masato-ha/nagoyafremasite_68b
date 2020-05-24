@@ -68,7 +68,9 @@
                 商品の状態
                 %span.sell-title__require
                   必須
+
             =f.collection_select :item_condition_id, ItemCondition.all, :id, :name, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+
               
 
 
@@ -82,6 +84,7 @@
                 配送料の負担
                 %span.sell-title__require
                   必須
+
               =f.collection_select :trading_status_id, TradingStatus.all, :id, :name, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
             .error-messages#error-deliverycost
@@ -91,6 +94,7 @@
                 %span.sell-title__require
                   必須
               =f.collection_select :postage_type_id, PostageType.all, :id, :name, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+
             .sell-collection_select
             .error-messages#error-deliverycost
             .sell-title
@@ -99,6 +103,7 @@
                 %span.sell-title__require
                   必須
               =f.collection_select :shipping_area_id, ShippingArea.all, :id, :name, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+
             .sell-collection_select
             .error-messages#error-pref
             .sell-title
@@ -106,7 +111,9 @@
                 発送までの日数
                 %span.sell-title__require
                   必須
+
               =f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+
             .error-messages#error-delivery_days
         -# 価格部分
         .sell-container__content
