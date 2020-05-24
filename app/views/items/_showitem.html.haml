@@ -118,10 +118,10 @@
                       %text不適切な商品の通報
           - if user_signed_in?&& current_user.id == @item.user_id
             .shousaiedit
-              =link_to edit_item_path , class:"sjhnk" do
+              =link_to edit_item_path , class:"showsaibtn" do
                 編集する
-              %p.shousaidestroy
-                =link_to item_path , class:"sjhnk"  ,method: :delete do
+              %p.sffg
+                =link_to item_path , class:"showsaibtn"  ,method: :delete do
                   削除する
               
 
