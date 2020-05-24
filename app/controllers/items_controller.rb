@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show,:destroy]
+  before_action :set_item, only: [:edit, :show,:destroy,:purchase]
   def index
     @items = Item.includes(:images).order('created_at DESC')
   end
@@ -34,6 +34,8 @@ class ItemsController < ApplicationController
       render show
     end
   end
+  def purchase
+  end
 
   def set_item
     @item = Item.find(params[:id]) 
@@ -41,9 +43,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-
      params.require(:item).permit(:name, :price, :introduction, :category_id, :item_condition_id, :brand_id, :shipping_area_id, :preparation_day_id, :trading_status_id, images_attributes: [:url]).merge(user_id: current_user.id)
-
   end
 
   

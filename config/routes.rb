@@ -9,16 +9,18 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'   
   } 
   
-  resources :items
+  resources :items do
+    member do
+      get 'purchase'
+    end
+  end
 
   root 'items#index'
   resources :users do
    resource :logout ,only: [:show]
   end
   resources :credit_cards do
-    collection do
-      get 'about'
-    end
+    
   end
 
 

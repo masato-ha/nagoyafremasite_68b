@@ -105,7 +105,7 @@
           color: #888;
           margin: 24px 0 32px;
           &-parent{
-            i{
+            input{
               text-align: left;
               position: relative;
             }
@@ -117,6 +117,7 @@
               font-size: 14px;
               font-weight: 400;
               vertical-align: middle;
+              color: #000;
             }
           }
         }

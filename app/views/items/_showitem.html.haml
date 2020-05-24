@@ -68,6 +68,10 @@
                   = "(税込)"
                 %p1
                   = "送料込み"
+              - if user_signed_in?&& current_user.id != @item.user_id
+                .main__whole__center__box__content__price-purchase
+                = link_to purchase_item_path(@item.id), class: "main_purchase_btn" do
+                  購入画面にすすむ
             .main__whole__center__box__content__description
               =@item.introduction
             .main__whole__center__box__content__table
