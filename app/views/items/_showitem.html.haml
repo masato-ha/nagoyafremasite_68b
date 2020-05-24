@@ -52,13 +52,13 @@
               %ul
                 %li
                   = image_tag (@item.images.first.url.url.to_s)
-                  %ul
-                    %li
-                      = image_tag (@item.images.first.url.url.to_s)
-                    %li
-                      -# = image_tag @item.images.second.url.url.to_s
-                    %li
-                      -# = image_tag @item.images.third.url.url.to_s
+                %ul
+                  - @item.images.each do |images|
+                    = image_tag (images.url.url.to_s)
+                    -# %li
+                    -#   = image_tag @item.images.second.url.url.to_s
+                    -# %li
+                    -#   = image_tag @item.images.third.url.url.to_s
             .main__whole__center__box__content__price
               %span 
                 ¥
@@ -105,7 +105,7 @@
                         =@item.shipping_area
                     %tr
                       %th 発送日の目安
-                      %td 4-7日で発送
+                      %td=@item.preparation_day
               .main__whole__center__box__content__optionalzone
                 %ul
                   %li.main__whole__center__box__content__optionalzone__like-Btn
@@ -117,10 +117,10 @@
                       %i.fa.fa-flag
                       %text不適切な商品の通報
           - if user_signed_in?&& current_user.id == @item.user_id
-            .sssss
+            .shousaiedit
               =link_to edit_item_path , class:"sjhnk" do
                 編集する
-              %p.sffg
+              %p.shousaidestroy
                 =link_to item_path , class:"sjhnk"  ,method: :delete do
                   削除する
               
