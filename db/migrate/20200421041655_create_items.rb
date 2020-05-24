@@ -8,8 +8,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :shipping_area_id, null: false
       t.string :size
       t.string :preparation_day_id, null: false
-      t.string :trading_status_id, null: false
-      t.string :postage_type_id
+      t.integer :trading_status_id, null: false
+      t.integer :postage_type_id
       t.datetime :deal_closed_date
   
       t.integer :brand_id, foreign_key: true

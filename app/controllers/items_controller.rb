@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def set_tweet
+  def set_item
     @item = Item.find(params[:id]) 
   end
 

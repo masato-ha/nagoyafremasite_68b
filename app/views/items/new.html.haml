@@ -55,7 +55,7 @@
                 カテゴリー
                 %span.sell-title__require
                   必須
-              =f.select :category_id, ['／(^o^)＼'], { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+              =f.select :category_id, Item.category_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
               %h3.sell-title__text
                 ブランド
