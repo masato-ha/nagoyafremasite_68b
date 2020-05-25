@@ -13,10 +13,12 @@
             %p.mainpurchase-top-buy-item-box-detail-name 
               =@item.name
             %p.mainpurchase-top-buy-item-box-detail-jp
-              %span=@item.price
+              %span
+                ¥
+                =@item.price
               %span.mainpurchase-top-buy-item-box-detail-jp-fee 
                 （税込）
-                =@item.trading_status_id
+                =@item.trading_status
   %section.mainpurchase-price
     .mainpurchase-price-inner
       .mainpurchase-price-inner-item
