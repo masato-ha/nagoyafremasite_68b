@@ -87,19 +87,19 @@ $(document).on('turbolinks:load', ()=> {
       });
     });
 
-    //送信しようとした時
-    // $('form').on('submit',function(){
-    //   let imageLength = $('#output-box').children('li').length;
-    //   if(imageLength ==''){
-    //     $('body, html').animate({ scrollTop: 0 }, 500);
-    //     $('#error-image').text('画像がありません');
-    //   }else if(imageLength >10){
-    //     $('body, html').animate({ scrollTop: 0 }, 500);
-    //     $('#error-image').text('画像を10枚以下にして下さい');
-    //   }else{
-    //     return true;
-    //   }
-    // });
+    // 送信しようとした時
+    //  $('form').on('submit',function(){
+      //  let imageLength = $('#output-box').children('li').length;
+      //  if(imageLength ==''){
+        //  $('body, html').animate({ scrollTop: 0 }, 500);
+        //  $('#error-image').text('画像がありません');
+      //  }else if(imageLength >10){
+        //  $('body, html').animate({ scrollTop: 0 }, 500);
+        //  $('#error-image').text('画像を10枚以下にして下さい');
+      //  }else{
+        //  return true;
+      //  }
+    //  });
 
      //画像を削除した時
     $(document).on('click','.preview-image__button__delete',function(){
