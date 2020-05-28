@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show,:destroy,:purchase]
+  before_action :set_item, only: [:edit, :show,:destroy,:purchase,:pay]
   def index
     @items = Item.includes(:images).order('created_at DESC')
   end
@@ -36,8 +36,32 @@ class ItemsController < ApplicationController
     end
   end
   def purchase
+    creditCard = CreditCard.where(user_id: current_user.id).first
+    if creditCard.blank?
+      redirect_to controller: 'credit_cards', action: 'new'
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+      customer = Payjp::Customer.retrieve(creditCard.customer_id)
+      @default_card_information = customer.cards.retrieve(creditCard.card_id)
+    end
+    
+    
   end
 
+  def pay
+    creditCard = CreditCard.where(user_id: current_user.id).first
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+    Payjp::Charge.create(
+    :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+    :customer => creditCard.customer_id, #顧客ID
+    :currency => 'jpy', #日本円
+  )
+  redirect_to controller: 'items', action: 'index' #完了画面に移動
+  end
+
+  def done
+  
+  end
   def set_item
     @item = Item.find(params[:id]) 
   end

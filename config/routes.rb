@@ -8,19 +8,28 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'   
   } 
-  
+  root 'items#index'
+
   resources :items do
     member do
       get 'purchase'
+      post 'purchase'
+      get 'pay'
     end
+  collection do
+    get 'done'
   end
+    # member do
+    #   post 'done'
+    # end
 
-  root 'items#index'
+  end
+ 
   resources :users do
    resource :logout ,only: [:show]
   end
   resources :credit_cards do
-    
+   
   end
 
 

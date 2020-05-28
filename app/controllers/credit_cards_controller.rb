@@ -52,4 +52,5 @@ class CreditCardsController < ApplicationController
       @default_card_information = customer.cards.retrieve(creditCard.card_id)
     end
   end
+  
 end
