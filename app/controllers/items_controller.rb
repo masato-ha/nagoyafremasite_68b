@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show,:destroy,:purchase,:pay]
+  before_action :set_card, only: [:purchase,:pay]
   def index
     @items = Item.includes(:images).order('created_at DESC')
   end
@@ -36,7 +37,6 @@ class ItemsController < ApplicationController
     end
   end
   def purchase
-    creditCard = CreditCard.where(user_id: current_user.id).first
     if creditCard.blank?
       redirect_to controller: 'credit_cards', action: 'new'
     else
@@ -49,7 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    creditCard = CreditCard.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
     Payjp::Charge.create(
     :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
@@ -66,11 +65,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id]) 
   end
 
+  def set_card
+    creditCard = CreditCard.where(user_id: current_user.id).first
+  end
+
   private
   def item_params
-
      params.require(:item).permit(:name, :price, :introduction, :category_id, :item_condition, :brand_id, :shipping_area, :preparation_day, :trading_status, :postage_type, images_attributes: [:url]).merge(user_id: current_user.id)
-
   end
 
   

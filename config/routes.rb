@@ -16,13 +16,9 @@ Rails.application.routes.draw do
       post 'purchase'
       get 'pay'
     end
-  collection do
-    get 'done'
-  end
-    # member do
-    #   post 'done'
-    # end
-
+    collection do
+      get 'done'
+    end
   end
  
   resources :users do
