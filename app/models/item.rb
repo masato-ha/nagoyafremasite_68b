@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   # belongs_to :brand #optional: true
   belongs_to :user
   has_many :images
+  
   # belongs_to :brand
   # belongs_to :user #optional: true#through:comments
   #画像複数投稿

@@ -310,10 +310,30 @@ $basic_white: #ffffff;
           margin-top: 30px;
           display: inline-block;
           padding-right: 16px;
+          &_sold{
+            width: 0;
+            height: 0;
+            border-top: 65px solid #3CCACE ;
+            border-right: 65px solid transparent;
+            border-bottom: 65px solid transparent;
+            border-left: 65px solid #3CCACE ;
+            z-index:100;
+            position: absolute;
+            // top:120px;
+            &-inner{
+              transform: rotate(-45deg);
+              font-size: 28px;
+              margin:-35px 0px 0px -55px;
+              color: #fff;
+              letter-spacing: 2px;
+              font-weight: 600;
+            }
+          }
           img{
             height: 180px;
             width: 255px;
             padding-right: 16px;
+            position: relative;
           }
           &__lists {
             background-color: $basic_white;
@@ -346,3 +366,4 @@ $basic_white: #ffffff;
     }
   }
 }
+
