@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
   )
   @product_purchaser= Item.find(params[:id])
   if @product_purchaser.update( buyer_id: current_user.id)
-  redirect_to controller: 'items', action: 'done' #完了画面に移動
+  redirect_to controller: 'items', action: 'index' #完了画面に移動
   else 
     redirect_to controller: 'items', action: 'purchase'
   end
