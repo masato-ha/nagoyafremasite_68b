@@ -57,9 +57,12 @@ class ItemsController < ApplicationController
     currency: 'jpy', #日本円
   )
   @product_purchaser= Item.find(params[:id])
-  @product_purchaser.update( buyer_id: current_user.id)
+  if @product_purchaser.update( buyer_id: current_user.id)
   redirect_to controller: 'items', action: 'done' #完了画面に移動
+  else 
+    redirect_to controller: 'items', action: 'purchase'
   end
+end
 
   def done
   end
