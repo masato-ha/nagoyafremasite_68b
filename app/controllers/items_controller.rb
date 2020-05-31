@@ -56,11 +56,15 @@ class ItemsController < ApplicationController
     customer: @credit_card.customer_id, #顧客ID
     currency: 'jpy', #日本円
   )
-  redirect_to controller: 'items', action: 'index' #完了画面に移動
+  @product_purchaser= Item.find(params[:id])
+  if @product_purchaser.update( buyer_id: current_user.id)
+  redirect_to controller: 'items', action: 'done' #完了画面に移動
+  else 
+    redirect_to controller: 'items', action: 'purchase'
   end
+end
 
   def done
-  
   end
   def set_item
     @item = Item.find(params[:id]) 
