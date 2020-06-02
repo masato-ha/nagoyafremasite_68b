@@ -15,12 +15,14 @@
           .sell-container__content__upload
             .sell-container__content__upload__items
               .sell-container__content__upload__items__box
+                //ここにインプットボックス
                 %ul#output-box
+                  //ここに画像を表示
                   %div#image-input
-                    %label.sell-container__content__upload__items__box__label{for: "item_images_attributes_0_url"}
+                    %label.sell-container__content__upload__items__box__label{data: {label_id: 0 }}
                       = f.fields_for :images do |image| 
-                        %div{"data-index" => "#{image.index}", class: "js-file_group"}
-                        = image.file_field :url,class: 'js-file', style: 'display: none;'
+                        %div{"data-index" => "#{image.index}"}
+                        = image.file_field :url, style: 'display: none;'
                         %pre
                           %i.fas.fa-camera.fa-lg
                           ドラッグアンドドロップ
