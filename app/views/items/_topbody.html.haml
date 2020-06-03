@@ -139,8 +139,11 @@
         新規投稿商品
       .topbody__pickup__indexes__categories
         - @items.each do |item|
-          .topbody__pickup__indexes__categories__category 
-            -# = image_tag item.url[0].image.url, class: "topbody__pickup__indexes__categories__category "
+          .topbody__pickup__indexes__categories__category
+            -if item.buyer_id.present? 
+              .topbody__pickup__indexes__categories__category_sold
+                .topbody__pickup__indexes__categories__category_sold-inner
+                  SOLD
             = link_to asset_url("/items/#{item.id}", method: :get) do
               = image_tag (item.images.first.url.url.to_s)
             .topbody__pickup__indexes__categories__category__lists
