@@ -27,7 +27,6 @@ $(document).on('turbolinks:load', ()=> {
           // 表示されているプレビューの数を数える
 
           let labelLength = $("#image-input>label").eq(-1).data('label-id');
-          console.log(labelLength)
           // #image-inputの子要素labelの中から最後の要素のカスタムデータidを取得
 
           // プレビュー表示
@@ -45,7 +44,6 @@ $(document).on('turbolinks:load', ()=> {
           
           if (imageLength < 9) {
             // 表示されているプレビューが９以下なら、新たにinputを生成する
-            console.log("あああ")
             $("#image-input").append(`<label for="item_images${labelLength+1}" class="sell-container__content__upload__items__box__label" data-label-id="${labelLength+1}">
                                         <input multiple="multiple" class="sell-container__content__upload__items__box__input" id="item_images${labelLength+1}"  type="file" name="item[images_attributes][${imageLength+1}][url]">
                                         <i class="fas fa-camera fa-lg"></i>
@@ -57,52 +55,6 @@ $(document).on('turbolinks:load', ()=> {
       reader.readAsDataURL(file);
     });
   });
-
-    // 画像用のinputを生成する関数
-  // const buildFileField = (num)=> {
-    // const html = `<div data-index="${num}" class="js-file_group">
-                    // <input class="js-file" type="file"
-                    // name="product[images_attributes][${num}][src]"
-                    // id="product_images_attributes_${num}_src"><br>
-                    // <div class="js-remove">削除</div>
-                  // </div>`;
-    // return html;
-  // }
-  // プレビュー用のimgタグを生成する関数
-  // const buildImg = (index, url)=> {
-    // const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
-    // return html;
-  // }
-// 
-  // file_fieldのnameに動的なindexをつける為の配列
-  // let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  // 既に使われているindexを除外
-  // lastIndex = $('.js-file_group:last').data('index');
-  // fileIndex.splice(0, lastIndex);
-// 
-  // $('.hidden-destroy').hide();
-// 
-  // $('#image-input').on('change', '.js-file', function(e) {
-    // const targetIndex = $(this).parent().data('index');
-    // ファイルのブラウザ上でのURLを取得する
-    // const file = e.target.files[0];
-    // const blobUrl = window.URL.createObjectURL(file);
-// 
-    // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
-    // if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      // img.setAttribute('src', blobUrl);
-    // } else {  // 新規画像追加の処理
-      // $('#image-input').append(buildImg(targetIndex, blobUrl));
-      // dropzone.css({
-        // 'width': `calc(100% - (114px * ${images.length}))`
-      // })
-      // fileIndexの先頭の数字を使ってinputを作る
-      // $('#output-box').append(buildFileField(fileIndex[0]));
-      // fileIndex.shift();
-      // 末尾の数に1足した数を追加する
-      // fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-    // }
-  // });
 
   $('#image-input').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
@@ -170,19 +122,19 @@ $(document).on('turbolinks:load', ()=> {
       });
     });
 
-    // 送信しようとした時
-    //  $('form').on('submit',function(){
-      //  let imageLength = $('#output-box').children('li').length;
-      //  if(imageLength ==''){
-        //  $('body, html').animate({ scrollTop: 0 }, 500);
-        //  $('#error-image').text('画像がありません');
-      //  }else if(imageLength >10){
-        //  $('body, html').animate({ scrollTop: 0 }, 500);
-        //  $('#error-image').text('画像を10枚以下にして下さい');
-      //  }else{
-        //  return true;
-      //  }
-    //  });
+    //送信しようとした時
+    $('form').on('submit',function(){
+      let imageLength = $('#output-box').children('li').length;
+      if(imageLength ==''){
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        $('#error-image').text('画像がありません');
+      }else if(imageLength >10){
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        $('#error-image').text('画像を10枚以下にして下さい');
+      }else{
+        return true;
+      }
+    });
 
      //画像を削除した時
     $(document).on('click','.preview-image__button__delete',function(){

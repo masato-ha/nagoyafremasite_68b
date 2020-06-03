@@ -13,9 +13,11 @@ class ItemsController < ApplicationController
     # binding.pry
     @item = Item.new(item_params)
     if @item.save
+      flash[:alert] = "商品が出品されました。"
       redirect_to root_path
     else
       @item.images.new
+      flash[:alert] = "画像を入力してください。"
       render :new
     end
   end
