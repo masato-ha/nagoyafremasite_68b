@@ -27,10 +27,8 @@ ActiveRecord::Schema.define(version: 2020_05_14_121813) do
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "card_number", null: false
-    t.integer "expriation_year", null: false
-    t.integer "expriation_month", null: false
-    t.integer "seculity_code", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,17 +45,18 @@ ActiveRecord::Schema.define(version: 2020_05_14_121813) do
     t.string "name", null: false
     t.text "introduction", null: false
     t.integer "price", null: false
-    t.string "item_condition", null: false
-    t.string "shipping_area", null: false
+    t.integer "item_condition", null: false
+    t.integer "shipping_area", null: false
     t.string "size"
-    t.string "preparation_day", null: false
-    t.string "trading_status", null: false
-    t.string "postage_type"
+    t.integer "preparation_day", null: false
+    t.integer "trading_status", null: false
+    t.integer "postage_type"
     t.datetime "deal_closed_date"
     t.integer "brand_id"
     t.integer "buyer_id"
     t.integer "seller_id"
     t.integer "category_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

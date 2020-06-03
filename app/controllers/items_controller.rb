@@ -28,7 +28,10 @@ class ItemsController < ApplicationController
 
    # 子カテゴリーが選択された後に動くアクション
   def get_category_grandchildren
-    @category_grandchildren = Category.where(ancestry: "#{params[:child_id]}")
+    #binding.pry
+    # @category_grandchildren = Category.where(ancestry: "#{params[:child_id]}")
+    category=Category.find(params[:child_id])
+    @category_grandchildren=category.children
     #子カテゴリーに紐付く孫カテゴリーの配列を取得
   end
 
