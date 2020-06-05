@@ -118,7 +118,7 @@
                       %text不適切な商品の通報
           - if user_signed_in?&& current_user.id == @item.user_id
             .shousaiedit
-              =link_to edit_item_path , class:"showsaibtn" do
+              =link_to edit_item_path , class:"showsaibtn"  ,method: :get do
                 編集する
                 
               %p.shousaidestroy
