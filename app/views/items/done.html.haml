@@ -1,0 +1,12 @@
+.sell
+  %header.sell-header
+    = link_to image_tag("logo.png", size: '140x40'), root_path
+.pay_info
+  .pay_info__area
+    .pay_info__area__title 
+      購入が完了しました
+      .pay_info__area__items__botarea 
+        = link_to root_path, class:"pay_info__area__submit-btn" do
+          TOPに戻る
+  = render "compactfooter"
+  

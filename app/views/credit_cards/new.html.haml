@@ -9,7 +9,7 @@
 %nav.mypagehed2
   %ul.mypagehed2-list
     %li.mypagehed2-list-item 
-      = link_to root_path, class:"headmine" do
+      = link_to item_path(:id), class:"headmine" do
         フリマ
         %i.fas.fa-angle-right
     %li.mypagehed2-list-item 
@@ -31,34 +31,35 @@
     %section.newcredit-right-cash
       %h2.newcredit-right-cash-head クレジットカード情報入力
       .newcredit-right-cash-list
-        = form_for @CreditCard do |form| 
-          .new-paynumber
-            %label.new-paynumber-numbers カード番号
+        .new-paynumber
+          = form_with url: credit_cards_path, method: :post, html: { name: "inputForm", id: "card_token" } do |f|
+            = f.label :カード番号, class: "new-paynumber-numbers" 
             %span.new-paynumber-mark 必須
-            = form.text_field :card_number, placeholder: "半角数字のみ"
+            %input.new-paynumber_zuuzi#card_number{type: "text", placeholder: "半角数字のみ"}
             %ul.newpaycardlist
-              %li Visa
-              %li Master
-              %li JCB
-          .new-payexpiration
-            %label.new-payexpiration-numbers 有効期限
-            %span.new-payexpiration-mark 必須
-            %br
-            .new-payexpiration-list
-              .new-payexpiration-list-lists
-                = form.select :expriation_month, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
-                %span 月
-              .new-payexpiration-list-lists
-                = form.select :expriation_year, ['21', '22', '23', '24', '25', '26', '27', '28', '29', '30']
-                %span 年
-          .new-paysecurity
-            %label.new-paysecurity-numbers セキュリティコード
-            %span.new-paysecurity-mark 必須
-            = form.text_field :seculity_code, placeholder: "カード背面4桁もしくは3桁の番号"
-            .new-paysecurity-point
-              .new-paysecurity-point-text
-                %span カード裏面の番号とは？
-              .new-paysecurity-point-info
-              = form.submit "追加する" , { :class => 'submit-btn' }
-        
+              = image_tag src="VISA.png" , size: "45x18"
+              = image_tag src="master.png" , size: "45x18"
+              = image_tag src="jcb.png" , size: "45x18"
+            .new-payexpiration
+              = f.label :有効期限, class:"new-payexpiration-numbers"
+              %span.new-payexpiration-mark 必須
+              %br
+              .new-payexpiration-list
+                .new-payexpiration-list-lists
+                  = f.select :exp_month,[["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],class:"new-payexpiration-list-lists_month"
+                  %span 月
+                .new-payexpiration-list-lists
+                  = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],class:"new-payexpiration-list-lists_year"
+                  %span 年
+            .new-paysecurity
+              = f.label :セキュリティコード, class:"new-paysecurity-numbers"
+              %span.new-paysecurity-mark 必須
+              = f.text_field :seculity_code, placeholder: "カード背面4桁もしくは3桁の番号",class: "new-paysecurity_zuuzi"
+              .new-paysecurity-point
+                .new-paysecurity-point-text
+                  %span カード裏面の番号とは？
+                .new-paysecurity-point-info
+                #card_token
+                = f.submit '追加する', class:"new-paysecurity-point-btn",id:"new-paysecurity-point-btn"
+
 = render "footer"

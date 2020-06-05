@@ -8,7 +8,7 @@ $basic_black: #333333;
 $basic_white: #ffffff;
 
 .highspace {
-  height: 1950px;
+  height: 2130px;
   width: 100vw;
   font-family: $basic_font;
   &__opening {
@@ -138,24 +138,24 @@ $basic_white: #ffffff;
 
 .main {
   background: #f8f8f8;
-  height: 1856px;
+  height: 2030;
   width: 100vw;
   &__whole {
-    height: 1856px;
+    height: 2030;
     width: 100vw;
     padding: 40px;
     margin: 0 auto;
     &__center {
       width: 700px;
-      height: 1768px;
+      height: 1940;
       margin: 0 auto;
       &__box {
         width: 700px;
-        height: 1677px;
+        height: 1840;
         margin: 0 auto;
         &__content {
           width: 700px;
-          height: 1362px;
+          height: 1500;
           background-color: #fff;
           padding: 24px 40px 40px;
           &__name {
@@ -166,11 +166,27 @@ $basic_white: #ffffff;
           &__list {
             margin: 16px 0 0;
             width: 620px;
-            height: 443px;
+            height: 403px;
+            &_sold{
+              width: 0;
+            height: 0;
+            border-top: 80px solid #3CCACE ;
+            border-right: 80px solid transparent;
+            border-bottom: 80px solid transparent;
+            border-left: 80px solid #3CCACE ;
+            z-index:100;
+            position: absolute;
+            left: 30px;
+              &-inner{
+                transform: rotate(-45deg);
+                font-size: 28px;
+                margin:-35px 0px 0px -55px;
+                color: #fff;
+                letter-spacing: 2px;
+                font-weight: 600;
+              }
+            }
             ul{
-              width: 620px;
-              height: 443px;
-              display: flex;
               position: relative;
               li{
                 display: flex;
@@ -182,40 +198,41 @@ $basic_white: #ffffff;
                   width: 560px;
                   height: 346px;
                   object-fit: cover;
-                }
-                ul{
-                  display: flex;
-                  justify-content: center;
-                  margin-top: 10px;
-                  width: 560px;
-                  height: 87px;
-                  li{
-                    width: 25%;
-                    margin: 0 10px 0 0;
-                    img{
-                      object-fit: cover;
-                      width: 140px;
-                      height: 87px;
-                    }
-                  }
-                  li{
-                    width: 25%;
-                    margin: 0 10px 0 0;
-                    img{
-                      object-fit: cover;
-                      height: 87px;
-                    }
-                  }
-                  li{
-                    width: 25%;
-                    margin: 0 10px 0 0;
-                    img{
-                      object-fit: cover;
-                      height: 87px;
-                    }
-                  }
+                  vertical-align: middle;
                 }
               }
+                ul{
+                  display: flex;
+                  flex-wrap: wrap;
+                 height: 87px;
+                 width: 560px;
+                 margin: 0 auto;
+                   
+                    img{
+                      object-fit: cover;
+                      width: 50px;
+                      height: 50px;
+                      margin: 0 5px 0 5px;
+                    }
+                 
+                  li{
+                    width: 25%;
+                    margin: 0 10px 0 0;
+                    img{
+                      object-fit: cover;
+                      height: 87px;
+                    }
+                  }
+                  li{
+                    width: 25%;
+                    margin: 0 10px 0 0;
+                    img{
+                      object-fit: cover;
+                      height: 87px;
+                    }
+                  }
+                }
+              
             }
           }
           &__price {
@@ -228,13 +245,37 @@ $basic_white: #ffffff;
               font-weight: bold;
               margin: 0 10px 0 0;
             }
-            &__detail {
+            &-detail {
               font-size: 16px;
               p{
                 font-size: 16px;
               }
             }
+            &-purchase{
+              font-size: 16px;
+              &-sold{
+                margin-top: 16px;
+                background: #888;
+                font-size: 14px;
+                color: #fff;
+                line-height: 56px;
+                text-align: center;
+                font-weight: 600;
+              }
+            }
           }
+          .main_purchase_btn{
+            margin-top: 16px;
+            background: #3CCACE;
+            font-size: 14px;
+            color: #fff;
+            line-height: 56px;
+            text-align: center;
+            font-weight: 600;
+            display: block;
+          }
+         
+  
           &__description {
             line-height: 1.5;
             font-size: 18px;
@@ -446,10 +487,9 @@ $basic_white: #ffffff;
             ul{
               i{
                 display: inline-block;
-                font: normal normal normal 14px/1 FontAwesome;
+                font-family: "Font Awesome 5 Free";
                 font-size: inherit;
                 text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
               }
             }
             &__out-Btn{
@@ -467,13 +507,32 @@ $basic_white: #ffffff;
                 text-decoration: none;
                 i{
                   display: inline-block;
-                  font: normal normal normal 14px/1 FontAwesome;
+                  font-family: "Font Awesome 5 Free";
                   font-size: inherit;
                   text-rendering: auto;
                   -webkit-font-smoothing: antialiased;
                 }
               }
             }
+          }
+          
+        }
+        .shousaiedit{
+          margin: 24px 0 24px 0;
+          background: #fff;
+          padding: 8px 16px 8px 16px;
+          .showsaibtn{
+            margin: 20px 0 20px 0;
+            background: #3CCACE;;
+            border: 1px solid #3CCACE;;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
           }
         }
       }
@@ -510,11 +569,9 @@ $basic_white: #ffffff;
               border-radius: 100px;
               i{
                 display: inline-block;
-                font: normal normal normal 14px/1 FontAwesome;
+                font-family: "Font Awesome 5 Free";
                 font-size: inherit;
                 text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
               }
             }
           }
@@ -529,11 +586,9 @@ $basic_white: #ffffff;
             color: #3CCACE;
             i{
               display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
+              font-family: "Font Awesome 5 Free";
               font-size: inherit;
               text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
             }
             span{
               text-decoration: none;
@@ -552,11 +607,10 @@ $basic_white: #ffffff;
             }
             i{
               display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
+              font-family: "Font Awesome 5 Free";
               font-size: inherit;
               text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
+
             }
           }
         }

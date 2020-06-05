@@ -1,5 +1,5 @@
-.Purchase
-  %h1 
+.sell
+  %header.sell-header
     = link_to image_tag("logo.png", size: '140x40'), root_path
 .mainpurchase
   %section.mainpurchase-top
@@ -8,12 +8,17 @@
       .mainpurchase-top-buy-item
         .mainpurchase-top-buy-item-box
           %h3.mainpurchase-top-buy-item-box-image
-            = image_tag("https://static.mercdn.net/thumb/photos/m48137982118_1.jpg?1587912502", size: "80x80")
+            = image_tag(@item.images.first.url.url.to_s ,size: "80x80")
           .mainpurchase-top-buy-item-box-detail
-            %p.mainpurchase-top-buy-item-box-detail-name 任天堂 スイッチ Joy-Con ネオングリーン/ネオンピンク
+            %p.mainpurchase-top-buy-item-box-detail-name 
+              =@item.name
             %p.mainpurchase-top-buy-item-box-detail-jp
-              %span ¥8,199
-              %span.mainpurchase-top-buy-item-box-detail-jp-fee （税込）送料込み
+              %span
+                ¥
+                =@item.price
+              %span.mainpurchase-top-buy-item-box-detail-jp-fee 
+                （税込）
+                =@item.trading_status
   %section.mainpurchase-price
     .mainpurchase-price-inner
       .mainpurchase-price-inner-item
@@ -21,31 +26,40 @@
           %li.mainpurchase-price-inner-item-list-bold
             .mainpurchase-price-inner-item-list-bold-label 支払い金額
             .mainpurchase-price-inner-item-list-bold-cell 
-              %span ¥8,199
+              %span 
+                ¥
+                =@item.price
         %ul.mainpurchase-price-inner-item-point
           %li.mainpurchase-price-inner-item-point-parent
-            %i.fas.fa-check
+            %input.point__checkbox{type:"checkbox", value:"0"}
             %label ポイントを使用 (所持ポイント: P0)
   %section.mainpurchase-info
     .mainpurchase-info-pay
-      %h3 支払い方法
+      .mainpurchase-info-pay-form
+        .mainpurchase-info-pay-form 支払い方法
+        = link_to credit_card_path(:id), class:"mainpurchase-info-pay-form-right" do
+          %span 変更する
       %p.mainpurchase-info-pay-text
-        %i.fas.fa-check
-        %span.mainpurchase-info-pay-text-reg 登録して下さい
+        %br
+        = "**** **** **** " + @default_card_information.last4
+        %br
+        - exp_month = @default_card_information.exp_month.to_s
+        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+        = exp_month + " / " + exp_year
   %section.mainpurchase-address
     .mainpurchase-address-inner
       .mainpurchase-address-inner-title
         %h3.mainpurchase-address-inner-title-left 配送先
-        = link_to root_path, class:"mainpurchase-address-inner-title-right" do
-          %span 変更する
       %address.mainpurchase-address-inner-from
         %br
-        %p 〒000-0000
+        %p 
+          〒
+          =@item.user.post_code
         %br
-          東京都米花町0-00
+          =@item.user.prefecture+@item.user.city+@item.user.address_name+@item.user.building_name
         %br
-          江戸川コナン
+          =@item.user.address_first_name+@item.user.address_family_name
   %section.mainpurchase-button
-    = link_to root_path, method: :delete do
+    = link_to pay_item_path(@item), method: :get do
       購入する
   = render "compactfooter"
