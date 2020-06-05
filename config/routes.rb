@@ -8,6 +8,15 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'   
   } 
+  
+  resources :items do
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
+
   root 'items#index'
 
   resources :items do

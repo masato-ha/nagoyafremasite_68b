@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to :category
+
+  belongs_to :category
   # belongs_to :brand #optional: true
   belongs_to :user
   has_many :images
@@ -38,9 +38,6 @@ class Item < ApplicationRecord
   }
   enum brand_id:{
     ナイキ:1
-  }
-  enum category_id:{
-    靴:1
   }
 
 

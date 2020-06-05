@@ -171,6 +171,7 @@ $(document).on('turbolinks:load', ()=> {
         $(this).css('border-color','rgb(204, 204, 204)');
       }
     });
+
     //状態
     $('#condition-select').on('blur',function(){
       let value = $(this).val();
@@ -184,27 +185,28 @@ $(document).on('turbolinks:load', ()=> {
     });
 
     //送料負担
-    $('#deliverycost-select').on('blur',function(){
+    $('#delivery_cost-select').on('blur',function(){
       let value = $(this).val();
       if(value == ""){
-        $('#error-deliverycost').text('選択して下さい');
+        $('#error-delivery_cost').text('選択して下さい');
         $(this).css('border-color','red');
       }else{
-        $('#error-deliverycost').text('');
+        $('#error-delivery_cost').text('');
         $(this).css('border-color','rgb(204, 204, 204)');
       }
     });
 
     //配送の方法の表示
-    $('#item_trading_status').change(function() {
-      var r = $('option:selected').val();
-      if(r == "選択して下さい"){
-        $(this).addClass('sell-collection_select__label');
+    $('#item_trading_status-select').on('blur',function() {
+      let value = $(this).val();
+      if(value == ""){
+        $('#error-item_trading_status').text('選択して下さい');
+        $(this).css('border-color','red');
       }else{
-        $('#error-pref').css('display','none');
+        $('#error-item_trading_status').text('');
+        $(this).css('border-color','rgb(204, 204, 204)');
       }
     })
-
     //発送元
     $('#pref-select').on('blur',function(){
       let value = $(this).val();
