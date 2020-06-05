@@ -65,7 +65,6 @@
                 ブランド
                 %span.sell-title__free
                   任意
-            = f.select :brand_id,Item.brand_ids.keys.to_a, { prompt: '選択して下さい'},{class: "sell-collection_select__label"}
             .sell-collection_select
               =f.select :brand_id, Item.brand_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .error-messages#error-deliverycost
