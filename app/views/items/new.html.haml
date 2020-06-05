@@ -57,7 +57,6 @@
                 %span.sell-title__require
                   必須
             .sell-collection_select{id: 'category-select_box'}
-              -# = f.select :category, @category_parent_array, {}, {class: 'sell-collection_select__label', id: 'parent_category'}
               = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択して下さい'}, {class: 'sell-collection_select__label', id: 'parent_category'}
             .error-messages#error-parent_category
             .sell-title
@@ -87,7 +86,6 @@
                 配送料の負担
                 %span.sell-title__require
                   必須
-              =f.select :trading_status,Item.trading_statuses.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
               =f.select :trading_status, Item.trading_statuses.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label",id: "delivery_cost-select"}
             .error-messages#error-delivery_cost
@@ -104,7 +102,6 @@
                 発送元の地域
                 %span.sell-title__require
                   必須
-              =f.select :shipping_area,Item.shipping_areas.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
               =f.select :shipping_area, Item.shipping_areas.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label",id: "pref-select"}
             .error-messages#error-pref
