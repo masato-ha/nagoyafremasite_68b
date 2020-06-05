@@ -28,12 +28,18 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_update_params)
-    if @item
+    if @item.update(item_update_params)
+      flash[:alert] = "商品が編集されました。"
       redirect_to root_path
-    else 
-      render edit
+    else
+      flash[:alert] = "画像を入力してください。"
+      render action: :edit
     end
+    # if @item
+    #   redirect_to root_path
+    # else 
+    #   render edit
+    # end
       # if  @item.update_attributes(item_update_params)
         #  redirect_to "/"
       # else
