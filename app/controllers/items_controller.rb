@@ -24,6 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @items = Item.find(params[:id])
+    @parents = Category.all.order("id ASC").limit(1316)
   end
 
   def edit
