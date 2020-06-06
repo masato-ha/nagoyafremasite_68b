@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show,:destroy]
+  before_action :set_item, only: [:edit, :show, :destroy, :edit, :update]
   def index
     @items = Item.includes(:images).order('created_at DESC')
   end
@@ -23,11 +23,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_update_params)
       flash[:alert] = "出品商品が編集されました。"
       redirect_to root_path
@@ -35,16 +33,6 @@ class ItemsController < ApplicationController
       flash[:alert] = "出品商品を入力してください。"
       render action: :edit
     end
-    # if @item
-    #   redirect_to root_path
-    # else 
-    #   render edit
-    # end
-      # if  @item.update_attributes(item_update_params)
-        #  redirect_to "/"
-      # else
-        # render action: :edit
-      # end
   end
 
   def destroy
@@ -56,7 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id]) 
+    @item = Item.find(params[:id])
   end
 
   private
