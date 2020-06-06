@@ -15,17 +15,18 @@
           .sell-container__content__upload
             .sell-container__content__upload__items
               .sell-container__content__upload__items__box
+                //ここにインプットボックス
                 %ul#output-box
+                  //ここに画像を表示
                   %div#image-input
-                    %label.sell-container__content__upload__items__box__label{for: "item_images_attributes_0_url"}
+                    %label.sell-container__content__upload__items__box__label{data: {label_id: 0 }}
                       = f.fields_for :images do |image| 
-                        %div{"data-index" => "#{image.index}", class: "js-file_group"}
-                        = image.file_field :url,class: 'js-file', style: 'display: none;'
+                        %div{"data-index" => "#{image.index}"}
+                        = image.file_field :url, style: 'display: none';
                         %pre
                           %i.fas.fa-camera.fa-lg
                           ドラッグアンドドロップ
                           またはクリックしてファイルをアップロード
-                          
         -#商品名部分
         .sell-container__content
           .sell-title
@@ -55,23 +56,25 @@
                 カテゴリー
                 %span.sell-title__require
                   必須
-              =f.select :category_id, Item.category_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
-            .sell-collection_select
+            .sell-collection_select{id: 'category-select_box'}
+              = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択して下さい'}, {class: 'sell-collection_select__label', id: 'parent_category'}
+            .error-messages#error-parent_category
+            .sell-title
               %h3.sell-title__text
                 ブランド
                 %span.sell-title__free
                   任意
-            = f.select :brand_id,Item.brand_ids.keys.to_a, { prompt: '選択して下さい'},{class: "sell-collection_select__label"}
             .sell-collection_select
+              =f.select :brand_id, Item.brand_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
+            .error-messages#error-deliverycost
             .sell-title
               %h3.sell-title__text
                 商品の状態
                 %span.sell-title__require
                   必須
-            =f.select :item_condition,Item.item_conditions.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
-
-              
-
+            .sell-collection_select
+              =f.select :item_condition, Item.item_conditions.keys.to_a, { prompt: '選択して下さい'},{class: "sell-collection_select__label", id: 'condition-select'}
+            .error-messages#error-condition
 
         -# 配送部分
         .sell-container__content
@@ -83,33 +86,31 @@
                 配送料の負担
                 %span.sell-title__require
                   必須
-              =f.select :trading_status,Item.trading_statuses.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
-            .error-messages#error-deliverycost
+              =f.select :trading_status, Item.trading_statuses.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label",id: "delivery_cost-select"}
+            .error-messages#error-delivery_cost
             .sell-title
               %h3.sell-title__text
                 配送の方法
                 %span.sell-title__require
                   必須
-              =f.select :postage_type, Item.postage_types.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
             .sell-collection_select
-            .error-messages#error-deliverycost
+              =f.select :postage_type, Item.postage_types.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label",id: "item_trading_status-select"}
+            .error-messages#error-item_trading_status
             .sell-title
               %h3.sell-title__text
                 発送元の地域
                 %span.sell-title__require
                   必須
-              =f.select :shipping_area,Item.shipping_areas.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
-
             .sell-collection_select
+              =f.select :shipping_area, Item.shipping_areas.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label",id: "pref-select"}
             .error-messages#error-pref
             .sell-title
               %h3.sell-title__text
                 発送までの日数
                 %span.sell-title__require
                   必須
-              =f.select :preparation_day,Item.preparation_days.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label"}
-
+              =f.select :preparation_day, Item.preparation_days.keys.to_a, { prompt: '選択して下さい'}, {class: "sell-collection_select__label",id: "delivery_days-select"}
             .error-messages#error-delivery_days
         -# 価格部分
         .sell-container__content

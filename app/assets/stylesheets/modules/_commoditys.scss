@@ -166,7 +166,26 @@ $basic_white: #ffffff;
           &__list {
             margin: 16px 0 0;
             width: 620px;
-            height: 443px;
+            height: 403px;
+            &_sold{
+              width: 0;
+            height: 0;
+            border-top: 80px solid #3CCACE ;
+            border-right: 80px solid transparent;
+            border-bottom: 80px solid transparent;
+            border-left: 80px solid #3CCACE ;
+            z-index:100;
+            position: absolute;
+            left: 30px;
+              &-inner{
+                transform: rotate(-45deg);
+                font-size: 28px;
+                margin:-35px 0px 0px -55px;
+                color: #fff;
+                letter-spacing: 2px;
+                font-weight: 600;
+              }
+            }
             ul{
               position: relative;
               li{
@@ -191,8 +210,8 @@ $basic_white: #ffffff;
                    
                     img{
                       object-fit: cover;
-                      width: 60px;
-                      height: 60px;
+                      width: 50px;
+                      height: 50px;
                       margin: 0 5px 0 5px;
                     }
                  
@@ -226,13 +245,37 @@ $basic_white: #ffffff;
               font-weight: bold;
               margin: 0 10px 0 0;
             }
-            &__detail {
+            &-detail {
               font-size: 16px;
               p{
                 font-size: 16px;
               }
             }
+            &-purchase{
+              font-size: 16px;
+              &-sold{
+                margin-top: 16px;
+                background: #888;
+                font-size: 14px;
+                color: #fff;
+                line-height: 56px;
+                text-align: center;
+                font-weight: 600;
+              }
+            }
           }
+          .main_purchase_btn{
+            margin-top: 16px;
+            background: #3CCACE;
+            font-size: 14px;
+            color: #fff;
+            line-height: 56px;
+            text-align: center;
+            font-weight: 600;
+            display: block;
+          }
+         
+  
           &__description {
             line-height: 1.5;
             font-size: 18px;

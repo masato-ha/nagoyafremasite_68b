@@ -9,16 +9,32 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'   
   } 
   
-  resources :items
+  resources :items do
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
 
   root 'items#index'
+
+  resources :items do
+    member do
+      get 'purchase'
+      post 'purchase'
+      get 'pay'
+    end
+    collection do
+      get 'done'
+    end
+  end
+ 
   resources :users do
    resource :logout ,only: [:show]
   end
   resources :credit_cards do
-    collection do
-      get 'about'
-    end
+   
   end
 
 
