@@ -19,6 +19,7 @@ img {
   align-items: center;
   box-sizing: border-box;
   margin: 0!important;
+  margin-top: 16px;
   &__text{
     font-size: 14px;
     font-weight: 600;
@@ -61,15 +62,15 @@ img {
   margin-bottom: 24px;
   display: flex;
   &__guides-link{
-    color: rgb(0, 149, 238);
+    color: rgb(140, 146, 150);
     margin-left: 12px;
   }
 }
 
 .sell-collection_select{
   box-sizing: border-box;
-  margin-top: 16px;
   width: 100%;
+  margin-bottom: 32px;
   &__label{
     display: inline-block;
     position: relative;
@@ -104,6 +105,19 @@ img {
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
+  }
+}
+//子カテゴリー用
+.sell-collection_category{
+  box-sizing: border-box;
+  width: 100%;
+  &__select{
+    display: inline-block;
+    position: relative;
+    width: 100%; 
+    margin-top: 16px;
+    font-size: 16px;
+    height: 50px;
   }
 }
 // ここより上は繰り返し使用するパーツ
