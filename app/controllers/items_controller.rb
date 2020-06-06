@@ -25,6 +25,10 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       @item.images.new
+      @category_parent_array = []
+      Category.where(ancestry: nil).limit(13).each do |parent|
+        @category_parent_array << parent
+      end
       flash[:alert] = "画像を入力してください。"
       render :new
     end
