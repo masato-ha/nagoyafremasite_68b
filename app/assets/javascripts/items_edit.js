@@ -142,7 +142,6 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
-
    //価格
    $('.revision-container__content__price__form__box').on('blur',function(){
     let value = $(this).val();
@@ -154,9 +153,3 @@ $(document).on('turbolinks:load', function(){
       $(this).css('border-color','rgb(204, 204, 204)');
     }
   });
-
-
-
-
-
-
