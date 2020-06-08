@@ -8,19 +8,19 @@ $(function(){
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='sell-collection_category' id= 'children_wrapper'>
-                          <select class="sell-collection_category__select" id="child_category" name="category_id">
+                          <select class="sell-collection_category__select" id="child_category" name="item[category_id]">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           </select>
                         </div>`;
     $('#category-select_box').append(childSelectHtml);
-    
+
   }
   // 孫カテゴリーの表示作成
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='sell-collection_select' id= 'grandchildren_wrapper'>
-                              <select class="sell-collection_select__label" id="grandchild_category" name="category_id">
+                              <select class="sell-collection_select__label" id="grandchild_category" name="item[category_id]">
                                 <option value="---" data-category="---">---</option>
                                 ${insertHTML}
                               </select>

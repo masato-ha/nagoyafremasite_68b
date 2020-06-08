@@ -10,7 +10,7 @@ class Item < ApplicationRecord
 
   #画像複数投稿
   accepts_nested_attributes_for :images, allow_destroy: true
-
+  #必須（画像）
   validates :images,presence: true #length: { minimum: 1, message: "が入力されていません" }
   #必須（商品名40文字以内）
   validates :name, presence: true, length: { maximum: 40}
