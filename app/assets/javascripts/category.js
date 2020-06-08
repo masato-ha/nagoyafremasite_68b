@@ -30,7 +30,6 @@ $(function(){
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
-    //console.log(parentCategory)
     if (parentCategory != ""){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: '/items/get_category_children',
@@ -38,7 +37,6 @@ $(function(){
         data: { parent_id: parentCategory },
         dataType: 'json'
       })
-      //console.log(child)
       .done(function(children){
         $('#children_wrapper').remove(); //親が変更された時、子以下を削除するする
         $('#grandchildren_wrapper').remove();
@@ -67,7 +65,6 @@ $(function(){
         dataType: 'json'
       })
       .done(function(grandchildren){
-        //console.log(grandchildren)
         if (grandchildren.length != 0) {
           $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除するする
           var insertHTML = '';

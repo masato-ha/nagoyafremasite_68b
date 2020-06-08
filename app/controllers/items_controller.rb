@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).limit(13).each do |parent|
       @category_parent_array << parent
     end
-    #@category_parent_array = Category.all
   end
 
   def create
