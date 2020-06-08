@@ -1,0 +1,169 @@
+.revision
+  %header.revision-header
+    = link_to image_tag("logo.png", size: '140x40'), root_path
+  %main
+    %section.revision-container
+      = form_with model: @item, local: true do |f|
+        -#画像部分
+        .revision-container__content
+          .revision-title
+            %h3.revision-title__text
+              出品画像
+              %span.revision-title__require
+                必須
+          .revision-container__content__max-sheet 最大10枚までアップデートできます
+          .revision-container__content__upload
+            .revision-container__content__upload__items
+              .revision-container__content__upload__items__box
+                .revision-container__content__upload__items__box__categories
+                  .prev-content
+                    //JSで挿入したhtmlと同じ形　each文でのプレビュー表示
+                    - @item.images.each do |url|
+                      .preview-box
+                        .upper-box
+                          = image_tag url.url.url, width: "112", height: "112", alt: "preview"
+                        .lower-box
+                          .update-box
+                            = f.label :"images_attributes_#{@item.images.length}_url", class: "label-box", id: "label-box--#{@item.images.length}" do
+                              %pre.edit-btn 編集
+                          .delete-box
+                            .delete-btn 
+                              %span 削除
+                  .label-content
+
+                    //プレビューの数に合わせてforオプションを指定
+                    = f.label :"images_attributes_#{@item.images.length}_url", class: "label-box", id: "label-box--#{@item.images.length}" do
+                      %pre.label-box__text-visible クリックしてファイルをアップロード
+                  .hidden-content
+                    = f.fields_for :images do |i|
+
+                      //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                      = i.file_field :url, class: "hidden-field"
+                      = i.check_box :_destroy, class: "hidden-checkbox"
+
+                      //5つのfile_fieldを準備するに当たって、足りない分を表示
+                    - @item.images.length.upto(9) do |i|
+                      %input{name: "item[images_attributes][#{i}][url]", id: "item_images_attributes_#{i}_url", class:"hidden-field", type:"file"}
+         
+
+
+        -#商品名部分
+        .revision-container__content
+          .revision-title
+            %h3.revision-title__text
+              商品名
+              %span.revision-title__require
+                必須
+            = f.text_field :name, {class:'revision-container__content__name', required: "required", placeholder: '商品名（必須 40文字まで)'}
+          .error-messages#error-name
+          .revision-title
+            %h3.revision-title__text
+              商品の説明
+              %span.revision-title__require
+                必須
+            = f.text_area :introduction,{class:'revision-container__content__description', required: "required", placeholder: '商品の説明（必須1000文字以内)'}
+          .revision-container__content__word-count
+            %span#word-count
+              0
+            &#47;1000
+          .error-messages#error-text
+        -# 詳細部分
+        .revision-container__content
+          %h3.revision-sub-head 商品の詳細
+          .revision-container__content__details
+            .revision-title
+              %h3.revision-title__text
+                カテゴリー
+                %span.revision-title__require
+                  必須
+              =f.select :category_id, Item.category_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "revision-collection_select__label"}
+            .revision-collection_select
+              %h3.revision-title__text
+                ブランド
+                %span.revision-title__free
+                  任意
+            = f.select :brand_id,Item.brand_ids.keys.to_a, { prompt: '選択して下さい'},{class: "revision-collection_select__label"}
+            .revision-collection_select
+            .revision-title
+              %h3.revision-title__text
+                商品の状態
+                %span.revision-title__require
+                  必須
+            =f.select :item_condition,Item.item_conditions.keys.to_a, { prompt: '選択して下さい'}, {class: "revision-collection_select__label"}
+
+              
+
+
+        -# 配送部分
+        .revision-container__content
+          %h3.revision-sub-head
+            %p 配送について
+          .revision-container__content__delivery
+            .revision-title
+              %h3.revision-title__text
+                配送料の負担
+                %span.revision-title__require
+                  必須
+              =f.select :trading_status,Item.trading_statuses.keys.to_a, { prompt: '選択して下さい'}, {class: "revision-collection_select__label"}
+            .revision-collection_select
+            .error-messages#error-deliverycost
+            .revision-title
+              %h3.revision-title__text
+                配送の方法
+                %span.revision-title__require
+                  必須
+              =f.select :postage_type, Item.postage_types.keys.to_a, { prompt: '選択して下さい'}, {class: "revision-collection_select__label"}
+            .revision-collection_select
+            .error-messages#error-deliverycost
+            .revision-title
+              %h3.revision-title__text
+                発送元の地域
+                %span.revision-title__require
+                  必須
+              =f.select :shipping_area,Item.shipping_areas.keys.to_a, { prompt: '選択して下さい'}, {class: "revision-collection_select__label"}
+
+            .revision-collection_select
+            .error-messages#error-pref
+            .revision-title
+              %h3.revision-title__text
+                発送までの日数
+                %span.revision-title__require
+                  必須
+              =f.select :preparation_day,Item.preparation_days.keys.to_a, { prompt: '選択して下さい'}, {class: "revision-collection_select__label"}
+
+            .error-messages#error-delivery_days
+        -# 価格部分
+        .revision-container__content
+          %h3.revision-sub-head
+            %p 販売価格(300〜9,999,999)
+            = link_to '/price',target: '_blank', class: 'revision-sub-head__guides-link' do
+              %i.far.fa-question-circle
+          .revision-container__content__price
+            .revision-title
+              %h3.revision-title__text
+                販売価格
+                %span.revision-title__require
+                  必須
+            .revision-container__content__price__form
+              = f.label :price, class: 'revision-container__content__price__form__label' do
+                ¥ 
+                = f.number_field :price, {placeholder: '0', class: 'revision-container__content__price__form__box', required: "required"}
+          .error-messages#error-price
+          .revision-container__content__commission
+            .revision-container__content__commission__left
+              販売手数料 （10%）
+            .revision-container__content__commission__right ー
+          .revision-container__content__profit
+            .revision-container__content__profit__left
+              販売利益
+            .revision-container__content__profit__right ー
+          .submit-btn
+            = f.submit '更新する', class: 'submit-btn__sell-btn'
+            .submit-btn__Save 下書きに保存
+            .submit-btn__return
+              = link_to 'もどる',root_path
+          .attention-box
+            禁止されている行為および出品物を必ずご確認ください。
+            偽ブランド品や盗品物などの販売は犯罪であり、法律に
+            より処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
+  = render "compactfooter"

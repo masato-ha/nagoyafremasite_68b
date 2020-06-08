@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show,:destroy,:purchase,:pay]
+  before_action :set_item, only: [:edit, :show, :destroy, :update, :purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]
-  
   def index
     @items = Item.includes(:images).order('created_at DESC')
     @parents = Category.where(ancestry: nil)
@@ -60,6 +59,13 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if @item.update(item_update_params)
+      flash[:alert] = "出品商品が編集されました。"
+      redirect_to root_path
+    else
+      flash[:alert] = "出品商品を入力してください。"
+      render action: :edit
+    end
   end
 
   def destroy
@@ -100,7 +106,7 @@ class ItemsController < ApplicationController
   def done
   end
   def set_item
-    @item = Item.find(params[:id]) 
+    @item = Item.find(params[:id])
   end
   
   def set_card
@@ -112,4 +118,12 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :price, :introduction, :category_id, :item_condition, :brand_id, :shipping_area, :preparation_day, :trading_status, :postage_type, images_attributes: [:url]).merge(user_id: current_user.id)
   end
+
+  
+  def item_update_params
+    params.require(:item).permit(:name, :price, :introduction, :category_id, :item_condition, :brand_id, :shipping_area, :preparation_day, :trading_status, :postage_type, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
+      
+  end
+
+  
 end
