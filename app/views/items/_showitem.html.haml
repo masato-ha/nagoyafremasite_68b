@@ -97,13 +97,11 @@
                     %td
                       - @parents.each do |parent| #eachで全てを取り出す。
                         - if @item.category_id == parent.id #取り出したIDと商品のIDが同じ物を表示
-                          = parent.name
-                      -# = link_to root_path, class:"" do
-                      -#   ベビー・キッズ
-                      -# = link_to root_path, class:"" do
-                      -#   ベビー服(男女兼用)  ~95cm
-                      -# = link_to root_path, class:"" do
-                      -#   アウター
+                          = parent.parent.parent.name #親カテゴリー
+                          %br
+                          = parent.parent.name #子カテゴリー
+                          %br
+                          = parent.name #孫カテゴリー
                     %tr
                       %th ブランド
                       %td=@item.brand_id

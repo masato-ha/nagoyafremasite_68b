@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.includes(:images).order('created_at DESC')
+    @parents = Category.where(ancestry: nil)
   end
 
   def new
@@ -26,7 +27,7 @@ class ItemsController < ApplicationController
     else
       @item.images.new
       @category_parent_array = []
-      Category.where(ancestry: nil).limit(13).each do |parent|
+      Category.where(ancestry: nil).limit(2632).each do |parent|
         @category_parent_array << parent
       end
       flash[:alert] = "画像を入力してください。"
@@ -53,7 +54,7 @@ class ItemsController < ApplicationController
   end
   def show
     @items = Item.find(params[:id])
-    @parents = Category.all.order("id ASC").limit(1316)
+    @parents = Category.all.order("id ASC").limit(2362)
   end
 
   def edit

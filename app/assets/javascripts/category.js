@@ -8,7 +8,7 @@ $(function(){
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='sell-collection_category' id= 'children_wrapper'>
-                          <select class="sell-collection_category__select" id="child_category" name="category_id">
+                          <select class="sell-collection_category__select" id="child_category" name="item[category_id]">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           </select>
@@ -20,7 +20,7 @@ $(function(){
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='sell-collection_select' id= 'grandchildren_wrapper'>
-                              <select class="sell-collection_select__label" id="grandchild_category" name="category_id">
+                              <select class="sell-collection_select__label" id="grandchild_category" name="item[category_id]">
                                 <option value="---" data-category="---">---</option>
                                 ${insertHTML}
                               </select>
@@ -67,6 +67,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(grandchildren){
+        //console.log(grandchildren)
         if (grandchildren.length != 0) {
           $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除するする
           var insertHTML = '';
