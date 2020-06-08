@@ -3,11 +3,18 @@ class ItemsController < ApplicationController
   before_action :set_card, only: [:purchase, :pay]
   def index
     @items = Item.includes(:images).order('created_at DESC')
+    @parents = Category.where(ancestry: nil)
   end
 
   def new
     @item = Item.new
     @item.images.new
+    #セレクトボックスの初期値設定
+    @category_parent_array = []
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).limit(13).each do |parent|
+      @category_parent_array << parent
+    end
   end
 
   def create
@@ -17,12 +24,35 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       @item.images.new
+      @category_parent_array = []
+      Category.where(ancestry: nil).limit(2632).each do |parent|
+        @category_parent_array << parent
+      end
       flash[:alert] = "画像を入力してください。"
       render :new
     end
   end
-
+  # 親カテゴリーが選択された後に動くアクション
+  def get_category_children
+    respond_to do |format|
+      format.html
+      format.json do
+      @category_children = Category.where(ancestry: "#{params[:parent_id]}")
+      #親カテゴリーに紐付く子カテゴリーを取得
+      end
+    end
+  end 
+    # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren
+    #binding.pry
+    # @category_grandchildren = Category.where(ancestry: "#{params[:child_id]}")
+    category=Category.find(params[:child_id])
+    @category_grandchildren=category.children
+    #子カテゴリーに紐付く孫カテゴリーの配列を取得
+  end
   def show
+    @items = Item.find(params[:id])
+    @parents = Category.all.order("id ASC").limit(2362)
   end
 
   def edit
@@ -45,6 +75,7 @@ class ItemsController < ApplicationController
       render show
     end
   end
+  
   def purchase
     if @credit_card.blank?
       redirect_to controller: 'credit_cards', action: 'new'
@@ -63,31 +94,31 @@ class ItemsController < ApplicationController
     amount: @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
     customer: @credit_card.customer_id, #顧客ID
     currency: 'jpy', #日本円
-  )
+    )
   @product_purchaser= Item.find(params[:id])
-  if @product_purchaser.update( buyer_id: current_user.id)
-  redirect_to controller: 'items', action: 'index' #完了画面に移動
-  else 
-    redirect_to controller: 'items', action: 'purchase'
+    if @product_purchaser.update( buyer_id: current_user.id)
+      redirect_to controller: 'items', action: 'index' #完了画面に移動
+    else 
+      redirect_to controller: 'items', action: 'purchase'
+    end
   end
-end
 
   def done
   end
   def set_item
     @item = Item.find(params[:id])
   end
-
+  
   def set_card
     @credit_card = CreditCard.where(user_id: current_user.id).first
   end
-
+  
   private
+
   def item_params
-
-     params.require(:item).permit(:name, :price, :introduction, :category_id, :item_condition, :brand_id, :shipping_area, :preparation_day, :trading_status, :postage_type, images_attributes: [:url]).merge(user_id: current_user.id)
-
+    params.require(:item).permit(:name, :price, :introduction, :category_id, :item_condition, :brand_id, :shipping_area, :preparation_day, :trading_status, :postage_type, images_attributes: [:url]).merge(user_id: current_user.id)
   end
+
   
   def item_update_params
     params.require(:item).permit(:name, :price, :introduction, :category_id, :item_condition, :brand_id, :shipping_area, :preparation_day, :trading_status, :postage_type, images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)

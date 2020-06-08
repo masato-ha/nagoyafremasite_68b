@@ -10,7 +10,7 @@ class Item < ApplicationRecord
 
   #画像複数投稿
   accepts_nested_attributes_for :images, allow_destroy: true
-
+  #必須（画像）
   validates :images,presence: true #length: { minimum: 1, message: "が入力されていません" }
   #必須（商品名40文字以内）
   validates :name, presence: true, length: { maximum: 40}
@@ -31,7 +31,7 @@ class Item < ApplicationRecord
     送料込み:1, 着払い:2
   }
   enum postage_type: {
-    未定:1, クロネコヤマト:2, ゆうパック:3, ゆうメール:4, らくらくメルカリ便:5, レターパック:6, 普通郵便（定形、定形外）:7, クリックポスト:8, ゆうパケット:9
+    未定:1, クロネコヤマト:2, ゆうパック:3, ゆうメール:4, らくらくフリマ便:5, レターパック:6, 普通郵便（定形、定形外）:7, クリックポスト:8, ゆうパケット:9
   }
   enum preparation_day: {
     １〜２日で発送:1, ２〜３日で発送:2, ４〜７日で発送:3
