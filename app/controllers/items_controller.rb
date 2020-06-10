@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_card, only: [:purchase, :pay]
   
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.includes(:images).order('created_at DESC').limit(9)
     @parents = Category.where(ancestry: nil)
   end
 
@@ -57,6 +57,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
