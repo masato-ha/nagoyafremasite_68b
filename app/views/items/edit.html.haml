@@ -76,13 +76,14 @@
                 カテゴリー
                 %span.revision-title__require
                   必須
-              =f.select :category_id, Item.category_ids.keys.to_a, { prompt: '選択して下さい'}, {class: "revision-collection_select__label"}
+            .revision-collection_select{id: 'category-select_box'}
+              = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択して下さい'}, {class: "revision-collection_select__label",id:"parent_category"}
             .revision-collection_select
               %h3.revision-title__text
                 ブランド
                 %span.revision-title__free
                   任意
-            = f.select :brand_id,Item.brand_ids.keys.to_a, { prompt: '選択して下さい'},{class: "revision-collection_select__label"}
+              = f.select :brand_id,Item.brand_ids.keys.to_a, { prompt: '選択して下さい'},{class: "revision-collection_select__label"}
             .revision-collection_select
             .revision-title
               %h3.revision-title__text

@@ -56,6 +56,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_parent_array = []
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).limit(13).each do |parent|
+      @category_parent_array << parent
+    end
   end
 
   def update
