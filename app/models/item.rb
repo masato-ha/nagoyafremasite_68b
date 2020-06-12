@@ -20,6 +20,7 @@ class Item < ApplicationRecord
   validates :price, presence: true , numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   #必須（カテゴリー、商品の状態、発送元地域、発送までの日数、配送料の負担者、）
   validates  :category_id, :item_condition, :shipping_area, :preparation_day, :trading_status, presence: true
+  validates :category_id, presence: true
 
   enum item_condition: {
     新品、未使用:1, 未使用に近い:2, 目立った傷や汚れなし:3, やや傷や汚れあり:4, 傷や汚れあり:5, 全体的に状態が悪い:6

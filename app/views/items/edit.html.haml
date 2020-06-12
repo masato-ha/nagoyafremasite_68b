@@ -77,7 +77,7 @@
                 %span.revision-title__require
                   必須
             .revision-collection_select{id: 'category-select_box'}
-              = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択して下さい'}, {class: "revision-collection_select__label",id:"parent_category"}
+              = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択して下さい'}, {class: "revision-collection_select__label",id:"parent_category",name: ""}
             .revision-collection_select
               %h3.revision-title__text
                 ブランド
