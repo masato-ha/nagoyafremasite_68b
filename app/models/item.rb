@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   validates :images,presence: true #length: { minimum: 1, message: "が入力されていません" }
   #必須（商品名40文字以内）
   validates :name, presence: true, length: { maximum: 40}
-  #必須（商品説明文1000文字以内）
+  validates :images,presence: true #length: { minimum: 1, message: "が入力されていません" }
   validates :introduction, presence: true, length: { maximum: 1000 }
   #必須（価格300~9,999,999）
   validates :price, presence: true , numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
