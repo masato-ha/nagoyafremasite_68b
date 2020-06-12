@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
       Category.where(ancestry: nil).limit(2632).each do |parent|
         @category_parent_array << parent
       end
-      flash[:alert] = "画像を入力してください。"
+      flash[:alert] = "必須項目をご確認ください。"
       render :new
     end
   end
