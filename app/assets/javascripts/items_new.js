@@ -78,7 +78,7 @@ $(document).on('turbolinks:load', ()=> {
     // イベント元のカスタムデータ属性の値を取得
     $(`#upload-image${targetImageId}`).remove();
     //プレビューを削除
-    $(`[for=images${targetImageId}]`).remove();
+    $(`label[data-label-id='${targetImageId}']`).remove();
     //削除したプレビューに関連したinputを削除
   });
   let imageLength = $('#output-box').children('li').length;
@@ -175,7 +175,7 @@ $(document).on('turbolinks:load', ()=> {
     //状態
     $('#condition-select').on('blur',function(){
       let value = $(this).val();
-      if(value == ""){
+      if(value == "選択して下さい"){
         $('#error-condition').text('選択して下さい');
         $(this).css('border-color','red');
       }else{

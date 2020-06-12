@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :destroy, :update, :purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.includes(:images).order('created_at DESC').limit(9)
     @parents = Category.where(ancestry: nil)
   end
 
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
       Category.where(ancestry: nil).limit(2632).each do |parent|
         @category_parent_array << parent
       end
-      flash[:alert] = "画像を入力してください。"
+      flash[:alert] = "必須項目をご確認ください。"
       render :new
     end
   end
