@@ -52,12 +52,19 @@ $basic_white: #ffffff;
           cursor: pointer;
           margin-top: 5px;
           font-family: $basic_font;
-          margin-left: 45px;
+          margin-left: 85px;
+          i {
+            color: #ccc;
+          }
           a {
             font-size: 14px;
             margin-right: 44px;
+            font-weight: 600;
             text-decoration: none;
             color: $basic_black;
+            &:hover{
+              color:blue;
+            }
           }
         }
       }

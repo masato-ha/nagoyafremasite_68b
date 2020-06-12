@@ -6,9 +6,8 @@
         %i.fas.fa-camera
   .topbody__box__below
     .topbody__box__below__search
-      .topbody__box__below__search__category             
-        = link_to "カテゴリー"             
-        = link_to "ブランド"
+      .topbody__box__below__search__category          
+        = render "categories"
     %nav.mypagehed-right
     - if user_signed_in?
       %ul.main-header-user-nav
