@@ -64,11 +64,18 @@ class ItemsController < ApplicationController
   end
 
   def update
+    # binding.pry
     if @item.update(item_update_params)
       flash[:alert] = "出品商品が編集されました。"
       redirect_to root_path
     else
-      flash[:alert] = "出品商品を入力してください。"
+      @item.images=Image.where(item_id:@item.id)
+      @category_parent_array = []
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).limit(13).each do |parent|
+      @category_parent_array << parent
+    end
+      flash[:alert] = "必須項目をご確認ください。"
       render action: :edit
     end
   end

@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
 $(function(){
   // タブのDOM要素を取得し、変数で定義
   let tabs = $(".newtabs1");
@@ -48,4 +48,4 @@ $(function(){
   tabs1.click(tabSwitch);   
 
 });
-});
+// });

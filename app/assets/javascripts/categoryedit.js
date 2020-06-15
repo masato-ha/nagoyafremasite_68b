@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+// $(document).on('turbolinks:load', ()=> {
   $(function(){
     // カテゴリーセレクトボックスのオプションを作成
     function appendOption(category){
@@ -83,6 +83,6 @@ $(document).on('turbolinks:load', ()=> {
       }
     });
   });
-  });
+  // });
   
   
