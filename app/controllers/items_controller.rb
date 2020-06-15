@@ -1,20 +1,25 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :destroy, :update, :purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]
+  before_action :category_parents, only: [:new, :edit]
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(9)
     @parents = Category.where(ancestry: nil)
   end
 
-  def new
-    @item = Item.new
-    @item.images.new
+# カテゴリーセレクトボックスの設定
+  def category_parents
     #セレクトボックスの初期値設定
     @category_parent_array = []
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).limit(13).each do |parent|
       @category_parent_array << parent
     end
+  end
+
+  def new
+    @item = Item.new
+    @item.images.new
   end
 
 
@@ -70,16 +75,10 @@ class ItemsController < ApplicationController
   # end
 
   def show
-    @items = Item.find(params[:id])
     @parents = Category.all.order("id ASC").limit(1316)
   end
 
   def edit
-    @category_parent_array = []
-    #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).limit(13).each do |parent|
-      @category_parent_array << parent
-    end
   end
 
   def update

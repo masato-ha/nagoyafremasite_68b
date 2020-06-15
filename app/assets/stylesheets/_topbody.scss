@@ -53,15 +53,18 @@ $basic_white: #ffffff;
           margin-top: 5px;
           font-family: $basic_font;
           margin-left: 85px;
+          width: 180px;
+          white-space: nowrap;
           i {
             color: #ccc;
           }
           a {
             font-size: 14px;
             margin-right: 44px;
-            font-weight: 600;
+            //font-weight: 600;
             text-decoration: none;
             color: $basic_black;
+            //display: block;
             &:hover{
               color:blue;
             }
@@ -128,26 +131,26 @@ $basic_white: #ffffff;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         b1 {
           font-size: 60px;
-          z-index: 100;
+          z-index: 1;
           position: absolute;
           top: 170px;
         }
         b2 {
           font-weight: bold;
           font-size: 60px;
-          z-index: 100;
+          z-index: 1;
           position: absolute;
           top: 240px;
         }
         b3 {
           font-size: 23px;
-          z-index: 100;
+          z-index: 1;
           position: absolute;
           top: 350px;
         }
         b4 {
           font-size: 23px;
-          z-index: 100;
+          z-index: 1;
           position: absolute;
           top: 380px;
         }

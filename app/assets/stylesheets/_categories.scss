@@ -14,7 +14,8 @@
   position: absolute;
   height: 560px;
   background-color: white;
-  border-right: 1px solid white;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  z-index: 2;
 }
 
 // 子要素はカテゴリー名の共通項
@@ -22,45 +23,53 @@
   width: 100%;
   color: black;
   display: inline-block;
-  padding: 3px 15px;
-  font-size: 11px;
+  padding: 3px 10px;
   letter-spacing: 2px;
   &:hover{
   color:black;
+  background-color: lightblue;
   }
 }
 
 .categories{
   padding-bottom: 10px;
+  font-weight: 200;
   &:hover{
     .category__parent{
-      top: 122px;
+      top: 98px;
       display: block;
+      width: 222px;
       &--name{
-        width: 100%;
+        width: 222px;
         color: black;
         display: inline-block;
-        padding: 10px 20px;
-        font-size: 13px;
+        padding: 10px 15px;
+        font-size: 12px;
+        font-weight: 200;
         letter-spacing: 2px;
         &:hover {
           color: white;
+          background-color: lightblue;
         }
       }
       li {
         &:hover{
           .category__child{
-            width: 100%;
+            width: 110%;
             display: block;
             top: 0;
             left: 221px;
+            font-size: 12px;
+            font-weight: 200;
             li {
               &:hover{
                 .category__grandchild{
                   width: 300px;
                   display: block;
                   top: 0;
-                  left: 220px;
+                  left: 240px;
+                  font-size: 12px;
+                  font-weight: 200;
                 }
               }
             }
