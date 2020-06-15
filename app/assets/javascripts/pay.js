@@ -1,6 +1,6 @@
 // $(document).on('turbolinks:load', ()=> {
-document.addEventListener(
-  "turbolinks:load", e => {
+  document.addEventListener(
+    "DOMContentLoaded", e => {
     if (document.getElementById("new-paysecurity-point-btn") != null) {
        //token_submitというidがnullの場合、下記コードを実行しない
       Payjp.setPublicKey("pk_test_b089d88c3064a7ce30ce63ae"); //ここに公開鍵を直書き
