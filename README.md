@@ -14,7 +14,7 @@ Things you may want to cover:
 * Database creation
 
 ##ER図 https://gyazo.com/8a38543722a5fa2fe20930f8fe702319
-
+  
 ## usersテーブル
 
 |カラム名|カラム型|オプション|

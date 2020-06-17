@@ -144,7 +144,7 @@
                       削除する
 
               
-
+          -# = render "comments"
           .main__whole__center__comment-room
             %ul.main__whole__center__comment-room__Contents
             .main__whole__center__comment-room__Contents__new-comment{"accept-charset": "UTF-8", action: "#", method: "post"}
@@ -172,6 +172,9 @@
 
           .main__whole__center__relatedItems
             = link_to root_path, class:"" do
-              ベビー・キッズをもっと見る
+              - @parents.each do |parent| #eachで全てを取り出す。
+                - if @item.category_id == parent.id #取り出したIDと商品のIDが同じ物を表示
+                  = parent.parent.parent.name #親カテゴリー
+                  をもっと見る
             .main__whole__center__relatedItems__productLists
             %after.main__whole__center__relatedItems__relatedItems
