@@ -28,15 +28,21 @@
           %i.fas.fa-angle-right
       %li.breadCrumbs__list__item 
         = link_to root_path, class:"content" do
-          ベビー・キッズ
+          - @parents.each do |parent|
+            - if @item.category_id == parent.id #取り出したIDと商品のIDが同じ物を表示
+              = parent.parent.parent.name #親カテゴリー
+          %i.fas.fa-angle-right
+      %li.breadCrumbs__list__item 
+        = link_to root_path, class:"content" do 
+          - @parents.each do |parent|
+            - if @item.category_id == parent.id #取り出したIDと商品のIDが同じ物を表示
+              = parent.parent.name #親カテゴリー
           %i.fas.fa-angle-right
       %li.breadCrumbs__list__item 
         = link_to root_path, class:"content" do
-          ベビー服(男女兼用) ~95cm
-          %i.fas.fa-angle-right
-      %li.breadCrumbs__list__item 
-        = link_to root_path, class:"content" do
-          アウター
+          - @parents.each do |parent|
+            - if @item.category_id == parent.id #取り出したIDと商品のIDが同じ物を表示
+              = parent.name #親カテゴリー
           %i.fas.fa-angle-right
       %li.breadCrumbs__list__item 
         %p=@item.name
@@ -59,10 +65,7 @@
                 %ul
                   - @item.images.each do |images|
                     = image_tag (images.url.url.to_s)
-                    -# %li
-                    -#   = image_tag @item.images.second.url.url.to_s
-                    -# %li
-                    -#   = image_tag @item.images.third.url.url.to_s
+
             .main__whole__center__box__content__price
               %span 
                 ¥
@@ -106,6 +109,7 @@
                       %th ブランド
                       %td=@item.brand_id
                     %tr
+                    - if @items.present?
                       %th 商品のサイズ
                       %td
                     %tr
@@ -146,20 +150,31 @@
               
           -# = render "comments"
           .main__whole__center__comment-room
-            %ul.main__whole__center__comment-room__Contents
-            .main__whole__center__comment-room__Contents__new-comment{"accept-charset": "UTF-8", action: "#", method: "post"}
-              %input{name: "utf8", type: "hidden", value: "✓"}/
-              %input{name: "authenticity_token", type: "hidden", value: "z7Qut4WXQ3mF3zKKLKZrd1Fn+L/Qvfjm2htA/nurRRIj6zbRfEQ5aPKt2pDDScEFgn+UVEEZ7t0WPSCFBEH9WA=="}/
-              %textarea.main__whole__center__comment-room__Contents__new-comment__comment-body{name: "comment[body]", required: "required"}
-              %p.main__whole__center__comment-room__Contents__new-comment__noticeMsg
-                相手のことを考え丁寧なコメントを心がけましょう。
-                %br/
-                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            - if @comments.present?
+              %ul.main__whole__center__comment-room__Contents
+                .comments
+                  - if @comments
+                    - @comments.each do |comment|
+                      = image_tag "member_photo.png" , width:35, height:35, class:"kawa-image"
+                      .comments-name
+                        = comment.user.nickname
+                      .comments-box
+                        .comments-box__text
+                          = comment.comment
+                        .comments-box__date
+                          %time(datetime="#{comment.created_at}")= time_ago_in_words(comment.created_at) + "前"
+            %p.main__whole__center__comment-room__Contents__new-comment__noticeMsg
+              相手のことを考え丁寧なコメントを心がけましょう。
               %br/
-              %button.main__whole__center__comment-room__Contents__new-comment__commentBtn{name: "button", type: "submit"}
-                %i.fa.fa-comment
-                コメントする
-          
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %br/
+            .main__whole__center__comment-room__Contents__new-comment
+              = form_with model: [@item, @comment], local: true do |f|
+                = f.text_area :comment,{class: 'main__whole__center__comment-room__Contents__new-comment__comment-body', required: "required"}
+                = f.hidden_field :item_id, value: @item.id
+                = f.submit "コメントする",class: "main__whole__center__comment-room__Contents__new-comment__btn"
+
+
           %ul.main__whole__center__links
             %li.main__whole__center__links__f
               = link_to root_path, class:"" do

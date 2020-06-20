@@ -76,6 +76,8 @@ class ItemsController < ApplicationController
 
   def show
     @parents = Category.all.order("id ASC").limit(1316)
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def edit
