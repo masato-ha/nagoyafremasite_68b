@@ -8,7 +8,7 @@ $basic_black: #333333;
 $basic_white: #ffffff;
 
 .highspace {
-  height: 2130px;
+  height: 100%;
   width: 100vw;
   font-family: $basic_font;
   &__opening {
@@ -138,10 +138,10 @@ $basic_white: #ffffff;
 
 .main {
   background: #f8f8f8;
-  height: 2030;
+  height: 100%;
   width: 100vw;
   &__whole {
-    height: 2030;
+    height: 100%;
     width: 100vw;
     padding: 40px;
     margin: 0 auto;
@@ -543,6 +543,8 @@ $basic_white: #ffffff;
         text-align: center;
         &__Contents {
           list-style: none;
+          font-family: Arial, Helvetica, sans-serif;
+          height: 100%;
           &__new-comment {
             margin: 0;
             padding: 0;
@@ -554,11 +556,11 @@ $basic_white: #ffffff;
             &__noticeMsg {
               padding: 8px;
               font-size: 14px;
-              background-color: #f8f8f8;
+              background-color:#fff6de;
               margin: 10px 0;
               text-align: left;
             }
-            &__commentBtn {
+            &__btn {
               font-size: 18px;
               line-height: 48px;
               background: #3CCACE;
@@ -567,6 +569,9 @@ $basic_white: #ffffff;
               width: 60%;
               font-size: 18px;
               border-radius: 100px;
+              margin-left: auto;
+              margin-right: auto;
+              cursor: pointer;
               i{
                 display: inline-block;
                 font-family: "Font Awesome 5 Free";
@@ -575,8 +580,63 @@ $basic_white: #ffffff;
               }
             }
           }
+          .comments{
+            box-sizing: border-box;
+            padding: 4px 4px 0;
+            height: 100%;
+            border-radius: 15px;
+            .kawa-image{
+              float: left;
+              margin-right: 4px;
+              border-radius: 50%;
+            }
+            &-name{
+              text-align: left;
+              font-size: 14px;
+              font-weight: 600;
+              padding-left: 50px;
+            }
+            &-box{
+              height: auto;
+              background-color: #eff0f4;
+              border-radius: 15px;
+              line-height: 1.5;
+              margin: 4px 0 32px 50px;
+              padding: 16px;
+              position: relative;
+              &__text{
+                font-size: 14px;
+                text-align: left;
+              }
+              &__date{
+                font-size: 12px;
+                color: rgb(167, 161, 161);
+                text-align: left;
+                margin-top: 8px;
+              }
+              i{
+                position: absolute;
+                top: 8px;
+                left: -9px;
+                color: #eef0f4;
+              }
+            }
+            &-box:after{
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 0;
+              left: -11px;
+              top: 5px;
+              border-style: solid;
+              border-color: transparent transparent transparent #eff0f4;
+              border-width: 10px 0 8px 25.32px;
+              transform: rotate(215deg);
+            }
+          }
         }
       }
+      
       &__links {
         list-style: none;
         &__f{

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   } 
   
   resources :items do
+    resources :comments,only: [:create]
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'get_category_children', defaults: { format: 'json' }
